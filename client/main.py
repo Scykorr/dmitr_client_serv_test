@@ -345,7 +345,6 @@ class FirstTestWindow(QtWidgets.QWidget):
             if pix4.loadFromData(img_bin[0], 'png'):
                 self.ui_first_test.label_img_var4.setPixmap(pix4)
 
-
     def sort_variants(self):
         new_list = [[] for _ in range(10)]
         counter = 0
@@ -504,7 +503,7 @@ class SecondTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix.loadFromData(img_bin[0], 'png'):
                 self.ui_second_test.label_img_question.setPixmap(pix)
 
@@ -519,7 +518,7 @@ class SecondTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix1 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix1.loadFromData(img_bin[0], 'png'):
                 self.ui_second_test.label_img_var1.setPixmap(pix1)
 
@@ -534,7 +533,7 @@ class SecondTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix2 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix2.loadFromData(img_bin[0], 'png'):
                 self.ui_second_test.label_img_var2.setPixmap(pix2)
 
@@ -549,7 +548,7 @@ class SecondTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix3 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix3.loadFromData(img_bin[0], 'png'):
                 self.ui_second_test.label_img_var3.setPixmap(pix3)
 
@@ -564,9 +563,25 @@ class SecondTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix4 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix4.loadFromData(img_bin[0], 'png'):
                 self.ui_second_test.label_img_var4.setPixmap(pix4)
+
+    def get_image_db(self, question_var_name: str):
+        con = sql.connect('img.db')
+        cur = con.cursor()
+        img_bin = cur.execute(
+            'select image from img where id_question="{0}"'.format(
+                question_var_name,
+            ))
+        img_bin = img_bin.fetchone()
+        con.commit()
+        cur.close()
+        con.close()
+        pix = QPixmap()
+        if img_bin is not None:
+            if pix.loadFromData(img_bin[0], 'png'):
+                self.ui_second_test.label_img_question.setPixmap(pix)
 
 
 if __name__ == '__main__':
