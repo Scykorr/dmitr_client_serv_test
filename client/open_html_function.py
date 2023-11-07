@@ -9,10 +9,8 @@ class Ui_Form(object):
         Form.resize(1025, 700)
 
         self.webView = QWebEngineView(parent=Form)
-        # self.webView.setGeometry(QtCore.QRect(0, 30, 1021, 561))
         self.webView.setGeometry(QtCore.QRect(0, 10, 1021, 695))
         self.webView.setObjectName("webView")
-
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
