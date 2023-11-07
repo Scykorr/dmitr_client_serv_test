@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>872</width>
-    <height>678</height>
+    <height>595</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,8 +47,8 @@
   <widget class="QPushButton" name="pushButton_answer">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>630</y>
+     <x>330</x>
+     <y>540</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -62,38 +62,38 @@
     <rect>
      <x>60</x>
      <y>80</y>
-     <width>121</width>
+     <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>restrict - ограничивать</string>
+    <string>amount - величина, количество</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>80</y>
-     <width>121</width>
+     <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>circuit - схема</string>
+    <string>affect - воздействовать, влиять</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>100</y>
-     <width>121</width>
+     <width>191</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>figure – рисунок</string>
+    <string>store (syn. accumulate) - накапливать</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -106,20 +106,20 @@
     </rect>
    </property>
    <property name="text">
-    <string>flow - поток</string>
+    <string>capacitance - емкость</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>120</y>
-     <width>121</width>
+     <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>terminal – клемма</string>
+    <string>unidirectional - аккумулировать</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -132,20 +132,20 @@
     </rect>
    </property>
    <property name="text">
-    <string>resistance - сопротивление</string>
+    <string>capacitor - конденсатор</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>140</y>
-     <width>121</width>
+     <width>181</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>insulator - изолятор</string>
+    <string>approximately - однонаправленный</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
@@ -153,25 +153,25 @@
     <rect>
      <x>60</x>
      <y>140</y>
-     <width>121</width>
+     <width>211</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>amount - количество</string>
+    <string>inductance coil - катушка индуктивности</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>160</y>
-     <width>121</width>
+     <width>151</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>conductor - проводник</string>
+    <string>because of - приблизительно</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
@@ -184,20 +184,21 @@
     </rect>
    </property>
    <property name="text">
-    <string>determine - определить</string>
+    <string>conductor - проводник</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>280</x>
      <y>180</y>
-     <width>131</width>
-     <height>21</height>
+     <width>141</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>whereas – в то время как</string>
+    <string>buildup - из-за, вследствие
+накопления</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
@@ -210,21 +211,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>equation - равенство</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_13">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>200</y>
-     <width>161</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>сross sectional area – площадь
- поперечного сечения</string>
+    <string>medium - среда</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_14">
@@ -232,12 +219,12 @@
     <rect>
      <x>60</x>
      <y>200</y>
-     <width>121</width>
+     <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>voltage - напряжение</string>
+    <string>plate - обкладка (конденсатора)</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_16">
@@ -250,20 +237,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>inversely - обратно</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_17">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>230</y>
-     <width>121</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>сollide - сталкиваться</string>
+    <string>property - свойство</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_18">
@@ -271,12 +245,12 @@
     <rect>
      <x>60</x>
      <y>240</y>
-     <width>121</width>
+     <width>141</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>hence -  следовательно</string>
+    <string>unit - единица (измерения)</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_20">
@@ -289,14 +263,14 @@
     </rect>
    </property>
    <property name="text">
-    <string>reduce – уменьшить</string>
+    <string>value - величина</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>500</y>
+     <y>450</y>
      <width>91</width>
      <height>41</height>
     </rect>
@@ -389,7 +363,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>1. What is a passive component of a circuit?</string>
+    <string>1. What is a passive component?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_1">
@@ -412,8 +386,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>2. What are the three basic elements
- used in electronic circuits?</string>
+    <string>2. What do passive elements comprise?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_2">
@@ -459,7 +432,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>4. What device is called resistor?</string>
+    <string>4. What factors does resistance depend on?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_4">
@@ -476,22 +449,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>190</y>
+     <y>200</y>
      <width>221</width>
-     <height>61</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>5. Is the electric current inversely
- proportional to the resistance of a resistor
- or to the voltage applied across the resistor?</string>
+    <string>5. What device is called resistor?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_5">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>210</y>
+     <y>200</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -501,21 +472,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>250</y>
+     <y>230</y>
      <width>221</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>6. When does the amount of electric current
- flowing through the resistor decrease?</string>
+    <string>6. What is resistance affected by?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_6">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>260</y>
+     <y>230</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -525,21 +495,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>290</y>
+     <y>260</y>
      <width>221</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>7. What factors does the resistance
- depend on?</string>
+    <string>7. What are resistors used for?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_7">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>290</y>
+     <y>260</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -549,20 +518,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>330</y>
+     <y>290</y>
      <width>221</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>8. What form is the electric current wasted in?</string>
+    <string>8. What does Ohm's law permit to calculate?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_8">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>330</y>
+     <y>290</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -572,20 +541,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>360</y>
+     <y>320</y>
      <width>221</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>9. Can resistors control the flow of electrons?</string>
+    <string>9. What is capacitance?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_9">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>360</y>
+     <y>320</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -595,20 +564,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>390</y>
+     <y>350</y>
      <width>221</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>10. What is the symbol for resistance?</string>
+    <string>10. What is a capacitor?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_10">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>390</y>
+     <y>350</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -618,21 +587,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>420</y>
+     <y>380</y>
      <width>221</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>11. What letter is used for resistance
- in equations?</string>
+    <string>11. What parts does a capacitor consist of?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_11">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>420</y>
+     <y>380</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -642,20 +610,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>460</y>
+     <y>410</y>
      <width>221</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>12. What are the terminals used for?</string>
+    <string>12. What are common dielectrics?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_12">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>460</y>
+     <y>410</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -665,20 +633,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>490</y>
+     <y>440</y>
      <width>221</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>13. What is the unit of resistance?</string>
+    <string>13. What is the major usage of capacitors?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_13">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>490</y>
+     <y>440</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -688,21 +656,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>520</y>
+     <y>470</y>
      <width>221</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>14. Does Resistor belong to insulators
- or conductors?</string>
+    <string>14. What is inductance?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_14">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>520</y>
+     <y>470</y>
      <width>41</width>
      <height>20</height>
     </rect>
@@ -712,45 +679,20 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>560</y>
+     <y>500</y>
      <width>221</width>
-     <height>31</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>15. What factors does resistance of a resistor
- depend on?</string>
+    <string>15. What is an induction coil?</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_zadane5_15">
    <property name="geometry">
     <rect>
      <x>730</x>
-     <y>560</y>
-     <width>41</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_zadanie5_16">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>600</y>
-     <width>221</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>16. What are the advantages and
- disadvantages of resistors?</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_zadane5_16">
-   <property name="geometry">
-    <rect>
-     <x>730</x>
-     <y>600</y>
+     <y>500</y>
      <width>41</width>
      <height>20</height>
     </rect>

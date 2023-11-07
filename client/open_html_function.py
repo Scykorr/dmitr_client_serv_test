@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 import os
 
+
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")

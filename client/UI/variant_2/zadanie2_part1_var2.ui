@@ -94,7 +94,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>measurement</string>
+    <string>dissipate</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_word_2">
@@ -107,7 +107,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>electric</string>
+    <string>approximately</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_2">
@@ -143,7 +143,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>commonly</string>
+    <string>property</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_3">
@@ -179,7 +179,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>circuit</string>
+    <string>unidirectional</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_4">
@@ -215,7 +215,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>equation</string>
+    <string>internally</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_5">
@@ -251,7 +251,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>restrict</string>
+    <string>lead</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_6">
@@ -287,7 +287,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>collide</string>
+    <string>oppose</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_7">
@@ -323,7 +323,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>heat</string>
+    <string>restrict</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_8">
@@ -359,7 +359,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>often</string>
+    <string>conductive</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_9">
@@ -395,7 +395,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>electrical</string>
+    <string>large</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_10">
@@ -431,7 +431,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>length</string>
+    <string>practical</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_11">
@@ -467,7 +467,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>offer</string>
+    <string>accumulate</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_12">
@@ -503,7 +503,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>high</string>
+    <string>produce</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_13">
@@ -539,7 +539,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>inversely</string>
+    <string>high</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_14">
@@ -575,7 +575,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>proportional</string>
+    <string>approximately</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_15">
@@ -599,6 +599,42 @@
    </property>
    <property name="text">
     <string>15</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_answer_16">
+   <property name="geometry">
+    <rect>
+     <x>382</x>
+     <y>290</y>
+     <width>31</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_number_16">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>290</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>16</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_word_16">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>290</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>greater</string>
    </property>
   </widget>
  </widget>
