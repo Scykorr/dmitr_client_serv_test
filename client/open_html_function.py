@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWebEngineWidgets import QWebEngineView
-
+import os
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -20,11 +20,11 @@ class Ui_Form(object):
 
 
 class Window(QtWidgets.QWidget, Ui_Form):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, filename='var_1_text1.htm'):
         super().__init__(parent)
         self.setupUi(self)
-
-        file = "D:/PycharmProjects/dmitr_client_serv_test/draft/var_1_text1.mht"  # !!! +++
+        cwd = os.path.abspath(f'../draft/{filename}')
+        file = cwd
         self.webView.load(QtCore.QUrl.fromLocalFile(file))  # !!! +++
 
 
