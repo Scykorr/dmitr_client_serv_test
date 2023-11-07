@@ -11,6 +11,7 @@ from GUIpy.client_test2 import Ui_Form_test2
 from random import shuffle
 import time
 import sqlite3 as sql
+from variant_1 import Task1Part1Var1
 
 with open('ip_address', 'r', encoding='utf-8') as ip_file:
     for el in ip_file:
@@ -135,6 +136,7 @@ class WindowChooseTest(QtWidgets.QWidget):
         self.ui_choose_test.setupUi(self)
         self.ui_choose_test.pushButton_test1.clicked.connect(self.test_1)
         self.ui_choose_test.pushButton_test2.clicked.connect(self.test_2)
+        self.ui_choose_test.pushButton_variant1.clicked.connect(self.get_variant_1)
 
     def test_1(self):
         self.first_test_window = FirstTestWindow()
@@ -146,6 +148,9 @@ class WindowChooseTest(QtWidgets.QWidget):
         self.hide()
         self.second_test_window.show()
 
+    def get_variant_1(self):
+        self.first_variant_window = Task1Part1Var1()
+        self.first_variant_window.show()
 
 class FirstTestWindow(QtWidgets.QWidget):
     def __init__(self, parent=None):
