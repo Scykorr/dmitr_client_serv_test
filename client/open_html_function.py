@@ -1,14 +1,15 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 import os
 
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1019, 593)
+        Form.resize(1025, 700)
 
         self.webView = QWebEngineView(parent=Form)
-        self.webView.setGeometry(QtCore.QRect(0, 30, 1021, 561))
+        # self.webView.setGeometry(QtCore.QRect(0, 30, 1021, 561))
+        self.webView.setGeometry(QtCore.QRect(0, 10, 1021, 695))
         self.webView.setObjectName("webView")
 
         self.retranslateUi(Form)
@@ -16,7 +17,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle("ИНСТРУКЦИЯ")
+        Form.setWindowTitle("Text")
 
 
 class Window(QtWidgets.QWidget, Ui_Form):
