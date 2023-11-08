@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>425</width>
-    <height>690</height>
+    <height>658</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,8 +48,8 @@
   <widget class="QPushButton" name="pushButton_answer">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>650</y>
+     <x>290</x>
+     <y>610</y>
      <width>101</width>
      <height>31</height>
     </rect>
@@ -110,6 +110,19 @@ p, li { white-space: pre-wrap; }
      <width>51</width>
      <height>20</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_show_text">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>600</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Показать текст</string>
    </property>
   </widget>
  </widget>

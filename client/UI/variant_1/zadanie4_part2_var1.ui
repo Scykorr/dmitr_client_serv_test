@@ -48,7 +48,7 @@
   <widget class="QPushButton" name="pushButton_answer">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>280</x>
      <y>570</y>
      <width>101</width>
      <height>31</height>
@@ -137,6 +137,19 @@ p, li { white-space: pre-wrap; }
      <width>51</width>
      <height>20</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_show_text">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>560</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Показать текст</string>
    </property>
   </widget>
  </widget>

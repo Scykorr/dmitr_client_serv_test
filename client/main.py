@@ -12,6 +12,7 @@ from random import shuffle
 import time
 import sqlite3 as sql
 from variant_1 import Task1Part1Var1
+from variant_2 import Task1Part1Var2
 
 with open('ip_address', 'r', encoding='utf-8') as ip_file:
     for el in ip_file:
@@ -137,6 +138,7 @@ class WindowChooseTest(QtWidgets.QWidget):
         self.ui_choose_test.pushButton_test1.clicked.connect(self.test_1)
         self.ui_choose_test.pushButton_test2.clicked.connect(self.test_2)
         self.ui_choose_test.pushButton_variant1.clicked.connect(self.get_variant_1)
+        self.ui_choose_test.pushButton_variant2.clicked.connect(self.get_variant_2)
 
     def test_1(self):
         self.first_test_window = FirstTestWindow()
@@ -151,6 +153,10 @@ class WindowChooseTest(QtWidgets.QWidget):
     def get_variant_1(self):
         self.first_variant_window = Task1Part1Var1()
         self.first_variant_window.show()
+
+    def get_variant_2(self):
+        self.second_variant_window = Task1Part1Var2()
+        self.second_variant_window.show()
 
 class FirstTestWindow(QtWidgets.QWidget):
     def __init__(self, parent=None):

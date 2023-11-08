@@ -1,5 +1,3 @@
-import sys
-
 from PyQt5 import QtWidgets
 from GUIpy.variant_1.zadanie1_part1_var1 import Ui_Zadanie1_part1
 from GUIpy.variant_1.zadanie2_part1_var1 import Ui_Zadanie2_part1
