@@ -158,6 +158,7 @@ class WindowChooseTest(QtWidgets.QWidget):
         self.second_variant_window = Task1Part1Var2()
         self.second_variant_window.show()
 
+
 class FirstTestWindow(QtWidgets.QWidget):
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
@@ -307,7 +308,7 @@ class FirstTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix1 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix1.loadFromData(img_bin[0], 'png'):
                 self.ui_first_test.label_img_var1.setPixmap(pix1)
 
@@ -322,7 +323,7 @@ class FirstTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix2 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix2.loadFromData(img_bin[0], 'png'):
                 self.ui_first_test.label_img_var2.setPixmap(pix2)
 
@@ -337,7 +338,7 @@ class FirstTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix3 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix3.loadFromData(img_bin[0], 'png'):
                 self.ui_first_test.label_img_var3.setPixmap(pix3)
 
@@ -352,7 +353,7 @@ class FirstTestWindow(QtWidgets.QWidget):
         cur.close()
         con.close()
         pix4 = QPixmap()
-        if img_bin != None:
+        if img_bin is not None:
             if pix4.loadFromData(img_bin[0], 'png'):
                 self.ui_first_test.label_img_var4.setPixmap(pix4)
 
