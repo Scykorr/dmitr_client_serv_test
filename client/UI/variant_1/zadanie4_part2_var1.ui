@@ -152,6 +152,19 @@ p, li { white-space: pre-wrap; }
     <string>Показать текст</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_timer">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>570</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

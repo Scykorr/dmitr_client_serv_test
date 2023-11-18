@@ -231,6 +231,10 @@ class Ui_Zadanie1_2_3_part2_var1(object):
         self.label_34 = QtWidgets.QLabel(Zadanie1_2_3_part2_var1)
         self.label_34.setGeometry(QtCore.QRect(440, 620, 331, 21))
         self.label_34.setObjectName("label_34")
+        self.label_timer = QtWidgets.QLabel(Zadanie1_2_3_part2_var1)
+        self.label_timer.setGeometry(QtCore.QRect(250, 610, 141, 21))
+        self.label_timer.setText("")
+        self.label_timer.setObjectName("label_timer")
 
         self.retranslateUi(Zadanie1_2_3_part2_var1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie1_2_3_part2_var1)

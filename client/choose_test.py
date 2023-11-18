@@ -33,7 +33,7 @@ class WindowChooseTest(QtWidgets.QWidget):
         self.second_test_window.show()
 
     def get_variant_1(self):
-        self.first_variant_window = Task1Part1Var1()
+        self.first_variant_window = Task1Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)
         self.first_variant_window.show()
 
     def get_variant_2(self):
