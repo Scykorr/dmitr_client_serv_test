@@ -58,7 +58,7 @@ class MyThreadVariant(QtCore.QThread):
     def __init__(self, parent=None, result_time=None, curr_time=0):
         QtCore.QThread.__init__(self, parent)
         if result_time is None:
-            result_time = []
+            result_time = ['']
         self.result_time = result_time
         self.time_format = None
         self.curr_answers = None

@@ -41,7 +41,7 @@ class Task1Part1Var1(QtWidgets.QWidget):
     def get_next_task(self):
         self.window = Task2Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer_append()
+        self.answer()
         self.close()
         self.window.show()
 
@@ -49,7 +49,7 @@ class Task1Part1Var1(QtWidgets.QWidget):
         self.mythread.start()
 
     def on_started(self):
-        self.ui_first_test.label_timer.setText("")
+        self.ui_form.label_timer.setText("")
 
     def on_finished(self):
         self.next_time = 2400 - int(self.mythread.result_time[0])
@@ -60,36 +60,39 @@ class Task1Part1Var1(QtWidgets.QWidget):
 
     def answer(self):
         answer = ("{word1};{word2};{word3};{word4};{word5};{word6};{word7};{word8};{word9};{word10};{word11};"
-                  "{word12};{word13};{word14};{word15};{word16};{word17};{word18};{word19};{word20};{word21};").format(
-            word1=self.ui_form.lineEdit_word_1,
-            word2=self.ui_form.lineEdit_word_2,
-            word3=self.ui_form.lineEdit_word_3,
-            word4=self.ui_form.lineEdit_word_4,
-            word5=self.ui_form.lineEdit_word_5,
-            word6=self.ui_form.lineEdit_word_6,
-            word7=self.ui_form.lineEdit_word_7,
-            word8=self.ui_form.lineEdit_word_8,
-            word9=self.ui_form.lineEdit_word_9,
-            word10=self.ui_form.lineEdit_word_10,
+                  "{word12};{word13};{word14};{word15};{word16};{word17};{word18};{word19};{word20};{word21}").format(
+            word1=self.ui_form.lineEdit_word_1.text(),
+            word2=self.ui_form.lineEdit_word_2.text(),
+            word3=self.ui_form.lineEdit_word_3.text(),
+            word4=self.ui_form.lineEdit_word_4.text(),
+            word5=self.ui_form.lineEdit_word_5.text(),
+            word6=self.ui_form.lineEdit_word_6.text(),
+            word7=self.ui_form.lineEdit_word_7.text(),
+            word8=self.ui_form.lineEdit_word_8.text(),
+            word9=self.ui_form.lineEdit_word_9.text(),
+            word10=self.ui_form.lineEdit_word_10.text(),
+            word11=self.ui_form.lineEdit_word_11.text(),
+            word12=self.ui_form.lineEdit_word_12.text(),
+            word13=self.ui_form.lineEdit_word_13.text(),
+            word14=self.ui_form.lineEdit_word_14.text(),
+            word15=self.ui_form.lineEdit_word_15.text(),
+            word16=self.ui_form.lineEdit_word_16.text(),
+            word17=self.ui_form.lineEdit_word_17.text(),
+            word18=self.ui_form.lineEdit_word_18.text(),
+            word19=self.ui_form.lineEdit_word_19.text(),
+            word20=self.ui_form.lineEdit_word_20.text(),
+            word21=self.ui_form.lineEdit_word_21.text(),
         )
         Client(self.ip_address_server, 7000).connect(
-            "insert zadanie_variant set user_name='{user_name}', variant={variant}, num_zadanie={num_zad},"
-            " num_part={num_part}, answer_user='{answ_user}'".format(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=1,
                 num_part=1,
-                answ_user=None,
+                answ_user=answer,
             ))
         self.on_finished()
-
-    def answer_append(self):
-        Client(self.ip_address_server, 7000).connect(
-            "update user set true_answer={0}, current_answer={1} where fio_user='{2}'".format(
-                self.right_answer,
-                self.counter_questions_result,
-                self.student_fio,
-            ))
 
 
 class Task2Part1Var1(QtWidgets.QWidget):
@@ -104,15 +107,66 @@ class Task2Part1Var1(QtWidgets.QWidget):
         self.ui_form.setupUi(self)
         self.ui_form.pushButton_answer.clicked.connect(self.get_next_task)
         self.next_time = next_time
+        self.mythread = MyThreadVariant(curr_time=next_time)
+        self.on_clicked()
+        self.mythread.started.connect(self.on_started)
+        self.mythread.finished.connect(self.on_finished)
+        self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
+        self.student_fio = user_name[0]
+
+    def on_clicked(self):
+        self.mythread.start()
+
+    def on_started(self):
+        self.ui_form.label_timer.setText("")
+
+    def on_finished(self):
+        self.next_time = 2400 - int(self.mythread.result_time[0])
+        self.mythread.exit()
+
+    def on_change(self, s):
+        self.ui_form.label_timer.setText(s)
+
+    def answer(self):
+        answer = ("{word1};{word2};{word3};{word4};{word5};{word6};{word7};{word8};{word9};{word10};{word11};"
+                  "{word12};{word13};{word14};{word15}").format(
+            word1=self.ui_form.lineEdit_answer_1.text(),
+            word2=self.ui_form.lineEdit_answer_2.text(),
+            word3=self.ui_form.lineEdit_answer_3.text(),
+            word4=self.ui_form.lineEdit_answer_4.text(),
+            word5=self.ui_form.lineEdit_answer_5.text(),
+            word6=self.ui_form.lineEdit_answer_6.text(),
+            word7=self.ui_form.lineEdit_answer_7.text(),
+            word8=self.ui_form.lineEdit_answer_8.text(),
+            word9=self.ui_form.lineEdit_answer_9.text(),
+            word10=self.ui_form.lineEdit_answer_10.text(),
+            word11=self.ui_form.lineEdit_answer_11.text(),
+            word12=self.ui_form.lineEdit_answer_12.text(),
+            word13=self.ui_form.lineEdit_answer_13.text(),
+            word14=self.ui_form.lineEdit_answer_14.text(),
+            word15=self.ui_form.lineEdit_answer_15.text(),
+        )
+        Client(self.ip_address_server, 7000).connect(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+                user_name=self.student_fio,
+                variant=1,
+                num_zad=2,
+                num_part=1,
+                answ_user=answer,
+            ))
+        self.on_finished()
 
     def get_next_task(self):
-        self.window = Task345Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)
+        self.window = Task345Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
+                                       next_time=self.next_time)
+        self.answer()
         self.close()
         self.window.show()
 
 
 class Task345Part1Var1(QtWidgets.QWidget):
-    def __init__(self, ip_address_server, user_name=None, parent=None):
+    def __init__(self, ip_address_server, next_time, user_name=None, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         if user_name is None:
             user_name = []
@@ -123,6 +177,7 @@ class Task345Part1Var1(QtWidgets.QWidget):
         self.ui_form.setupUi(self)
         self.ui_form.pushButton_answer.clicked.connect(self.get_next_task)
         self.ui_form.pushButton.clicked.connect(self.get_text)
+        self.next_time = next_time
 
     def get_text(self):
         self.window = Window(filename='var_1_text1.htm')

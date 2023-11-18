@@ -167,7 +167,7 @@ class Ui_Zadanie2_part1(object):
         self.label_number_15.setGeometry(QtCore.QRect(270, 260, 16, 20))
         self.label_number_15.setObjectName("label_number_15")
         self.label_timer = QtWidgets.QLabel(Zadanie2_part1)
-        self.label_timer.setGeometry(QtCore.QRect(320, 320, 141, 31))
+        self.label_timer.setGeometry(QtCore.QRect(320, 320, 161, 31))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
 

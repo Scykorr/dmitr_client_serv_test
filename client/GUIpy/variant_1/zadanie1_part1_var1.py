@@ -157,7 +157,7 @@ class Ui_Zadanie1_part1(object):
         self.pushButton_answer.setGeometry(QtCore.QRect(200, 420, 101, 31))
         self.pushButton_answer.setObjectName("pushButton_answer")
         self.label_timer = QtWidgets.QLabel(Zadanie1_part1)
-        self.label_timer.setGeometry(QtCore.QRect(320, 420, 141, 31))
+        self.label_timer.setGeometry(QtCore.QRect(320, 420, 171, 31))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
 
