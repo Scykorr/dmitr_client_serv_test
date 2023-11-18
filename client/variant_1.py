@@ -1,6 +1,8 @@
 import time
 
 from PyQt5 import QtWidgets, QtCore
+from PyQt5.QtWidgets import QMessageBox
+
 from GUIpy.variant_1.zadanie1_part1_var1 import Ui_Zadanie1_part1
 from GUIpy.variant_1.zadanie2_part1_var1 import Ui_Zadanie2_part1
 from GUIpy.variant_1.zadanie3_4_5_part1_var1 import Ui_Zadanie3_4_5_part1_var1
@@ -34,9 +36,12 @@ class Task1Part1Var1(QtWidgets.QWidget):
         self.mythread.started.connect(self.on_started)
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
+        self.next_time = 0
 
     def get_next_task(self):
-        self.window = Task2Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)
+        self.window = Task2Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
+                                     next_time=self.next_time)
+        self.answer_append()
         self.close()
         self.window.show()
 
@@ -47,66 +52,38 @@ class Task1Part1Var1(QtWidgets.QWidget):
         self.ui_first_test.label_timer.setText("")
 
     def on_finished(self):
-        res_sec = 600 - int(self.mythread.result_time[0])
-        time_format_result = time.strftime("%H:%M:%S", time.gmtime(res_sec))
-        result_points = self.right_answer * 10
-        Client(self.ip_address_server, 7000).connect(
-            "update user set time='{0}', true_answer={1}, false_answer={2}, current_answer={3},"
-            " result_score={5} where fio_user='{4}'".format(
-                time_format_result,
-                self.right_answer,
-                self.wrong_answer,
-                self.counter_questions_result,
-                self.student_fio,
-                result_points,
-            ))
-        QMessageBox.about(self, 'Ваш результат:', 'Тест завершен.\n{0} верных ответов из 10.'.format(
-            self.right_answer
-        ))
-        exit()
+        self.next_time = 2400 - int(self.mythread.result_time[0])
+        self.mythread.exit()
 
     def on_change(self, s):
-        self.ui_first_test.label_timer.setText(s)
+        self.ui_form.label_timer.setText(s)
 
     def answer(self):
-        self.counter_questions_result += 1
-        if self.ui_first_test.radioButton_answer1.isChecked() \
-                and self.sorted_variants[self.counter_questions][0][2] == 1:
-            self.right_answer += 1
-            self.right_answer_append()
-        elif self.ui_first_test.radioButton_answer2.isChecked() \
-                and self.sorted_variants[self.counter_questions][1][2] == 1:
-            self.right_answer += 1
-            self.right_answer_append()
-        elif self.ui_first_test.radioButton_answer3.isChecked() \
-                and self.sorted_variants[self.counter_questions][2][2] == 1:
-            self.right_answer += 1
-            self.right_answer_append()
-        elif self.ui_first_test.radioButton_4.isChecked() \
-                and self.sorted_variants[self.counter_questions][3][2] == 1:
-            self.right_answer += 1
-            self.right_answer_append()
-        else:
-            self.wrong_answer += 1
-            Client(self.ip_address_server, 7000).connect(
-                "update user set false_answer={0}, current_answer={1} where fio_user='{2}'".format(
-                    self.wrong_answer,
-                    self.counter_questions_result,
-                    self.student_fio,
-                ))
+        answer = ("{word1};{word2};{word3};{word4};{word5};{word6};{word7};{word8};{word9};{word10};{word11};"
+                  "{word12};{word13};{word14};{word15};{word16};{word17};{word18};{word19};{word20};{word21};").format(
+            word1=self.ui_form.lineEdit_word_1,
+            word2=self.ui_form.lineEdit_word_2,
+            word3=self.ui_form.lineEdit_word_3,
+            word4=self.ui_form.lineEdit_word_4,
+            word5=self.ui_form.lineEdit_word_5,
+            word6=self.ui_form.lineEdit_word_6,
+            word7=self.ui_form.lineEdit_word_7,
+            word8=self.ui_form.lineEdit_word_8,
+            word9=self.ui_form.lineEdit_word_9,
+            word10=self.ui_form.lineEdit_word_10,
+        )
+        Client(self.ip_address_server, 7000).connect(
+            "insert zadanie_variant set user_name='{user_name}', variant={variant}, num_zadanie={num_zad},"
+            " num_part={num_part}, answer_user='{answ_user}'".format(
+                user_name=self.student_fio,
+                variant=1,
+                num_zad=1,
+                num_part=1,
+                answ_user=None,
+            ))
+        self.on_finished()
 
-        self.ui_first_test.radioButton_answer1.setChecked(True)
-        self.ui_first_test.radioButton_answer2.setChecked(False)
-        self.ui_first_test.radioButton_answer3.setChecked(False)
-        self.ui_first_test.radioButton_4.setChecked(False)
-        self.counter_questions += 1
-        if self.counter_questions < 10:
-            self.get_questionts()
-        else:
-            self.on_finished()
-            exit()
-
-    def right_answer_append(self):
+    def answer_append(self):
         Client(self.ip_address_server, 7000).connect(
             "update user set true_answer={0}, current_answer={1} where fio_user='{2}'".format(
                 self.right_answer,
@@ -116,7 +93,7 @@ class Task1Part1Var1(QtWidgets.QWidget):
 
 
 class Task2Part1Var1(QtWidgets.QWidget):
-    def __init__(self, ip_address_server, user_name=None, parent=None):
+    def __init__(self, ip_address_server, next_time, user_name=None, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         if user_name is None:
             user_name = []
@@ -126,6 +103,7 @@ class Task2Part1Var1(QtWidgets.QWidget):
         self.ui_form = Ui_Zadanie2_part1()
         self.ui_form.setupUi(self)
         self.ui_form.pushButton_answer.clicked.connect(self.get_next_task)
+        self.next_time = next_time
 
     def get_next_task(self):
         self.window = Task345Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)

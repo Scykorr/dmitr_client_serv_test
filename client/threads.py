@@ -55,16 +55,17 @@ class MyThreadTest2(QtCore.QThread):
 class MyThreadVariant(QtCore.QThread):
     mysignal = QtCore.pyqtSignal(str)
 
-    def __init__(self, parent=None, result_time=None):
+    def __init__(self, parent=None, result_time=None, curr_time=0):
         QtCore.QThread.__init__(self, parent)
         if result_time is None:
             result_time = []
         self.result_time = result_time
         self.time_format = None
         self.curr_answers = None
+        self.curr_time = curr_time
 
     def run(self):
-        for i in range(2400, -1, -1):
+        for i in range(2400-self.curr_time, -1, -1):
             self.sleep(1)
             self.time_format = time.strftime("%H:%M:%S", time.gmtime(i))
             self.result_time[0] = str(i)
