@@ -1,4 +1,3 @@
-import sys
 from socket import *
 import sqlite3 as sql
 import json
