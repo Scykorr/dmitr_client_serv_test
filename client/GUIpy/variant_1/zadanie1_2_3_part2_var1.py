@@ -28,7 +28,7 @@ class Ui_Zadanie1_2_3_part2_var1(object):
         self.label_title.setAlignment(QtCore.Qt.AlignCenter)
         self.label_title.setObjectName("label_title")
         self.pushButton_answer = QtWidgets.QPushButton(Zadanie1_2_3_part2_var1)
-        self.pushButton_answer.setGeometry(QtCore.QRect(130, 600, 101, 31))
+        self.pushButton_answer.setGeometry(QtCore.QRect(80, 600, 101, 31))
         self.pushButton_answer.setObjectName("pushButton_answer")
         self.pushButton = QtWidgets.QPushButton(Zadanie1_2_3_part2_var1)
         self.pushButton.setGeometry(QtCore.QRect(130, 460, 91, 41))
@@ -232,7 +232,7 @@ class Ui_Zadanie1_2_3_part2_var1(object):
         self.label_34.setGeometry(QtCore.QRect(440, 620, 331, 21))
         self.label_34.setObjectName("label_34")
         self.label_timer = QtWidgets.QLabel(Zadanie1_2_3_part2_var1)
-        self.label_timer.setGeometry(QtCore.QRect(250, 610, 141, 21))
+        self.label_timer.setGeometry(QtCore.QRect(220, 610, 171, 21))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
 
