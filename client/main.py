@@ -2,8 +2,6 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtGui import QPixmap
 import sys
-from socket import *
-import json
 from GUIpy.client_login import Ui_Form_client_login
 from GUIpy.client_main import Ui_Form_client_main
 from GUIpy.client_test1 import Ui_Form_client_test1
@@ -14,70 +12,11 @@ import sqlite3 as sql
 from variant_1 import Task1Part1Var1
 from variant_2 import Task1Part1Var2
 from client.users import Client
+from threads import MyThread, MyThreadTest2
 
 with open('ip_address', 'r', encoding='utf-8') as ip_file:
     for el in ip_file:
         ip_address_server = el
-
-
-class MyThread(QtCore.QThread):
-    mysignal = QtCore.pyqtSignal(str)
-
-    def __init__(self, parent=None):
-        QtCore.QThread.__init__(self, parent)
-        self.time_format = None
-        self.curr_answers = None
-
-    def run(self):
-        for i in range(600, -1, -1):
-            self.sleep(1)
-            self.time_format = time.strftime("%H:%M:%S", time.gmtime(i))
-            result_time[0] = str(i)
-            self.mysignal.emit("Осталось времени = %s" % self.time_format)
-
-
-class MyThreadTest2(QtCore.QThread):
-    mysignal = QtCore.pyqtSignal(str)
-
-    def __init__(self, parent=None):
-        QtCore.QThread.__init__(self, parent)
-        self.time_format = None
-        self.curr_answers = None
-        self.count_winners = 0
-
-    def run(self):
-        for i in range(9999, -1, -1):
-            if self.count_winners == 5:
-                break
-            self.sleep(1)
-            self.time_format = time.strftime("%H:%M:%S", time.gmtime(i))
-            result_time[0] = str(i)
-            self.mysignal.emit("Осталось времени = %s" % self.time_format)
-            self.curr_answers = Client(ip_address_server, 7000).connect('select current_answer from user')
-            self.count_winners = 0
-            for el in self.curr_answers:
-                if el[0] == 10:
-                    self.count_winners += 1
-            print(self.count_winners)
-
-
-class MyThreadVariant(QtCore.QThread):
-    mysignal = QtCore.pyqtSignal(str)
-
-    def __init__(self, parent=None):
-        QtCore.QThread.__init__(self, parent)
-        self.time_format = None
-        self.curr_answers = None
-
-    def run(self):
-        for i in range(2400, -1, -1):
-            self.sleep(1)
-            self.time_format = time.strftime("%H:%M:%S", time.gmtime(i))
-            result_time[0] = str(i)
-            self.mysignal.emit("Осталось времени = %s" % self.time_format)
-
-
-
 
 
 class WindowLogin(QtWidgets.QWidget):
@@ -163,7 +102,7 @@ class FirstTestWindow(QtWidgets.QWidget):
         self.ui_first_test.label_timer.setText("")
 
     def on_finished(self):
-        res_sec = 600 - int(result_time[0])
+        res_sec = 600 - int(self.mythread.result_time[0])
         time_format_result = time.strftime("%H:%M:%S", time.gmtime(res_sec))
         result_points = self.right_answer * 10
         Client(ip_address_server, 7000).connect(
@@ -356,7 +295,7 @@ class SecondTestWindow(QtWidgets.QWidget):
         self.ui_second_test.radioButton_answer1.setChecked(True)
         self.start_time = time.time()
         self.get_questions()
-        self.mythread_test2 = MyThreadTest2()
+        self.mythread_test2 = MyThreadTest2(ip_address_server=ip_address_server)
         self.on_clicked()
         self.mythread_test2.started.connect(self.on_started)
         self.mythread_test2.finished.connect(self.on_finished)
@@ -380,7 +319,7 @@ class SecondTestWindow(QtWidgets.QWidget):
         winner_seconds = Client(ip_address_server, 7000).connect(
             'select seconds_for_test2 from score_for_count')
         winner_seconds = winner_seconds[0][0]
-        res_sec = 9999 - int(result_time[0])
+        res_sec = 9999 - int(self.mythread_test2.result_time[0])
         time_format_result = time.strftime("%H:%M:%S", time.gmtime(res_sec))
         if res_sec < 10:
             k_time = 150
@@ -568,7 +507,6 @@ class SecondTestWindow(QtWidgets.QWidget):
 
 if __name__ == '__main__':
     user_name = []
-    result_time = ['']
     app = QApplication(sys.argv)
     login_window = WindowLogin()
     login_window.show()
