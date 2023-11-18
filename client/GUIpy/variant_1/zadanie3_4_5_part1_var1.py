@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Zadanie3_4_5_part1_var1(object):
     def setupUi(self, Zadanie3_4_5_part1_var1):
         Zadanie3_4_5_part1_var1.setObjectName("Zadanie3_4_5_part1_var1")
-        Zadanie3_4_5_part1_var1.resize(872, 678)
+        Zadanie3_4_5_part1_var1.resize(863, 678)
         self.label_title = QtWidgets.QLabel(Zadanie3_4_5_part1_var1)
         self.label_title.setGeometry(QtCore.QRect(10, 30, 381, 41))
         font = QtGui.QFont()
@@ -100,7 +100,7 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.label_title_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_title_2.setObjectName("label_title_2")
         self.lineEdit_zadanie4 = QtWidgets.QLineEdit(Zadanie3_4_5_part1_var1)
-        self.lineEdit_zadanie4.setGeometry(QtCore.QRect(40, 390, 341, 20))
+        self.lineEdit_zadanie4.setGeometry(QtCore.QRect(20, 390, 341, 20))
         self.lineEdit_zadanie4.setObjectName("lineEdit_zadanie4")
         self.label_title_3 = QtWidgets.QLabel(Zadanie3_4_5_part1_var1)
         self.label_title_3.setGeometry(QtCore.QRect(490, 0, 371, 81))
@@ -211,7 +211,7 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.lineEdit_zadane5_16.setGeometry(QtCore.QRect(730, 600, 41, 20))
         self.lineEdit_zadane5_16.setObjectName("lineEdit_zadane5_16")
         self.label_timer = QtWidgets.QLabel(Zadanie3_4_5_part1_var1)
-        self.label_timer.setGeometry(QtCore.QRect(290, 630, 141, 31))
+        self.label_timer.setGeometry(QtCore.QRect(290, 630, 171, 31))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
 
@@ -246,7 +246,8 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.pushButton.setText(_translate("Zadanie3_4_5_part1_var1", "Показать текст"))
         self.label_title_2.setText(_translate("Zadanie3_4_5_part1_var1", "Задание 4.*\n"
 " Укажите номера предложений\n"
-" с Complex Subject (Сложное подлежащее)."))
+" с Complex Subject (Сложное подлежащее).\n"
+"(ввод номеров через пробел)"))
         self.label_title_3.setText(_translate("Zadanie3_4_5_part1_var1", "Задание 5*\n"
 " Письменно ответьте на вопросы\n"
 "(ВОПРОС – НОМЕР ПРЕДЛОЖЕНИЯ)."))

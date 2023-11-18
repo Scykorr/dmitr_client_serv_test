@@ -178,6 +178,70 @@ class Task345Part1Var1(QtWidgets.QWidget):
         self.ui_form.pushButton_answer.clicked.connect(self.get_next_task)
         self.ui_form.pushButton.clicked.connect(self.get_text)
         self.next_time = next_time
+        self.mythread = MyThreadVariant(curr_time=next_time)
+        self.on_clicked()
+        self.mythread.started.connect(self.on_started)
+        self.mythread.finished.connect(self.on_finished)
+        self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
+        self.student_fio = user_name[0]
+
+    def on_clicked(self):
+        self.mythread.start()
+
+    def on_started(self):
+        self.ui_form.label_timer.setText("")
+
+    def on_finished(self):
+        self.next_time = 2400 - int(self.mythread.result_time[0])
+        self.mythread.exit()
+
+    def on_change(self, s):
+        self.ui_form.label_timer.setText(s)
+
+    def answer(self):
+        word1 = ';'.join(self.ui_form.lineEdit_zadanie4.text().split())
+        answer = "{word1}".format(
+            word1=word1,
+        )
+        Client(self.ip_address_server, 7000).connect(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+                user_name=self.student_fio,
+                variant=1,
+                num_zad=4,
+                num_part=1,
+                answ_user=answer,
+            ))
+
+        answer_second = ("{word1};{word2};{word3};{word4};{word5};{word6};{word7};{word8};{word9};{word10};{word11};"
+                         "{word12};{word13};{word14};{word15};{word16}").format(
+            word1=self.ui_form.lineEdit_zadane5_1.text(),
+            word2=self.ui_form.lineEdit_zadane5_2.text(),
+            word3=self.ui_form.lineEdit_zadane5_3.text(),
+            word4=self.ui_form.lineEdit_zadane5_4.text(),
+            word5=self.ui_form.lineEdit_zadane5_5.text(),
+            word6=self.ui_form.lineEdit_zadane5_6.text(),
+            word7=self.ui_form.lineEdit_zadane5_7.text(),
+            word8=self.ui_form.lineEdit_zadane5_8.text(),
+            word9=self.ui_form.lineEdit_zadane5_9.text(),
+            word10=self.ui_form.lineEdit_zadane5_10.text(),
+            word11=self.ui_form.lineEdit_zadane5_11.text(),
+            word12=self.ui_form.lineEdit_zadane5_12.text(),
+            word13=self.ui_form.lineEdit_zadane5_13.text(),
+            word14=self.ui_form.lineEdit_zadane5_14.text(),
+            word15=self.ui_form.lineEdit_zadane5_15.text(),
+            word16=self.ui_form.lineEdit_zadane5_16.text(),
+        )
+        Client(self.ip_address_server, 7000).connect(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+                user_name=self.student_fio,
+                variant=1,
+                num_zad=5,
+                num_part=1,
+                answ_user=answer_second,
+            ))
+        self.on_finished()
 
     def get_text(self):
         self.window = Window(filename='var_1_text1.htm')
@@ -185,6 +249,7 @@ class Task345Part1Var1(QtWidgets.QWidget):
 
     def get_next_task(self):
         self.window = Task6Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)
+        self.answer()
         self.close()
         self.window.show()
 
@@ -228,13 +293,14 @@ class Task6Part1Var1(QtWidgets.QWidget):
         self.ui_form.label_word_19.setText(values[14])
 
     def get_next_task(self):
-        self.window = Task7Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)
+        self.window = Task7Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
+                                     next_time=self.next_time)
         self.close()
         self.window.show()
 
 
 class Task7Part1Var1(QtWidgets.QWidget):
-    def __init__(self, ip_address_server, user_name=None, parent=None):
+    def __init__(self, ip_address_server, next_time, user_name=None, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         if user_name is None:
             user_name = []

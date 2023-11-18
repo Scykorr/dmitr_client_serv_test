@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>872</width>
+    <width>863</width>
     <height>678</height>
    </rect>
   </property>
@@ -328,7 +328,8 @@
    <property name="text">
     <string>Задание 4.*
  Укажите номера предложений
- с Complex Subject (Сложное подлежащее).</string>
+ с Complex Subject (Сложное подлежащее).
+(ввод номеров через пробел)</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>
@@ -340,7 +341,7 @@
   <widget class="QLineEdit" name="lineEdit_zadanie4">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>20</x>
      <y>390</y>
      <width>341</width>
      <height>20</height>
@@ -761,7 +762,7 @@
     <rect>
      <x>290</x>
      <y>630</y>
-     <width>141</width>
+     <width>171</width>
      <height>31</height>
     </rect>
    </property>
