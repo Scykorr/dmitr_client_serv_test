@@ -248,7 +248,8 @@ class Task345Part1Var1(QtWidgets.QWidget):
         self.window.show()
 
     def get_next_task(self):
-        self.window = Task6Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)
+        self.window = Task6Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
+                                     next_time=self.next_time)
         self.answer()
         self.close()
         self.window.show()
@@ -256,7 +257,7 @@ class Task345Part1Var1(QtWidgets.QWidget):
 
 class Task6Part1Var1(QtWidgets.QWidget):
 
-    def __init__(self, ip_address_server, user_name=None, parent=None):
+    def __init__(self, ip_address_server, next_time, user_name=None, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         if user_name is None:
             user_name = []
@@ -272,6 +273,56 @@ class Task6Part1Var1(QtWidgets.QWidget):
                            'usually': 'commonly', 'decrease': 'reduce', 'permit': 'allow', 'wire': 'cable',
                            'measure': 'evaluate', 'insulator': 'dielectric', 'advantage': 'benefit'}
         self.get_right_random_value()
+        self.next_time = next_time
+        self.mythread = MyThreadVariant(curr_time=next_time)
+        self.on_clicked()
+        self.mythread.started.connect(self.on_started)
+        self.mythread.finished.connect(self.on_finished)
+        self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
+        self.student_fio = user_name[0]
+
+    def on_clicked(self):
+        self.mythread.start()
+
+    def on_started(self):
+        self.ui_form.label_timer.setText("")
+
+    def on_finished(self):
+        self.next_time = 2400 - int(self.mythread.result_time[0])
+        self.mythread.exit()
+
+    def on_change(self, s):
+        self.ui_form.label_timer.setText(s)
+
+    def answer(self):
+        answer = ("{word1};{word2};{word3};{word4};{word5};{word6};{word7};{word8};{word9};{word10};{word11};"
+                  "{word12};{word13};{word14};{word15}").format(
+            word1=f'{self.ui_form.lineEdit_answer_1.text()},{self.ui_form.label_word_29.text()}',
+            word2=f'{self.ui_form.lineEdit_answer_2.text()},{self.ui_form.label_word_30.text()}',
+            word3=f'{self.ui_form.lineEdit_answer_3.text()},{self.ui_form.label_word_23.text()}',
+            word4=f'{self.ui_form.lineEdit_answer_4.text()},{self.ui_form.label_word_17.text()}',
+            word5=f'{self.ui_form.lineEdit_answer_5.text()},{self.ui_form.label_word_26.text()}',
+            word6=f'{self.ui_form.lineEdit_answer_6.text()},{self.ui_form.label_word_24.text()}',
+            word7=f'{self.ui_form.lineEdit_answer_7.text()},{self.ui_form.label_word_20.text()}',
+            word8=f'{self.ui_form.lineEdit_answer_8.text()},{self.ui_form.label_word_21.text()}',
+            word9=f'{self.ui_form.lineEdit_answer_9.text()},{self.ui_form.label_word_18.text()}',
+            word10=f'{self.ui_form.lineEdit_answer_10.text()},{self.ui_form.label_word_16.text()}',
+            word11=f'{self.ui_form.lineEdit_answer_11.text()},{self.ui_form.label_word_22.text()}',
+            word12=f'{self.ui_form.lineEdit_answer_12.text()},{self.ui_form.label_word_27.text()}',
+            word13=f'{self.ui_form.lineEdit_answer_13.text()},{self.ui_form.label_word_28.text()}',
+            word14=f'{self.ui_form.lineEdit_answer_14.text()},{self.ui_form.label_word_25.text()}',
+            word15=f'{self.ui_form.lineEdit_answer_15.text()},{self.ui_form.label_word_19.text()}',
+        )
+        Client(self.ip_address_server, 7000).connect(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+                user_name=self.student_fio,
+                variant=1,
+                num_zad=6,
+                num_part=1,
+                answ_user=answer,
+            ))
+        self.on_finished()
 
     def get_right_random_value(self):
         values = list(self.words_dict.values())
@@ -295,6 +346,7 @@ class Task6Part1Var1(QtWidgets.QWidget):
     def get_next_task(self):
         self.window = Task7Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
+        self.answer()
         self.close()
         self.window.show()
 
