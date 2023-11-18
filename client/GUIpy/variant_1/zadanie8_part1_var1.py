@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Zadanie8_part1_var1(object):
     def setupUi(self, Zadanie8_part1_var1):
         Zadanie8_part1_var1.setObjectName("Zadanie8_part1_var1")
-        Zadanie8_part1_var1.resize(425, 623)
+        Zadanie8_part1_var1.resize(437, 623)
         self.label_title = QtWidgets.QLabel(Zadanie8_part1_var1)
         self.label_title.setGeometry(QtCore.QRect(20, 20, 381, 41))
         font = QtGui.QFont()
@@ -182,7 +182,7 @@ class Ui_Zadanie8_part1_var1(object):
         self.label_number_20.setGeometry(QtCore.QRect(230, 460, 16, 20))
         self.label_number_20.setObjectName("label_number_20")
         self.label_timer = QtWidgets.QLabel(Zadanie8_part1_var1)
-        self.label_timer.setGeometry(QtCore.QRect(270, 580, 141, 31))
+        self.label_timer.setGeometry(QtCore.QRect(270, 580, 161, 31))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
 
