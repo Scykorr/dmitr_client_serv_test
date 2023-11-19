@@ -38,13 +38,6 @@ class Task1Part1Var1(QtWidgets.QWidget):
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
         self.next_time = 0
 
-    def get_next_task(self):
-        self.window = Task2Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
-                                     next_time=self.next_time)
-        self.answer()
-        self.close()
-        self.window.show()
-
     def on_clicked(self):
         self.mythread.start()
 
@@ -93,6 +86,13 @@ class Task1Part1Var1(QtWidgets.QWidget):
                 answ_user=answer,
             ))
         self.on_finished()
+
+    def get_next_task(self):
+        self.window = Task2Part1Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
+                                     next_time=self.next_time)
+        self.answer()
+        self.close()
+        self.window.show()
 
 
 class Task2Part1Var1(QtWidgets.QWidget):
