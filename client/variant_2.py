@@ -84,9 +84,9 @@ class Task1Part1Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task2Part1Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -155,9 +155,9 @@ class Task2Part1Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task345Part1Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                        next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -244,9 +244,9 @@ class Task345Part1Var2(QtWidgets.QWidget):
         self.window.show()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task6Part1Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -341,9 +341,9 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.ui_form.label_word_32.setText(values[15])
 
     def get_next_task(self):
+        self.answer()
         self.window = Task7Part1Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -400,9 +400,9 @@ class Task7Part1Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task8Part1Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -464,9 +464,9 @@ class Task8Part1Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task123Part2Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                        next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -572,9 +572,9 @@ class Task123Part2Var2(QtWidgets.QWidget):
         self.window.show()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task4Part2Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -633,9 +633,9 @@ class Task4Part2Var2(QtWidgets.QWidget):
         self.window.show()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task5Part2Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
@@ -694,9 +694,9 @@ class Task5Part2Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_next_task(self):
+        self.answer()
         self.window = Task6Part2Var2(ip_address_server=self.ip_address_server, user_name=self.user_name,
                                      next_time=self.next_time)
-        self.answer()
         self.close()
         self.window.show()
 
