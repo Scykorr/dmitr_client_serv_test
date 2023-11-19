@@ -28,7 +28,7 @@ class Ui_Zadanie4_part2_var1(object):
         self.label_title.setAlignment(QtCore.Qt.AlignCenter)
         self.label_title.setObjectName("label_title")
         self.pushButton_answer = QtWidgets.QPushButton(Zadanie4_part2_var1)
-        self.pushButton_answer.setGeometry(QtCore.QRect(280, 570, 101, 31))
+        self.pushButton_answer.setGeometry(QtCore.QRect(310, 570, 101, 31))
         self.pushButton_answer.setObjectName("pushButton_answer")
         self.textBrowser = QtWidgets.QTextBrowser(Zadanie4_part2_var1)
         self.textBrowser.setGeometry(QtCore.QRect(20, 90, 331, 141))
@@ -52,7 +52,7 @@ class Ui_Zadanie4_part2_var1(object):
         self.pushButton_show_text.setGeometry(QtCore.QRect(10, 560, 91, 41))
         self.pushButton_show_text.setObjectName("pushButton_show_text")
         self.label_timer = QtWidgets.QLabel(Zadanie4_part2_var1)
-        self.label_timer.setGeometry(QtCore.QRect(120, 570, 141, 31))
+        self.label_timer.setGeometry(QtCore.QRect(120, 570, 161, 31))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
 

@@ -40,7 +40,7 @@ class Ui_Zadanie6_part2_var1(object):
         self.lineEdit_answer_3.setGeometry(QtCore.QRect(10, 200, 31, 20))
         self.lineEdit_answer_3.setObjectName("lineEdit_answer_3")
         self.pushButton_answer = QtWidgets.QPushButton(Zadanie6_part2_var1)
-        self.pushButton_answer.setGeometry(QtCore.QRect(150, 570, 101, 31))
+        self.pushButton_answer.setGeometry(QtCore.QRect(100, 570, 101, 31))
         self.pushButton_answer.setObjectName("pushButton_answer")
         self.label_number_10 = QtWidgets.QLabel(Zadanie6_part2_var1)
         self.label_number_10.setGeometry(QtCore.QRect(50, 530, 16, 20))
@@ -182,7 +182,7 @@ class Ui_Zadanie6_part2_var1(object):
         self.label_number_20.setGeometry(QtCore.QRect(230, 440, 16, 20))
         self.label_number_20.setObjectName("label_number_20")
         self.label_timer = QtWidgets.QLabel(Zadanie6_part2_var1)
-        self.label_timer.setGeometry(QtCore.QRect(260, 580, 141, 21))
+        self.label_timer.setGeometry(QtCore.QRect(230, 570, 171, 31))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
 
