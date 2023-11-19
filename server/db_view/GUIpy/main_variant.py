@@ -23,6 +23,9 @@ class Ui_Form(object):
         self.pushButton_delete_all = QtWidgets.QPushButton(Form)
         self.pushButton_delete_all.setGeometry(QtCore.QRect(410, 10, 131, 23))
         self.pushButton_delete_all.setObjectName("pushButton_delete_all")
+        self.pushButton_refresh = QtWidgets.QPushButton(Form)
+        self.pushButton_refresh.setGeometry(QtCore.QRect(20, 10, 131, 23))
+        self.pushButton_refresh.setObjectName("pushButton_refresh")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -31,6 +34,7 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.pushButton_delete_all.setText(_translate("Form", "Удалить результаты"))
+        self.pushButton_refresh.setText(_translate("Form", "Обновить результаты"))
 
 
 if __name__ == "__main__":

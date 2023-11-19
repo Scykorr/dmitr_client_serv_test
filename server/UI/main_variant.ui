@@ -36,6 +36,19 @@
     <string>Удалить результаты</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_refresh">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>131</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Обновить результаты</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

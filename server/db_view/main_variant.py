@@ -5,20 +5,7 @@ from PyQt5.QtWidgets import QTableWidgetItem, QApplication
 
 from server.db_view.GUIpy.main_variant import Ui_Form
 import sqlite3 as sql
-
-
-class MyThreadVariant(QtCore.QThread):
-    mysignal = QtCore.pyqtSignal(list)
-
-    def __init__(self, parent=None):
-        QtCore.QThread.__init__(self, parent)
-        self.time_format = None
-
-    def run(self):
-        while True:
-            self.sleep(1)
-            select_result = WindowVariantMain.select_from_users(self)
-            self.mysignal.emit(select_result)
+from variant_1 import Task1Part1Var1
 
 
 class WindowVariantMain(QtWidgets.QWidget):
@@ -28,16 +15,17 @@ class WindowVariantMain(QtWidgets.QWidget):
         self.ui_main_server.setupUi(self)
         self.ui_main_server.tableWidget_server.setColumnCount(15)
         self.ui_main_server.pushButton_delete_all.clicked.connect(self.drop_db)
-        self.mythread = MyThreadVariant()
-        self.on_clicked()
-        self.mythread.started.connect(self.on_started)
-        self.mythread.finished.connect(self.on_finished)
-        self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
+        self.ui_main_server.tableWidget_server.doubleClicked.connect(self.get_task)
+        self.on_change()
+        self.ui_main_server.pushButton_refresh.clicked.connect(self.on_change)
+        self.username = None
+        self.task1var1part1 = Task1Part1Var1()
+
 
     def drop_db(self):
         con = sql.connect('../data.db')
         cur = con.cursor()
-        cur.execute('delete from user')
+        cur.execute('delete from zadanie_variant')
         con.commit()
         cur.close()
         con.close()
@@ -46,16 +34,8 @@ class WindowVariantMain(QtWidgets.QWidget):
     def open_window_db(self):
         self.questions_window.show()
 
-    def on_clicked(self):
-        self.mythread.start()
-
-    def on_started(self):
-        pass
-
-    def on_finished(self):
-        self.mythread.exit()
-
-    def on_change(self, s):
+    def on_change(self):
+        s = self.select_from_users()
         self.ui_main_server.tableWidget_server.clear()
         self.ui_main_server.tableWidget_server.setHorizontalHeaderLabels(
             "ФИО;Вариант;№1;№2;№4;№5;№6;№7;№8;№1;№2;№3;№4;№5;№6".split(";"))
@@ -66,8 +46,6 @@ class WindowVariantMain(QtWidgets.QWidget):
         for i_res, res in enumerate(s):
             self.ui_main_server.tableWidget_server.setItem(i_res, 0, QTableWidgetItem(str(res[0])))
             self.ui_main_server.tableWidget_server.setItem(i_res, 1, QTableWidgetItem(str(res[1])))
-
-
 
     def select_from_users(self):
         vals = []
@@ -81,6 +59,14 @@ class WindowVariantMain(QtWidgets.QWidget):
         cur.close()
         con.close()
         return vals
+
+    def get_task(self):
+        curr_row = self.ui_main_server.tableWidget_server.currentRow()
+        curr_column = self.ui_main_server.tableWidget_server.currentColumn()
+        if curr_column == 2 and self.ui_main_server.tableWidget_server.item(curr_row, 1).text() == '1':
+            self.username = self.ui_main_server.tableWidget_server.item(curr_row, 0).text()
+            self.task1var1part1.main_select(self.username)
+            self.task1var1part1.show()
 
 
 if __name__ == '__main__':

@@ -26,9 +26,6 @@ class Ui_Form_server(object):
         self.pushButton_work_db = QtWidgets.QPushButton(Form_server)
         self.pushButton_work_db.setGeometry(QtCore.QRect(160, 10, 131, 23))
         self.pushButton_work_db.setObjectName("pushButton_work_db")
-        self.pushButton_variants = QtWidgets.QPushButton(Form_server)
-        self.pushButton_variants.setGeometry(QtCore.QRect(20, 10, 121, 23))
-        self.pushButton_variants.setObjectName("pushButton_variants")
 
         self.retranslateUi(Form_server)
         QtCore.QMetaObject.connectSlotsByName(Form_server)
@@ -38,7 +35,6 @@ class Ui_Form_server(object):
         Form_server.setWindowTitle(_translate("Form_server", "Server"))
         self.pushButton_delete_all.setText(_translate("Form_server", "Удалить результаты"))
         self.pushButton_work_db.setText(_translate("Form_server", "Работа с вопросами"))
-        self.pushButton_variants.setText(_translate("Form_server", "Тест по вариантам"))
 
 
 if __name__ == "__main__":
