@@ -26,7 +26,7 @@
   <widget class="QPushButton" name="pushButton_delete_all">
    <property name="geometry">
     <rect>
-     <x>314</x>
+     <x>310</x>
      <y>10</y>
      <width>131</width>
      <height>23</height>
@@ -47,35 +47,6 @@
    </property>
    <property name="text">
     <string>Работа с вопросами</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_common_test">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>91</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Общий тест</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_standart_bliz_test">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>30</y>
-     <width>151</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Стандартный блиц тест</string>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
    </property>
   </widget>
  </widget>
