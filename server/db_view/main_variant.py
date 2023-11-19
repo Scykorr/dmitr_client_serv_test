@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QTableWidgetItem, QApplication
 
 from server.db_view.GUIpy.main_variant import Ui_Form
 import sqlite3 as sql
-from variant_1 import Task1Part1Var1, Task2Part1Var1, Task345Part1Var1
+from variant_1 import Task1Part1Var1, Task2Part1Var1, Task345Part1Var1, Task6Part1Var1
 
 
 class WindowVariantMain(QtWidgets.QWidget):
@@ -22,6 +22,7 @@ class WindowVariantMain(QtWidgets.QWidget):
         self.task1var1part1 = Task1Part1Var1()
         self.task2var1part1 = Task2Part1Var1()
         self.task345var1part1 = Task345Part1Var1()
+        self.task6var1part1 = Task6Part1Var1()
 
     def drop_db(self):
         con = sql.connect('../data.db')
@@ -77,6 +78,10 @@ class WindowVariantMain(QtWidgets.QWidget):
             self.username = self.ui_main_server.tableWidget_server.item(curr_row, 0).text()
             self.task345var1part1.main_select(self.username)
             self.task345var1part1.show()
+        elif curr_column == 6 and self.ui_main_server.tableWidget_server.item(curr_row, 1).text() == '1':
+            self.username = self.ui_main_server.tableWidget_server.item(curr_row, 0).text()
+            self.task6var1part1.main_select(self.username)
+            self.task6var1part1.show()
 
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@ from open_html_function import Window
 from GUIpy.variant_1.zadanie1_part1_var1 import Ui_Zadanie1_part1
 from GUIpy.variant_1.zadanie2_part1_var1 import Ui_Zadanie2_part1
 from GUIpy.variant_1.zadanie3_4_5_part1_var1 import Ui_Zadanie3_4_5_part1_var1
-
+from GUIpy.variant_1.zadanie6_part1_var1 import Ui_Zadanie6_part1_var1
 
 
 class Task1Part1Var1(QtWidgets.QWidget):
@@ -332,3 +332,118 @@ class Task345Part1Var1(QtWidgets.QWidget):
     def get_text(self):
         self.window = Window(filename='var_1_text1.htm')
         self.window.show()
+
+
+class Task6Part1Var1(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        QtWidgets.QWidget.__init__(self, parent)
+        self.window = None
+        self.ui_form = Ui_Zadanie6_part1_var1()
+        self.ui_form.setupUi(self)
+        self.true_answer = ['1,containing', '2,elements', '3,symbols', '4,restricted', '5,defined', '6,employing',
+                            '7,correlation', '8,streaming', '9,commonly', '10,reduce', '11,allow', '12,cable',
+                            '13,evaluate', '14,dielectric', '15,benefit']
+
+    def get_num(self, word):
+        for el in self.true_answer:
+            el = el.split(',')
+            if el[1] == word:
+                return el[0]
+
+    def set_default_vals(self):
+        self.ui_form.lineEdit_answer_16.setText(self.get_num(self.ui_form.label_word_16.text()))
+        self.ui_form.lineEdit_answer_17.setText(self.get_num(self.ui_form.label_word_17.text()))
+        self.ui_form.lineEdit_answer_18.setText(self.get_num(self.ui_form.label_word_18.text()))
+        self.ui_form.lineEdit_answer_19.setText(self.get_num(self.ui_form.label_word_19.text()))
+        self.ui_form.lineEdit_answer_20.setText(self.get_num(self.ui_form.label_word_20.text()))
+        self.ui_form.lineEdit_answer_21.setText(self.get_num(self.ui_form.label_word_21.text()))
+        self.ui_form.lineEdit_answer_22.setText(self.get_num(self.ui_form.label_word_22.text()))
+        self.ui_form.lineEdit_answer_23.setText(self.get_num(self.ui_form.label_word_23.text()))
+        self.ui_form.lineEdit_answer_24.setText(self.get_num(self.ui_form.label_word_24.text()))
+        self.ui_form.lineEdit_answer_25.setText(self.get_num(self.ui_form.label_word_25.text()))
+        self.ui_form.lineEdit_answer_26.setText(self.get_num(self.ui_form.label_word_26.text()))
+        self.ui_form.lineEdit_answer_27.setText(self.get_num(self.ui_form.label_word_27.text()))
+        self.ui_form.lineEdit_answer_28.setText(self.get_num(self.ui_form.label_word_28.text()))
+        self.ui_form.lineEdit_answer_29.setText(self.get_num(self.ui_form.label_word_29.text()))
+        self.ui_form.lineEdit_answer_30.setText(self.get_num(self.ui_form.label_word_30.text()))
+
+    def main_select(self, user_name):
+        vals = []
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select answer_user from zadanie_variant where num_zadanie=6 and user_name='{user_name}' and num_part=1 and variant=1")
+        for el in answer:
+            vals.append(el)
+        val = vals[0][0].split(';')
+        self.update_cells(val)
+        con.commit()
+        cur.close()
+        con.close()
+        self.set_default_vals()
+        return vals
+
+    def update_cells(self, val):
+        self.ui_form.lineEdit_answer_1.setText(val[0].split(',')[0])
+        self.ui_form.label_word_16.setText(val[0].split(',')[1])
+        self.ui_form.lineEdit_answer_2.setText(val[1].split(',')[0])
+        self.ui_form.label_word_17.setText(val[1].split(',')[1])
+        self.ui_form.lineEdit_answer_3.setText(val[2].split(',')[0])
+        self.ui_form.label_word_18.setText(val[2].split(',')[1])
+        self.ui_form.lineEdit_answer_4.setText(val[3].split(',')[0])
+        self.ui_form.label_word_19.setText(val[3].split(',')[1])
+        self.ui_form.lineEdit_answer_5.setText(val[4].split(',')[0])
+        self.ui_form.label_word_20.setText(val[4].split(',')[1])
+        self.ui_form.lineEdit_answer_6.setText(val[5].split(',')[0])
+        self.ui_form.label_word_21.setText(val[5].split(',')[1])
+        self.ui_form.lineEdit_answer_7.setText(val[6].split(',')[0])
+        self.ui_form.label_word_22.setText(val[6].split(',')[1])
+        self.ui_form.lineEdit_answer_8.setText(val[7].split(',')[0])
+        self.ui_form.label_word_23.setText(val[7].split(',')[1])
+        self.ui_form.lineEdit_answer_9.setText(val[8].split(',')[0])
+        self.ui_form.label_word_24.setText(val[8].split(',')[1])
+        self.ui_form.lineEdit_answer_10.setText(val[9].split(',')[0])
+        self.ui_form.label_word_25.setText(val[9].split(',')[1])
+        self.ui_form.lineEdit_answer_11.setText(val[10].split(',')[0])
+        self.ui_form.label_word_26.setText(val[10].split(',')[1])
+        self.ui_form.lineEdit_answer_12.setText(val[11].split(',')[0])
+        self.ui_form.label_word_27.setText(val[11].split(',')[1])
+        self.ui_form.lineEdit_answer_13.setText(val[12].split(',')[0])
+        self.ui_form.label_word_28.setText(val[12].split(',')[1])
+        self.ui_form.lineEdit_answer_14.setText(val[13].split(',')[0])
+        self.ui_form.label_word_29.setText(val[13].split(',')[1])
+        self.ui_form.lineEdit_answer_15.setText(val[14].split(',')[0])
+        self.ui_form.label_word_30.setText(val[14].split(',')[1])
+        self.check_values()
+
+    def check_values(self):
+        if self.ui_form.lineEdit_answer_1.text() != self.ui_form.lineEdit_answer_16.text():
+            self.ui_form.lineEdit_answer_1.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_2.text() != self.ui_form.lineEdit_answer_17.text():
+            self.ui_form.lineEdit_answer_2.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_3.text() != self.ui_form.lineEdit_answer_18.text():
+            self.ui_form.lineEdit_answer_3.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_4.text() != self.ui_form.lineEdit_answer_19.text():
+            self.ui_form.lineEdit_answer_4.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_5.text() != self.ui_form.lineEdit_answer_20.text():
+            self.ui_form.lineEdit_answer_5.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_6.text() != self.ui_form.lineEdit_answer_21.text():
+            self.ui_form.lineEdit_answer_6.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_7.text() != self.ui_form.lineEdit_answer_22.text():
+            self.ui_form.lineEdit_answer_7.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_8.text() != self.ui_form.lineEdit_answer_23.text():
+            self.ui_form.lineEdit_answer_8.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_9.text() != self.ui_form.lineEdit_answer_24.text():
+            self.ui_form.lineEdit_answer_9.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_10.text() != self.ui_form.lineEdit_answer_25.text():
+            self.ui_form.lineEdit_answer_10.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_11.text() != self.ui_form.lineEdit_answer_26.text():
+            self.ui_form.lineEdit_answer_11.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_12.text() != self.ui_form.lineEdit_answer_27.text():
+            self.ui_form.lineEdit_answer_12.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_13.text() != self.ui_form.lineEdit_answer_28.text():
+            self.ui_form.lineEdit_answer_13.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_14.text() != self.ui_form.lineEdit_answer_29.text():
+            self.ui_form.lineEdit_answer_14.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_answer_15.text() != self.ui_form.lineEdit_answer_30.text():
+            self.ui_form.lineEdit_answer_15.setStyleSheet("QLineEdit {background-color: red;}")
