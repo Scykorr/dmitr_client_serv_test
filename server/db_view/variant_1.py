@@ -1,8 +1,12 @@
 import sqlite3 as sql
 from PyQt5 import QtWidgets
 
+from open_html_function import Window
+
 from GUIpy.variant_1.zadanie1_part1_var1 import Ui_Zadanie1_part1
 from GUIpy.variant_1.zadanie2_part1_var1 import Ui_Zadanie2_part1
+from GUIpy.variant_1.zadanie3_4_5_part1_var1 import Ui_Zadanie3_4_5_part1_var1
+
 
 
 class Task1Part1Var1(QtWidgets.QWidget):
@@ -209,3 +213,122 @@ class Task2Part1Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_answer_14.setStyleSheet("QLineEdit {background-color: red;}")
         if self.ui_form.lineEdit_answer_15.text() != self.ui_form.lineEdit_answer_30.text():
             self.ui_form.lineEdit_answer_15.setStyleSheet("QLineEdit {background-color: red;}")
+
+
+class Task345Part1Var1(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        QtWidgets.QWidget.__init__(self, parent)
+        self.window = None
+        self.ui_form = Ui_Zadanie3_4_5_part1_var1()
+        self.ui_form.setupUi(self)
+        self.set_default_vals()
+        self.ui_form.pushButton.clicked.connect(self.get_text)
+
+    def set_default_vals(self):
+        self.ui_form.lineEdit_zadanie4_2.setText('3 8 29 32')
+        self.ui_form.lineEdit_zadane5_17.setText('1')
+        self.ui_form.lineEdit_zadane5_18.setText('2')
+        self.ui_form.lineEdit_zadane5_19.setText('5')
+        self.ui_form.lineEdit_zadane5_20.setText('5')
+        self.ui_form.lineEdit_zadane5_21.setText('7')
+        self.ui_form.lineEdit_zadane5_22.setText('8')
+        self.ui_form.lineEdit_zadane5_23.setText('12')
+        self.ui_form.lineEdit_zadane5_24.setText('15')
+        self.ui_form.lineEdit_zadane5_25.setText('17')
+        self.ui_form.lineEdit_zadane5_26.setText('19')
+        self.ui_form.lineEdit_zadane5_27.setText('20')
+        self.ui_form.lineEdit_zadane5_28.setText('22')
+        self.ui_form.lineEdit_zadane5_29.setText('23 24')
+        self.ui_form.lineEdit_zadane5_30.setText('29')
+        self.ui_form.lineEdit_zadane5_31.setText('30')
+        self.ui_form.lineEdit_zadane5_32.setText('45')
+
+    def main_select(self, user_name):
+        vals = []
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select answer_user from zadanie_variant where num_zadanie=4 and user_name='{user_name}' and num_part=1 and variant=1")
+        for el in answer:
+            vals.append(el)
+        val = vals[0][0].split(';')
+        self.update_cells_zad4(val)
+        con.commit()
+        cur.close()
+        con.close()
+
+        vals1 = []
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select answer_user from zadanie_variant where num_zadanie=5 and user_name='{user_name}' and num_part=1 and variant=1")
+        for el in answer:
+            vals1.append(el)
+        val1 = vals1[0][0].split(';')
+        self.update_cells_zad5(val1)
+        con.commit()
+        cur.close()
+        con.close()
+
+    def update_cells_zad4(self, val):
+        self.ui_form.lineEdit_zadanie4.setText(' '.join(val))
+        self.check_values()
+
+    def update_cells_zad5(self, val):
+        self.ui_form.lineEdit_zadane5_1.setText(val[0])
+        self.ui_form.lineEdit_zadane5_2.setText(val[1])
+        self.ui_form.lineEdit_zadane5_3.setText(val[2])
+        self.ui_form.lineEdit_zadane5_4.setText(val[3])
+        self.ui_form.lineEdit_zadane5_5.setText(val[4])
+        self.ui_form.lineEdit_zadane5_6.setText(val[5])
+        self.ui_form.lineEdit_zadane5_7.setText(val[6])
+        self.ui_form.lineEdit_zadane5_8.setText(val[7])
+        self.ui_form.lineEdit_zadane5_9.setText(val[8])
+        self.ui_form.lineEdit_zadane5_10.setText(val[9])
+        self.ui_form.lineEdit_zadane5_11.setText(val[10])
+        self.ui_form.lineEdit_zadane5_12.setText(val[11])
+        self.ui_form.lineEdit_zadane5_13.setText(val[12])
+        self.ui_form.lineEdit_zadane5_14.setText(val[13])
+        self.ui_form.lineEdit_zadane5_15.setText(val[14])
+        self.ui_form.lineEdit_zadane5_16.setText(val[15])
+        self.check_values()
+
+    def check_values(self):
+        if self.ui_form.lineEdit_zadanie4.text() != self.ui_form.lineEdit_zadanie4_2.text():
+            self.ui_form.lineEdit_zadanie4.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_1.text() != self.ui_form.lineEdit_zadane5_17.text():
+            self.ui_form.lineEdit_zadane5_1.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_2.text() != self.ui_form.lineEdit_zadane5_18.text():
+            self.ui_form.lineEdit_zadane5_2.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_3.text() != self.ui_form.lineEdit_zadane5_19.text():
+            self.ui_form.lineEdit_zadane5_3.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_4.text() != self.ui_form.lineEdit_zadane5_20.text():
+            self.ui_form.lineEdit_zadane5_4.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_5.text() != self.ui_form.lineEdit_zadane5_21.text():
+            self.ui_form.lineEdit_zadane5_5.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_6.text() != self.ui_form.lineEdit_zadane5_22.text():
+            self.ui_form.lineEdit_zadane5_6.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_7.text() != self.ui_form.lineEdit_zadane5_23.text():
+            self.ui_form.lineEdit_zadane5_7.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_8.text() != self.ui_form.lineEdit_zadane5_24.text():
+            self.ui_form.lineEdit_zadane5_8.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_9.text() != self.ui_form.lineEdit_zadane5_25.text():
+            self.ui_form.lineEdit_zadane5_9.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_10.text() != self.ui_form.lineEdit_zadane5_26.text():
+            self.ui_form.lineEdit_zadane5_10.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_11.text() != self.ui_form.lineEdit_zadane5_27.text():
+            self.ui_form.lineEdit_zadane5_11.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_12.text() != self.ui_form.lineEdit_zadane5_28.text():
+            self.ui_form.lineEdit_zadane5_12.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_13.text() != '23' or self.ui_form.lineEdit_zadane5_13.text() != '24':
+            self.ui_form.lineEdit_zadane5_13.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_14.text() != self.ui_form.lineEdit_zadane5_30.text():
+            self.ui_form.lineEdit_zadane5_14.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_15.text() != self.ui_form.lineEdit_zadane5_31.text():
+            self.ui_form.lineEdit_zadane5_15.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_zadane5_16.text() != self.ui_form.lineEdit_zadane5_32.text():
+            self.ui_form.lineEdit_zadane5_16.setStyleSheet("QLineEdit {background-color: red;}")
+
+    def get_text(self):
+        self.window = Window(filename='var_1_text1.htm')
+        self.window.show()
