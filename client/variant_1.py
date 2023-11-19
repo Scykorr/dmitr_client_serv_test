@@ -594,19 +594,58 @@ class Task4Part2Var1(QtWidgets.QWidget):
         self.ui_form.setupUi(self)
         self.ui_form.pushButton_answer.clicked.connect(self.get_next_task)
         self.ui_form.pushButton_show_text.clicked.connect(self.get_text)
+        self.next_time = next_time
+        self.mythread = MyThreadVariant(curr_time=next_time)
+        self.on_clicked()
+        self.mythread.started.connect(self.on_started)
+        self.mythread.finished.connect(self.on_finished)
+        self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
+        self.student_fio = user_name[0]
+
+    def on_clicked(self):
+        self.mythread.start()
+
+    def on_started(self):
+        self.ui_form.label_timer.setText("")
+
+    def on_finished(self):
+        self.next_time = 2400 - int(self.mythread.result_time[0])
+        self.mythread.exit()
+
+    def on_change(self, s):
+        self.ui_form.label_timer.setText(s)
+
+    def answer(self):
+        answer = "{word1};{word2};{word3}".format(
+            word1=self.ui_form.lineEdit.text(),
+            word2=self.ui_form.lineEdit_2.text(),
+            word3=self.ui_form.lineEdit_3.text(),
+        )
+        Client(self.ip_address_server, 7000).connect(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+                user_name=self.student_fio,
+                variant=1,
+                num_zad=4,
+                num_part=2,
+                answ_user=answer,
+            ))
+        self.on_finished()
 
     def get_text(self):
         self.window = Window(filename='var_1_text2.htm')
         self.window.show()
 
     def get_next_task(self):
-        self.window = Task5Part2Var1(ip_address_server=self.ip_address_server, user_name=self.user_name)
+        self.window = Task5Part2Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,
+                                     next_time=self.next_time)
+        self.answer()
         self.close()
         self.window.show()
 
 
 class Task5Part2Var1(QtWidgets.QWidget):
-    def __init__(self, ip_address_server, user_name=None, parent=None):
+    def __init__(self, ip_address_server, next_time, user_name=None, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         if user_name is None:
             user_name = []
