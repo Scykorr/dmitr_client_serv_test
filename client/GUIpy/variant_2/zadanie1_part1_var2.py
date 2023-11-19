@@ -154,8 +154,12 @@ class Ui_Zadanie1_part1(object):
         self.lineEdit_word_21.setGeometry(QtCore.QRect(370, 350, 113, 20))
         self.lineEdit_word_21.setObjectName("lineEdit_word_21")
         self.pushButton_answer = QtWidgets.QPushButton(Zadanie1_part1)
-        self.pushButton_answer.setGeometry(QtCore.QRect(200, 420, 101, 31))
+        self.pushButton_answer.setGeometry(QtCore.QRect(140, 420, 101, 31))
         self.pushButton_answer.setObjectName("pushButton_answer")
+        self.label_timer = QtWidgets.QLabel(Zadanie1_part1)
+        self.label_timer.setGeometry(QtCore.QRect(270, 410, 171, 31))
+        self.label_timer.setText("")
+        self.label_timer.setObjectName("label_timer")
 
         self.retranslateUi(Zadanie1_part1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie1_part1)

@@ -74,7 +74,7 @@
   <widget class="QPushButton" name="pushButton_answer">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>130</x>
      <y>320</y>
      <width>101</width>
      <height>31</height>
@@ -635,6 +635,19 @@
    </property>
    <property name="text">
     <string>greater</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_timer">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>320</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

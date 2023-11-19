@@ -198,6 +198,10 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.lineEdit_zadane5_15 = QtWidgets.QLineEdit(Zadanie3_4_5_part1_var1)
         self.lineEdit_zadane5_15.setGeometry(QtCore.QRect(730, 500, 41, 20))
         self.lineEdit_zadane5_15.setObjectName("lineEdit_zadane5_15")
+        self.label_timer = QtWidgets.QLabel(Zadanie3_4_5_part1_var1)
+        self.label_timer.setGeometry(QtCore.QRect(470, 540, 171, 31))
+        self.label_timer.setText("")
+        self.label_timer.setObjectName("label_timer")
 
         self.retranslateUi(Zadanie3_4_5_part1_var1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie3_4_5_part1_var1)
