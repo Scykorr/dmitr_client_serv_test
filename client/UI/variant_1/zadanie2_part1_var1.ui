@@ -36,7 +36,7 @@
    <property name="text">
     <string>Задание 2.*
  Сгруппируйте слова согласно их
- частям речи и переведите их.</string>
+ частям речи и переведите их. (n, v, adj)</string>
    </property>
    <property name="textFormat">
     <enum>Qt::AutoText</enum>

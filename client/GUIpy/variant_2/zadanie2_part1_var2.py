@@ -188,7 +188,7 @@ class Ui_Zadanie2_part1(object):
         Zadanie2_part1.setWindowTitle(_translate("Zadanie2_part1", "Form"))
         self.label_title.setText(_translate("Zadanie2_part1", "Задание 2.*\n"
 " Сгруппируйте слова согласно их\n"
-" частям речи и переведите их."))
+" частям речи и переведите их. (n, v, adj)"))
         self.label_number_1.setText(_translate("Zadanie2_part1", "1"))
         self.pushButton_answer.setText(_translate("Zadanie2_part1", "Далее"))
         self.label_word_1.setText(_translate("Zadanie2_part1", "dissipate"))
