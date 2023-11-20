@@ -55,7 +55,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>accumulate</string>
+    <string>Accumulate</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_word_1">
@@ -170,7 +170,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>active/ passive</string>
+    <string>active/passive</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_word_6">
