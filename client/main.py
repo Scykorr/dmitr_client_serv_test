@@ -4,6 +4,10 @@ import sys
 from GUIpy.client_login import Ui_Form_client_login
 from client.users import Client
 from choose_test import WindowChooseTest
+from socket import socket, AF_INET, SOCK_STREAM
+import json
+import sqlite3
+import webbrowser
 
 with open('ip_address', 'r', encoding='utf-8') as ip_file:
     for el in ip_file:
