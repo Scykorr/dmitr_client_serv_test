@@ -184,6 +184,35 @@ p, li { white-space: pre-wrap; }
     <string>Правильный ответ</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>531</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../img/for_test3.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>label_title</zorder>
+  <zorder>textBrowser</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>textBrowser_2</zorder>
+  <zorder>lineEdit_2</zorder>
+  <zorder>pushButton_show_text</zorder>
+  <zorder>lineEdit_3</zorder>
+  <zorder>lineEdit_4</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <resources/>
  <connections/>
