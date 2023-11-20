@@ -675,7 +675,7 @@ class Task5Part2Var2(QtWidgets.QWidget):
         self.ui_form.label_timer.setText(s)
 
     def answer(self):
-        answer = "{word1};{word2};{word3}".format(
+        answer = "{word1};{word2};{word3};{word4};{word5}".format(
             word1=self.ui_form.lineEdit_answer_1.text(),
             word2=self.ui_form.lineEdit_answer_2.text(),
             word3=self.ui_form.lineEdit_answer_3.text(),
