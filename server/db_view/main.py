@@ -37,7 +37,6 @@ class WindowServerMain(QtWidgets.QWidget):
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
 
-
     def drop_db(self):
         con = sql.connect('../data.db')
         cur = con.cursor()
