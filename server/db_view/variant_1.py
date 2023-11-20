@@ -1,7 +1,7 @@
 import sqlite3 as sql
 from PyQt5 import QtWidgets
 
-from open_html_function import Window
+from open_html_function import open_file
 
 from GUIpy.variant_1.zadanie1_part1_var1 import Ui_Zadanie1_part1
 from GUIpy.variant_1.zadanie2_part1_var1 import Ui_Zadanie2_part1
@@ -336,8 +336,7 @@ class Task345Part1Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_zadane5_16.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        self.window = Window(filename='var_1_text1.htm')
-        self.window.show()
+        open_file('var_1_text1.htm')
 
 
 class Task6Part1Var1(QtWidgets.QWidget):
@@ -727,8 +726,8 @@ class Task123Part2Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_17.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        self.window = Window(filename='var_1_text2.htm')
-        self.window.show()
+        open_file('var_1_text2.htm')
+
 
 
 class Task4Part2Var1(QtWidgets.QWidget):
@@ -776,8 +775,7 @@ class Task4Part2Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_3.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        self.window = Window(filename='var_1_text2.htm')
-        self.window.show()
+        open_file(filename='var_1_text2.htm')
 
 
 class Task5Part2Var1(QtWidgets.QWidget):
