@@ -770,6 +770,80 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>861</width>
+     <height>681</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../img/for_tests.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>label_title</zorder>
+  <zorder>pushButton_answer</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label_13</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label_16</zorder>
+  <zorder>label_17</zorder>
+  <zorder>label_18</zorder>
+  <zorder>label_20</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>label_title_2</zorder>
+  <zorder>lineEdit_zadanie4</zorder>
+  <zorder>label_title_3</zorder>
+  <zorder>label_zadanie5_1</zorder>
+  <zorder>lineEdit_zadane5_1</zorder>
+  <zorder>label_zadanie5_2</zorder>
+  <zorder>lineEdit_zadane5_2</zorder>
+  <zorder>label_zadanie5_3</zorder>
+  <zorder>lineEdit_zadane5_3</zorder>
+  <zorder>label_zadanie5_4</zorder>
+  <zorder>lineEdit_zadane5_4</zorder>
+  <zorder>label_zadanie5_5</zorder>
+  <zorder>lineEdit_zadane5_5</zorder>
+  <zorder>label_zadanie5_6</zorder>
+  <zorder>lineEdit_zadane5_6</zorder>
+  <zorder>label_zadanie5_7</zorder>
+  <zorder>lineEdit_zadane5_7</zorder>
+  <zorder>label_zadanie5_8</zorder>
+  <zorder>lineEdit_zadane5_8</zorder>
+  <zorder>label_zadanie5_9</zorder>
+  <zorder>lineEdit_zadane5_9</zorder>
+  <zorder>label_zadanie5_10</zorder>
+  <zorder>lineEdit_zadane5_10</zorder>
+  <zorder>label_zadanie5_11</zorder>
+  <zorder>lineEdit_zadane5_11</zorder>
+  <zorder>label_zadanie5_12</zorder>
+  <zorder>lineEdit_zadane5_12</zorder>
+  <zorder>label_zadanie5_13</zorder>
+  <zorder>lineEdit_zadane5_13</zorder>
+  <zorder>label_zadanie5_14</zorder>
+  <zorder>lineEdit_zadane5_14</zorder>
+  <zorder>label_zadanie5_15</zorder>
+  <zorder>lineEdit_zadane5_15</zorder>
+  <zorder>label_zadanie5_16</zorder>
+  <zorder>lineEdit_zadane5_16</zorder>
+  <zorder>label_timer</zorder>
  </widget>
  <resources/>
  <connections/>

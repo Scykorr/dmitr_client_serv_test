@@ -979,6 +979,100 @@
     <string>Правильный ответ</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>881</width>
+     <height>671</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../img/for_test3.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>label_title</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label_12</zorder>
+  <zorder>label_13</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label_16</zorder>
+  <zorder>label_17</zorder>
+  <zorder>label_18</zorder>
+  <zorder>label_20</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>label_title_2</zorder>
+  <zorder>lineEdit_zadanie4</zorder>
+  <zorder>label_title_3</zorder>
+  <zorder>label_zadanie5_1</zorder>
+  <zorder>lineEdit_zadane5_1</zorder>
+  <zorder>label_zadanie5_2</zorder>
+  <zorder>lineEdit_zadane5_2</zorder>
+  <zorder>label_zadanie5_3</zorder>
+  <zorder>lineEdit_zadane5_3</zorder>
+  <zorder>label_zadanie5_4</zorder>
+  <zorder>lineEdit_zadane5_4</zorder>
+  <zorder>label_zadanie5_5</zorder>
+  <zorder>lineEdit_zadane5_5</zorder>
+  <zorder>label_zadanie5_6</zorder>
+  <zorder>lineEdit_zadane5_6</zorder>
+  <zorder>label_zadanie5_7</zorder>
+  <zorder>lineEdit_zadane5_7</zorder>
+  <zorder>label_zadanie5_8</zorder>
+  <zorder>lineEdit_zadane5_8</zorder>
+  <zorder>label_zadanie5_9</zorder>
+  <zorder>lineEdit_zadane5_9</zorder>
+  <zorder>label_zadanie5_10</zorder>
+  <zorder>lineEdit_zadane5_10</zorder>
+  <zorder>label_zadanie5_11</zorder>
+  <zorder>lineEdit_zadane5_11</zorder>
+  <zorder>label_zadanie5_12</zorder>
+  <zorder>lineEdit_zadane5_12</zorder>
+  <zorder>label_zadanie5_13</zorder>
+  <zorder>lineEdit_zadane5_13</zorder>
+  <zorder>label_zadanie5_14</zorder>
+  <zorder>lineEdit_zadane5_14</zorder>
+  <zorder>label_zadanie5_15</zorder>
+  <zorder>lineEdit_zadane5_15</zorder>
+  <zorder>label_zadanie5_16</zorder>
+  <zorder>lineEdit_zadane5_16</zorder>
+  <zorder>label_timer</zorder>
+  <zorder>lineEdit_zadanie4_2</zorder>
+  <zorder>lineEdit_zadane5_17</zorder>
+  <zorder>lineEdit_zadane5_18</zorder>
+  <zorder>lineEdit_zadane5_19</zorder>
+  <zorder>lineEdit_zadane5_20</zorder>
+  <zorder>lineEdit_zadane5_21</zorder>
+  <zorder>lineEdit_zadane5_22</zorder>
+  <zorder>lineEdit_zadane5_23</zorder>
+  <zorder>lineEdit_zadane5_24</zorder>
+  <zorder>lineEdit_zadane5_25</zorder>
+  <zorder>lineEdit_zadane5_26</zorder>
+  <zorder>lineEdit_zadane5_27</zorder>
+  <zorder>lineEdit_zadane5_28</zorder>
+  <zorder>lineEdit_zadane5_29</zorder>
+  <zorder>lineEdit_zadane5_30</zorder>
+  <zorder>lineEdit_zadane5_31</zorder>
+  <zorder>lineEdit_zadane5_32</zorder>
+  <zorder>label_15</zorder>
+  <zorder>label_19</zorder>
+  <zorder>label_21</zorder>
+  <zorder>label_22</zorder>
  </widget>
  <resources/>
  <connections/>

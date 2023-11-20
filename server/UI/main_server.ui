@@ -49,6 +49,26 @@
     <string>Работа с вопросами</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>471</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../img/for_test2.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>tableWidget_server</zorder>
+  <zorder>pushButton_delete_all</zorder>
+  <zorder>pushButton_work_db</zorder>
  </widget>
  <resources/>
  <connections/>

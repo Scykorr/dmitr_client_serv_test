@@ -65,6 +65,27 @@
     <string>Вариант 2</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>241</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../img/for_test2.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>pushButton_test1</zorder>
+  <zorder>pushButton_test2</zorder>
+  <zorder>pushButton_variant1</zorder>
+  <zorder>pushButton_variant2</zorder>
  </widget>
  <resources/>
  <connections/>

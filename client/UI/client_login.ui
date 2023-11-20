@@ -52,6 +52,26 @@
     <string>Войти</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>381</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../img/for_test2.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>lineEdit_fio</zorder>
+  <zorder>label_fio</zorder>
+  <zorder>pushButton_fio</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -838,6 +838,88 @@
     <string>Ответ</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>581</width>
+     <height>571</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../img/for_test3.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>label_title</zorder>
+  <zorder>label_number_1</zorder>
+  <zorder>lineEdit_answer_1</zorder>
+  <zorder>label_word_1</zorder>
+  <zorder>label_word_2</zorder>
+  <zorder>lineEdit_answer_2</zorder>
+  <zorder>label_number_2</zorder>
+  <zorder>label_word_3</zorder>
+  <zorder>lineEdit_answer_3</zorder>
+  <zorder>label_number_3</zorder>
+  <zorder>label_word_4</zorder>
+  <zorder>lineEdit_answer_4</zorder>
+  <zorder>label_number_4</zorder>
+  <zorder>label_word_5</zorder>
+  <zorder>lineEdit_answer_5</zorder>
+  <zorder>label_number_5</zorder>
+  <zorder>label_word_6</zorder>
+  <zorder>lineEdit_answer_6</zorder>
+  <zorder>label_number_6</zorder>
+  <zorder>label_word_7</zorder>
+  <zorder>lineEdit_answer_7</zorder>
+  <zorder>label_number_7</zorder>
+  <zorder>label_word_8</zorder>
+  <zorder>lineEdit_answer_8</zorder>
+  <zorder>label_number_8</zorder>
+  <zorder>label_word_9</zorder>
+  <zorder>lineEdit_answer_9</zorder>
+  <zorder>label_number_9</zorder>
+  <zorder>label_word_10</zorder>
+  <zorder>lineEdit_answer_10</zorder>
+  <zorder>label_number_10</zorder>
+  <zorder>label_word_11</zorder>
+  <zorder>lineEdit_answer_11</zorder>
+  <zorder>label_number_11</zorder>
+  <zorder>label_word_12</zorder>
+  <zorder>lineEdit_answer_12</zorder>
+  <zorder>label_number_12</zorder>
+  <zorder>label_word_13</zorder>
+  <zorder>lineEdit_answer_13</zorder>
+  <zorder>label_number_13</zorder>
+  <zorder>label_word_14</zorder>
+  <zorder>lineEdit_answer_14</zorder>
+  <zorder>label_number_14</zorder>
+  <zorder>label_word_15</zorder>
+  <zorder>lineEdit_answer_15</zorder>
+  <zorder>label_number_15</zorder>
+  <zorder>lineEdit_answer_16</zorder>
+  <zorder>lineEdit_answer_17</zorder>
+  <zorder>lineEdit_answer_18</zorder>
+  <zorder>lineEdit_answer_19</zorder>
+  <zorder>lineEdit_answer_20</zorder>
+  <zorder>lineEdit_answer_21</zorder>
+  <zorder>lineEdit_answer_22</zorder>
+  <zorder>lineEdit_answer_23</zorder>
+  <zorder>lineEdit_answer_24</zorder>
+  <zorder>lineEdit_answer_25</zorder>
+  <zorder>lineEdit_answer_26</zorder>
+  <zorder>lineEdit_answer_27</zorder>
+  <zorder>lineEdit_answer_28</zorder>
+  <zorder>lineEdit_answer_29</zorder>
+  <zorder>lineEdit_answer_30</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <resources/>
  <connections/>

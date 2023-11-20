@@ -554,6 +554,68 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>501</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../img/for_tests.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>label_title</zorder>
+  <zorder>label_word_1</zorder>
+  <zorder>lineEdit_word_1</zorder>
+  <zorder>label_word_2</zorder>
+  <zorder>lineEdit_word_2</zorder>
+  <zorder>label_word_3</zorder>
+  <zorder>lineEdit_word_3</zorder>
+  <zorder>label_word_4</zorder>
+  <zorder>lineEdit_word_4</zorder>
+  <zorder>label_word_5</zorder>
+  <zorder>lineEdit_word_5</zorder>
+  <zorder>label_word_6</zorder>
+  <zorder>lineEdit_word_6</zorder>
+  <zorder>label_word_7</zorder>
+  <zorder>lineEdit_word_7</zorder>
+  <zorder>label_word_8</zorder>
+  <zorder>lineEdit_word_8</zorder>
+  <zorder>label_word_9</zorder>
+  <zorder>lineEdit_word_9</zorder>
+  <zorder>label_word_10</zorder>
+  <zorder>lineEdit_word_10</zorder>
+  <zorder>label_word_11</zorder>
+  <zorder>lineEdit_word_11</zorder>
+  <zorder>label_word_12</zorder>
+  <zorder>lineEdit_word_12</zorder>
+  <zorder>label_word_13</zorder>
+  <zorder>lineEdit_word_13</zorder>
+  <zorder>label_word_14</zorder>
+  <zorder>lineEdit_word_14</zorder>
+  <zorder>label_word_15</zorder>
+  <zorder>lineEdit_word_15</zorder>
+  <zorder>label_word_16</zorder>
+  <zorder>lineEdit_word_16</zorder>
+  <zorder>label_word_17</zorder>
+  <zorder>lineEdit_word_17</zorder>
+  <zorder>label_word_18</zorder>
+  <zorder>lineEdit_word_18</zorder>
+  <zorder>label_word_19</zorder>
+  <zorder>lineEdit_word_19</zorder>
+  <zorder>label_word_20</zorder>
+  <zorder>lineEdit_word_20</zorder>
+  <zorder>label_word_21</zorder>
+  <zorder>lineEdit_word_21</zorder>
+  <zorder>pushButton_answer</zorder>
+  <zorder>label_timer</zorder>
  </widget>
  <resources/>
  <connections/>

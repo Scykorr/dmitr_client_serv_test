@@ -165,6 +165,33 @@ p, li { white-space: pre-wrap; }
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>421</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../img/for_tests.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>label_title</zorder>
+  <zorder>pushButton_answer</zorder>
+  <zorder>textBrowser</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>textBrowser_2</zorder>
+  <zorder>lineEdit_2</zorder>
+  <zorder>textBrowser_3</zorder>
+  <zorder>lineEdit_3</zorder>
+  <zorder>pushButton_show_text</zorder>
+  <zorder>label_timer</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -446,6 +446,55 @@
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_img">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>461</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../img/for_test3.jpg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_img</zorder>
+  <zorder>label_title</zorder>
+  <zorder>label_word_5</zorder>
+  <zorder>lineEdit_answer_3</zorder>
+  <zorder>pushButton_answer</zorder>
+  <zorder>label_number_1</zorder>
+  <zorder>label_number_4</zorder>
+  <zorder>label_word_3</zorder>
+  <zorder>label_word_4</zorder>
+  <zorder>label_word_1</zorder>
+  <zorder>label_word_2</zorder>
+  <zorder>lineEdit_answer_4</zorder>
+  <zorder>lineEdit_answer_2</zorder>
+  <zorder>lineEdit_answer_1</zorder>
+  <zorder>label_number_2</zorder>
+  <zorder>label_number_5</zorder>
+  <zorder>label_number_3</zorder>
+  <zorder>lineEdit_answer_5</zorder>
+  <zorder>label_word_17</zorder>
+  <zorder>label_word_20</zorder>
+  <zorder>label_word_23</zorder>
+  <zorder>label_word_24</zorder>
+  <zorder>label_word_26</zorder>
+  <zorder>label_word_29</zorder>
+  <zorder>label_word_30</zorder>
+  <zorder>label_number_6</zorder>
+  <zorder>label_number_7</zorder>
+  <zorder>label_number_8</zorder>
+  <zorder>label_number_9</zorder>
+  <zorder>label_number_10</zorder>
+  <zorder>label_number_11</zorder>
+  <zorder>label_number_12</zorder>
+  <zorder>label_timer</zorder>
  </widget>
  <resources/>
  <connections/>
