@@ -583,209 +583,206 @@ class Task8Part1Var2(QtWidgets.QWidget):
         if self.ui_form.lineEdit_answer_10.text() != self.ui_form.lineEdit_answer_20.text():
             self.ui_form.lineEdit_answer_10.setStyleSheet("QLineEdit {background-color: red;}")
 
-#
-# class Task123Part2Var1(QtWidgets.QWidget):
-#     def __init__(self, parent=None):
-#         QtWidgets.QWidget.__init__(self, parent)
-#         self.window = None
-#         self.ui_form = Ui_Zadanie1_2_3_part2_var1()
-#         self.ui_form.setupUi(self)
-#         self.set_default_vals()
-#         self.ui_form.pushButton.clicked.connect(self.get_text)
-#
-#     def set_default_vals(self):
-#         self.ui_form.checkBox_zadan1_part2_var1_4.setChecked(True)
-#         self.ui_form.checkBox_zadan2_part2_var1_8.setChecked(True)
-#         self.ui_form.lineEdit_18.setText('11')
-#         self.ui_form.lineEdit_19.setText('12')
-#         self.ui_form.lineEdit_20.setText('10')
-#         self.ui_form.lineEdit_21.setText('17 18')
-#         self.ui_form.lineEdit_22.setText('18')
-#         self.ui_form.lineEdit_23.setText('13')
-#         self.ui_form.lineEdit_24.setText('22')
-#         self.ui_form.lineEdit_25.setText('23')
-#         self.ui_form.lineEdit_26.setText('30')
-#         self.ui_form.lineEdit_27.setText('32')
-#         self.ui_form.lineEdit_28.setText('40')
-#         self.ui_form.lineEdit_29.setText('44')
-#         self.ui_form.lineEdit_30.setText('46')
-#         self.ui_form.lineEdit_31.setText('47')
-#         self.ui_form.lineEdit_32.setText('53')
-#         self.ui_form.lineEdit_33.setText('51')
-#         self.ui_form.lineEdit_34.setText('52')
-#
-#     def main_select(self, user_name):
-#         vals1 = []
-#         con = sql.connect('../data.db')
-#         cur = con.cursor()
-#         answer = cur.execute(
-#             f"select answer_user from zadanie_variant where num_zadanie=1 and user_name='{user_name}' "
-#             f"and num_part=2 and variant=1")
-#         for el in answer:
-#             vals1.append(el)
-#         val = vals1[0][0].split(';')
-#         self.update_cells_1(val)
-#         con.commit()
-#         cur.close()
-#         con.close()
-#
-#         vals2 = []
-#         con = sql.connect('../data.db')
-#         cur = con.cursor()
-#         answer = cur.execute(
-#             f"select answer_user from zadanie_variant where num_zadanie=2 and user_name='{user_name}' "
-#             f"and num_part=2 and variant=1")
-#         for el in answer:
-#             vals2.append(el)
-#         val = vals2[0][0].split(';')
-#         self.update_cells_2(val)
-#         con.commit()
-#         cur.close()
-#         con.close()
-#
-#         vals3 = []
-#         con = sql.connect('../data.db')
-#         cur = con.cursor()
-#         answer = cur.execute(
-#             f"select answer_user from zadanie_variant where num_zadanie=3 and user_name='{user_name}' "
-#             f"and num_part=2 and variant=1")
-#         for el in answer:
-#             vals3.append(el)
-#         val = vals3[0][0].split(';')
-#         self.update_cells_3(val)
-#         con.commit()
-#         cur.close()
-#         con.close()
-#
-#     def update_cells_1(self, val):
-#         if val[0] == 'True':
-#             self.ui_form.checkBox_zadan1_part2_var1.setChecked(True)
-#         if val[1] == 'True':
-#             self.ui_form.checkBox_2_zadan1_part2_var1.setChecked(True)
-#         if val[2] == 'True':
-#             self.ui_form.checkBox_3_zadan1_part2_var1.setChecked(True)
-#         self.check_values()
-#
-#     def update_cells_2(self, val):
-#         if val[0] == 'True':
-#             self.ui_form.checkBox_zadan2_part2_var1.setChecked(True)
-#         if val[1] == 'True':
-#             self.ui_form.checkBox_zadan2_part2_var1_2.setChecked(True)
-#         if val[2] == 'True':
-#             self.ui_form.checkBox_zadan2_part2_var1_3.setChecked(True)
-#         if val[3] == 'True':
-#             self.ui_form.checkBox_zadan2_part2_var1_4.setChecked(True)
-#         self.check_values()
-#
-#     def update_cells_3(self, val):
-#         self.ui_form.lineEdit.setText(val[0])
-#         self.ui_form.lineEdit_2.setText(val[1])
-#         self.ui_form.lineEdit_3.setText(val[2])
-#         self.ui_form.lineEdit_4.setText(val[3])
-#         self.ui_form.lineEdit_5.setText(val[4])
-#         self.ui_form.lineEdit_6.setText(val[5])
-#         self.ui_form.lineEdit_7.setText(val[6])
-#         self.ui_form.lineEdit_8.setText(val[7])
-#         self.ui_form.lineEdit_9.setText(val[8])
-#         self.ui_form.lineEdit_10.setText(val[9])
-#         self.ui_form.lineEdit_11.setText(val[10])
-#         self.ui_form.lineEdit_12.setText(val[11])
-#         self.ui_form.lineEdit_13.setText(val[12])
-#         self.ui_form.lineEdit_14.setText(val[13])
-#         self.ui_form.lineEdit_15.setText(val[14])
-#         self.ui_form.lineEdit_16.setText(val[15])
-#         self.ui_form.lineEdit_17.setText(val[16])
-#         self.check_values()
-#
-#     def check_values(self):
-#         if self.ui_form.lineEdit.text() != self.ui_form.lineEdit_18.text():
-#             self.ui_form.lineEdit.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_2.text() != self.ui_form.lineEdit_19.text():
-#             self.ui_form.lineEdit_2.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_3.text() != self.ui_form.lineEdit_20.text():
-#             self.ui_form.lineEdit_3.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_4.text() != '17 18':
-#             self.ui_form.lineEdit_4.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_5.text() != self.ui_form.lineEdit_22.text():
-#             self.ui_form.lineEdit_5.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_6.text() != self.ui_form.lineEdit_23.text():
-#             self.ui_form.lineEdit_6.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_7.text() != self.ui_form.lineEdit_24.text():
-#             self.ui_form.lineEdit_7.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_8.text() != self.ui_form.lineEdit_25.text():
-#             self.ui_form.lineEdit_8.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_9.text() != self.ui_form.lineEdit_26.text():
-#             self.ui_form.lineEdit_9.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_10.text() != self.ui_form.lineEdit_27.text():
-#             self.ui_form.lineEdit_10.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_11.text() != self.ui_form.lineEdit_28.text():
-#             self.ui_form.lineEdit_11.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_12.text() != self.ui_form.lineEdit_29.text():
-#             self.ui_form.lineEdit_12.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_13.text() != self.ui_form.lineEdit_30.text():
-#             self.ui_form.lineEdit_13.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_14.text() != self.ui_form.lineEdit_31.text():
-#             self.ui_form.lineEdit_14.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_15.text() != self.ui_form.lineEdit_32.text():
-#             self.ui_form.lineEdit_15.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_16.text() != self.ui_form.lineEdit_33.text():
-#             self.ui_form.lineEdit_16.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_17.text() != self.ui_form.lineEdit_34.text():
-#             self.ui_form.lineEdit_17.setStyleSheet("QLineEdit {background-color: red;}")
-#
-#     def get_text(self):
-#         self.window = Window(filename='var_1_text2.htm')
-#         self.window.show()
-#
-#
-# class Task4Part2Var1(QtWidgets.QWidget):
-#     def __init__(self, parent=None):
-#         QtWidgets.QWidget.__init__(self, parent)
-#         self.window = None
-#         self.ui_form = Ui_Zadanie4_part2_var1()
-#         self.ui_form.setupUi(self)
-#         self.set_default_vals()
-#         self.ui_form.pushButton_show_text.clicked.connect(self.get_text)
-#
-#     def set_default_vals(self):
-#         self.ui_form.lineEdit_4.setText('10')
-#         self.ui_form.lineEdit_5.setText('28')
-#         self.ui_form.lineEdit_6.setText('11')
-#
-#     def main_select(self, user_name):
-#         vals = []
-#         con = sql.connect('../data.db')
-#         cur = con.cursor()
-#         answer = cur.execute(
-#             f"select answer_user from zadanie_variant where num_zadanie=4 and user_name='{user_name}' "
-#             f"and num_part=2 and variant=1")
-#         for el in answer:
-#             vals.append(el)
-#         val = vals[0][0].split(';')
-#         self.update_cells(val)
-#         con.commit()
-#         cur.close()
-#         con.close()
-#         return vals
-#
-#     def update_cells(self, val):
-#         self.ui_form.lineEdit.setText(val[0])
-#         self.ui_form.lineEdit_2.setText(val[1])
-#         self.ui_form.lineEdit_3.setText(val[2])
-#         self.check_values()
-#
-#     def check_values(self):
-#         if self.ui_form.lineEdit.text() != self.ui_form.lineEdit_4.text():
-#             self.ui_form.lineEdit.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_2.text() != self.ui_form.lineEdit_5.text():
-#             self.ui_form.lineEdit_2.setStyleSheet("QLineEdit {background-color: red;}")
-#         if self.ui_form.lineEdit_3.text() != self.ui_form.lineEdit_6.text():
-#             self.ui_form.lineEdit_3.setStyleSheet("QLineEdit {background-color: red;}")
-#
-#     def get_text(self):
-#         self.window = Window(filename='var_1_text2.htm')
-#         self.window.show()
-#
+
+class Task123Part2Var2(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        QtWidgets.QWidget.__init__(self, parent)
+        self.window = None
+        self.ui_form = Ui_Zadanie1_2_3_part2_var1()
+        self.ui_form.setupUi(self)
+        self.set_default_vals()
+        self.ui_form.pushButton.clicked.connect(self.get_text)
+
+    def set_default_vals(self):
+        self.ui_form.checkBox_3_zadan1_part2_var1.setChecked(True)
+        self.ui_form.checkBox_zadan2_part2_var1_4.setChecked(True)
+        self.ui_form.lineEdit_18.setText('1')
+        self.ui_form.lineEdit_19.setText('3')
+        self.ui_form.lineEdit_20.setText('5')
+        self.ui_form.lineEdit_21.setText('7')
+        self.ui_form.lineEdit_22.setText('9')
+        self.ui_form.lineEdit_23.setText('10')
+        self.ui_form.lineEdit_24.setText('11')
+        self.ui_form.lineEdit_25.setText('12')
+        self.ui_form.lineEdit_26.setText('13')
+        self.ui_form.lineEdit_27.setText('14')
+        self.ui_form.lineEdit_28.setText('15')
+        self.ui_form.lineEdit_29.setText('17')
+        self.ui_form.lineEdit_30.setText('22')
+        self.ui_form.lineEdit_31.setText('23')
+        self.ui_form.lineEdit_32.setText('29')
+        self.ui_form.lineEdit_33.setText('36')
+        self.ui_form.lineEdit_34.setText('42')
+
+    def main_select(self, user_name):
+        vals1 = []
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select answer_user from zadanie_variant where num_zadanie=1 and user_name='{user_name}' "
+            f"and num_part=2 and variant=2")
+        for el in answer:
+            vals1.append(el)
+        val = vals1[0][0].split(';')
+        self.update_cells_1(val)
+        con.commit()
+        cur.close()
+        con.close()
+
+        vals2 = []
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select answer_user from zadanie_variant where num_zadanie=2 and user_name='{user_name}' "
+            f"and num_part=2 and variant=2")
+        for el in answer:
+            vals2.append(el)
+        val = vals2[0][0].split(';')
+        self.update_cells_2(val)
+        con.commit()
+        cur.close()
+        con.close()
+
+        vals3 = []
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select answer_user from zadanie_variant where num_zadanie=3 and user_name='{user_name}' "
+            f"and num_part=2 and variant=2")
+        for el in answer:
+            vals3.append(el)
+        val = vals3[0][0].split(';')
+        self.update_cells_3(val)
+        con.commit()
+        cur.close()
+        con.close()
+
+    def update_cells_1(self, val):
+        if val[0] == 'True':
+            self.ui_form.checkBox_zadan1_part2_var1.setChecked(True)
+        if val[1] == 'True':
+            self.ui_form.checkBox_2_zadan1_part2_var1.setChecked(True)
+        if val[2] == 'True':
+            self.ui_form.checkBox_3_zadan1_part2_var1.setChecked(True)
+        self.check_values()
+
+    def update_cells_2(self, val):
+        if val[0] == 'True':
+            self.ui_form.checkBox_zadan2_part2_var1.setChecked(True)
+        if val[1] == 'True':
+            self.ui_form.checkBox_zadan2_part2_var1_2.setChecked(True)
+        if val[2] == 'True':
+            self.ui_form.checkBox_zadan2_part2_var1_3.setChecked(True)
+        if val[3] == 'True':
+            self.ui_form.checkBox_zadan2_part2_var1_4.setChecked(True)
+        self.check_values()
+
+    def update_cells_3(self, val):
+        self.ui_form.lineEdit.setText(val[0])
+        self.ui_form.lineEdit_2.setText(val[1])
+        self.ui_form.lineEdit_3.setText(val[2])
+        self.ui_form.lineEdit_4.setText(val[3])
+        self.ui_form.lineEdit_5.setText(val[4])
+        self.ui_form.lineEdit_6.setText(val[5])
+        self.ui_form.lineEdit_7.setText(val[6])
+        self.ui_form.lineEdit_8.setText(val[7])
+        self.ui_form.lineEdit_9.setText(val[8])
+        self.ui_form.lineEdit_10.setText(val[9])
+        self.ui_form.lineEdit_11.setText(val[10])
+        self.ui_form.lineEdit_12.setText(val[11])
+        self.ui_form.lineEdit_13.setText(val[12])
+        self.ui_form.lineEdit_14.setText(val[13])
+        self.ui_form.lineEdit_15.setText(val[14])
+        self.ui_form.lineEdit_16.setText(val[15])
+        self.ui_form.lineEdit_17.setText(val[16])
+        self.check_values()
+
+    def check_values(self):
+        if self.ui_form.lineEdit.text() != self.ui_form.lineEdit_18.text():
+            self.ui_form.lineEdit.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_2.text() != self.ui_form.lineEdit_19.text():
+            self.ui_form.lineEdit_2.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_3.text() != self.ui_form.lineEdit_20.text():
+            self.ui_form.lineEdit_3.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_4.text() != self.ui_form.lineEdit_21.text():
+            self.ui_form.lineEdit_4.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_5.text() != self.ui_form.lineEdit_22.text():
+            self.ui_form.lineEdit_5.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_6.text() != self.ui_form.lineEdit_23.text():
+            self.ui_form.lineEdit_6.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_7.text() != self.ui_form.lineEdit_24.text():
+            self.ui_form.lineEdit_7.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_8.text() != self.ui_form.lineEdit_25.text():
+            self.ui_form.lineEdit_8.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_9.text() != self.ui_form.lineEdit_26.text():
+            self.ui_form.lineEdit_9.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_10.text() != self.ui_form.lineEdit_27.text():
+            self.ui_form.lineEdit_10.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_11.text() != self.ui_form.lineEdit_28.text():
+            self.ui_form.lineEdit_11.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_12.text() != self.ui_form.lineEdit_29.text():
+            self.ui_form.lineEdit_12.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_13.text() != self.ui_form.lineEdit_30.text():
+            self.ui_form.lineEdit_13.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_14.text() != self.ui_form.lineEdit_31.text():
+            self.ui_form.lineEdit_14.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_15.text() != self.ui_form.lineEdit_32.text():
+            self.ui_form.lineEdit_15.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_16.text() != self.ui_form.lineEdit_33.text():
+            self.ui_form.lineEdit_16.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_17.text() != self.ui_form.lineEdit_34.text():
+            self.ui_form.lineEdit_17.setStyleSheet("QLineEdit {background-color: red;}")
+
+    def get_text(self):
+        self.window = Window(filename='var_2_text2.htm')
+        self.window.show()
+
+
+class Task4Part2Var2(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        QtWidgets.QWidget.__init__(self, parent)
+        self.window = None
+        self.ui_form = Ui_Zadanie4_part2_var1()
+        self.ui_form.setupUi(self)
+        self.set_default_vals()
+        self.ui_form.pushButton_show_text.clicked.connect(self.get_text)
+
+    def set_default_vals(self):
+        self.ui_form.lineEdit_3.setText('26')
+        self.ui_form.lineEdit_4.setText('1')
+
+    def main_select(self, user_name):
+        vals = []
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select answer_user from zadanie_variant where num_zadanie=4 and user_name='{user_name}' "
+            f"and num_part=2 and variant=1")
+        for el in answer:
+            vals.append(el)
+        val = vals[0][0].split(';')
+        self.update_cells(val)
+        con.commit()
+        cur.close()
+        con.close()
+        return vals
+
+    def update_cells(self, val):
+        self.ui_form.lineEdit.setText(val[0])
+        self.ui_form.lineEdit_2.setText(val[1])
+        self.check_values()
+
+    def check_values(self):
+        if self.ui_form.lineEdit.text() != self.ui_form.lineEdit_3.text():
+            self.ui_form.lineEdit.setStyleSheet("QLineEdit {background-color: red;}")
+        if self.ui_form.lineEdit_2.text() != self.ui_form.lineEdit_4.text():
+            self.ui_form.lineEdit_2.setStyleSheet("QLineEdit {background-color: red;}")
+
+
+    def get_text(self):
+        self.window = Window(filename='var_2_text2.htm')
+        self.window.show()
+
 #
 # class Task5Part2Var1(QtWidgets.QWidget):
 #     def __init__(self, parent=None):
