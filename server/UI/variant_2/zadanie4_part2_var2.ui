@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>425</width>
-    <height>658</height>
+    <width>524</width>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,19 +43,6 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_answer">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>610</y>
-     <width>101</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Далее</string>
    </property>
   </widget>
   <widget class="QTextBrowser" name="textBrowser">
@@ -115,8 +102,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="pushButton_show_text">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>600</y>
+     <x>370</x>
+     <y>520</y>
      <width>91</width>
      <height>41</height>
     </rect>
@@ -125,17 +112,76 @@ p, li { white-space: pre-wrap; }
     <string>Показать текст</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_timer">
+  <widget class="QLineEdit" name="lineEdit_3">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>610</y>
-     <width>171</width>
+     <x>440</x>
+     <y>140</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_4">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>460</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>110</y>
+     <width>31</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string/>
+    <string>Ответ</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>110</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Правильный ответ</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>430</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ответ</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>430</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Правильный ответ</string>
    </property>
   </widget>
  </widget>
