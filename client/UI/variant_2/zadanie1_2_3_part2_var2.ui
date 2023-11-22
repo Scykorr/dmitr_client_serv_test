@@ -872,6 +872,32 @@
     <pixmap>../../../img/for_test3.jpg</pixmap>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_next">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>510</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Далее</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_previous">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>510</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Назад</string>
+   </property>
+  </widget>
   <zorder>label_img</zorder>
   <zorder>label_title</zorder>
   <zorder>pushButton_answer</zorder>
@@ -937,6 +963,8 @@
   <zorder>lineEdit_17</zorder>
   <zorder>label_34</zorder>
   <zorder>label_timer</zorder>
+  <zorder>pushButton_next</zorder>
+  <zorder>pushButton_previous</zorder>
  </widget>
  <resources/>
  <connections/>

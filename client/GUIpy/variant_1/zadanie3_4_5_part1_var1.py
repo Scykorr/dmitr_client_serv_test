@@ -217,8 +217,14 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.label_img = QtWidgets.QLabel(Zadanie3_4_5_part1_var1)
         self.label_img.setGeometry(QtCore.QRect(0, 0, 861, 681))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("img/for_tests.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("../../../img/for_tests.jpg"))
         self.label_img.setObjectName("label_img")
+        self.pushButton_next = QtWidgets.QPushButton(Zadanie3_4_5_part1_var1)
+        self.pushButton_next.setGeometry(QtCore.QRect(240, 550, 75, 23))
+        self.pushButton_next.setObjectName("pushButton_next")
+        self.pushButton_3 = QtWidgets.QPushButton(Zadanie3_4_5_part1_var1)
+        self.pushButton_3.setGeometry(QtCore.QRect(110, 550, 75, 23))
+        self.pushButton_3.setObjectName("pushButton_3")
         self.label_img.raise_()
         self.label_title.raise_()
         self.pushButton_answer.raise_()
@@ -277,6 +283,8 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.label_zadanie5_16.raise_()
         self.lineEdit_zadane5_16.raise_()
         self.label_timer.raise_()
+        self.pushButton_next.raise_()
+        self.pushButton_3.raise_()
 
         self.retranslateUi(Zadanie3_4_5_part1_var1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie3_4_5_part1_var1)
@@ -339,6 +347,8 @@ class Ui_Zadanie3_4_5_part1_var1(object):
 " depend on?"))
         self.label_zadanie5_16.setText(_translate("Zadanie3_4_5_part1_var1", "16. What are the advantages and\n"
 " disadvantages of resistors?"))
+        self.pushButton_next.setText(_translate("Zadanie3_4_5_part1_var1", "Далее"))
+        self.pushButton_3.setText(_translate("Zadanie3_4_5_part1_var1", "Назад"))
 
 
 if __name__ == "__main__":

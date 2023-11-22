@@ -238,8 +238,14 @@ class Ui_Zadanie1_2_3_part2_var1(object):
         self.label_img = QtWidgets.QLabel(Zadanie1_2_3_part2_var1)
         self.label_img.setGeometry(QtCore.QRect(0, 0, 881, 661))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("img/for_tests.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("../../../img/for_tests.jpg"))
         self.label_img.setObjectName("label_img")
+        self.pushButton_next = QtWidgets.QPushButton(Zadanie1_2_3_part2_var1)
+        self.pushButton_next.setGeometry(QtCore.QRect(190, 510, 75, 23))
+        self.pushButton_next.setObjectName("pushButton_next")
+        self.pushButton_previous = QtWidgets.QPushButton(Zadanie1_2_3_part2_var1)
+        self.pushButton_previous.setGeometry(QtCore.QRect(70, 510, 75, 23))
+        self.pushButton_previous.setObjectName("pushButton_previous")
         self.label_img.raise_()
         self.label_title.raise_()
         self.pushButton_answer.raise_()
@@ -305,6 +311,8 @@ class Ui_Zadanie1_2_3_part2_var1(object):
         self.lineEdit_17.raise_()
         self.label_34.raise_()
         self.label_timer.raise_()
+        self.pushButton_next.raise_()
+        self.pushButton_previous.raise_()
 
         self.retranslateUi(Zadanie1_2_3_part2_var1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie1_2_3_part2_var1)
@@ -373,6 +381,8 @@ class Ui_Zadanie1_2_3_part2_var1(object):
         self.label_32.setText(_translate("Zadanie1_2_3_part2_var1", "16"))
         self.label_33.setText(_translate("Zadanie1_2_3_part2_var1", "17"))
         self.label_34.setText(_translate("Zadanie1_2_3_part2_var1", "What happens when an electric current passes through the wire coil?"))
+        self.pushButton_next.setText(_translate("Zadanie1_2_3_part2_var1", "Далее"))
+        self.pushButton_previous.setText(_translate("Zadanie1_2_3_part2_var1", "Назад"))
 
 
 if __name__ == "__main__":

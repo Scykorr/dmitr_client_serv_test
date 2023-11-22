@@ -79,7 +79,7 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.label_20.setGeometry(QtCore.QRect(60, 260, 121, 21))
         self.label_20.setObjectName("label_20")
         self.pushButton = QtWidgets.QPushButton(Zadanie3_4_5_part1_var1)
-        self.pushButton.setGeometry(QtCore.QRect(170, 450, 91, 41))
+        self.pushButton.setGeometry(QtCore.QRect(170, 440, 91, 41))
         self.pushButton.setObjectName("pushButton")
         self.label_title_2 = QtWidgets.QLabel(Zadanie3_4_5_part1_var1)
         self.label_title_2.setGeometry(QtCore.QRect(10, 310, 371, 81))
@@ -205,8 +205,14 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.label_img = QtWidgets.QLabel(Zadanie3_4_5_part1_var1)
         self.label_img.setGeometry(QtCore.QRect(0, 0, 871, 601))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("img/for_test3.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("../../../img/for_test3.jpg"))
         self.label_img.setObjectName("label_img")
+        self.pushButton_next = QtWidgets.QPushButton(Zadanie3_4_5_part1_var1)
+        self.pushButton_next.setGeometry(QtCore.QRect(230, 490, 75, 23))
+        self.pushButton_next.setObjectName("pushButton_next")
+        self.pushButton_previous = QtWidgets.QPushButton(Zadanie3_4_5_part1_var1)
+        self.pushButton_previous.setGeometry(QtCore.QRect(110, 490, 75, 23))
+        self.pushButton_previous.setObjectName("pushButton_previous")
         self.label_img.raise_()
         self.label_title.raise_()
         self.pushButton_answer.raise_()
@@ -261,6 +267,8 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.label_zadanie5_15.raise_()
         self.lineEdit_zadane5_15.raise_()
         self.label_timer.raise_()
+        self.pushButton_next.raise_()
+        self.pushButton_previous.raise_()
 
         self.retranslateUi(Zadanie3_4_5_part1_var1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie3_4_5_part1_var1)
@@ -310,6 +318,8 @@ class Ui_Zadanie3_4_5_part1_var1(object):
         self.label_zadanie5_13.setText(_translate("Zadanie3_4_5_part1_var1", "13. What is the major usage of capacitors?"))
         self.label_zadanie5_14.setText(_translate("Zadanie3_4_5_part1_var1", "14. What is inductance?"))
         self.label_zadanie5_15.setText(_translate("Zadanie3_4_5_part1_var1", "15. What is an induction coil?"))
+        self.pushButton_next.setText(_translate("Zadanie3_4_5_part1_var1", "Далее"))
+        self.pushButton_previous.setText(_translate("Zadanie3_4_5_part1_var1", "Назад"))
 
 
 if __name__ == "__main__":

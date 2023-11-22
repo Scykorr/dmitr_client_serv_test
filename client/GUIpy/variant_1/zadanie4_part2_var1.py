@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Zadanie4_part2_var1(object):
     def setupUi(self, Zadanie4_part2_var1):
         Zadanie4_part2_var1.setObjectName("Zadanie4_part2_var1")
-        Zadanie4_part2_var1.resize(425, 622)
+        Zadanie4_part2_var1.resize(425, 629)
         self.label_title = QtWidgets.QLabel(Zadanie4_part2_var1)
         self.label_title.setGeometry(QtCore.QRect(20, 10, 381, 61))
         font = QtGui.QFont()
@@ -49,17 +49,23 @@ class Ui_Zadanie4_part2_var1(object):
         self.lineEdit_3.setGeometry(QtCore.QRect(360, 420, 51, 20))
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.pushButton_show_text = QtWidgets.QPushButton(Zadanie4_part2_var1)
-        self.pushButton_show_text.setGeometry(QtCore.QRect(10, 560, 91, 41))
+        self.pushButton_show_text.setGeometry(QtCore.QRect(60, 560, 91, 31))
         self.pushButton_show_text.setObjectName("pushButton_show_text")
         self.label_timer = QtWidgets.QLabel(Zadanie4_part2_var1)
         self.label_timer.setGeometry(QtCore.QRect(120, 570, 161, 31))
         self.label_timer.setText("")
         self.label_timer.setObjectName("label_timer")
         self.label_img = QtWidgets.QLabel(Zadanie4_part2_var1)
-        self.label_img.setGeometry(QtCore.QRect(0, 0, 421, 621))
+        self.label_img.setGeometry(QtCore.QRect(0, 0, 421, 631))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("img/for_tests.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("../../../img/for_tests.jpg"))
         self.label_img.setObjectName("label_img")
+        self.pushButton_previous = QtWidgets.QPushButton(Zadanie4_part2_var1)
+        self.pushButton_previous.setGeometry(QtCore.QRect(10, 600, 75, 23))
+        self.pushButton_previous.setObjectName("pushButton_previous")
+        self.pushButton_next = QtWidgets.QPushButton(Zadanie4_part2_var1)
+        self.pushButton_next.setGeometry(QtCore.QRect(130, 600, 75, 23))
+        self.pushButton_next.setObjectName("pushButton_next")
         self.label_img.raise_()
         self.label_title.raise_()
         self.pushButton_answer.raise_()
@@ -71,6 +77,8 @@ class Ui_Zadanie4_part2_var1(object):
         self.lineEdit_3.raise_()
         self.pushButton_show_text.raise_()
         self.label_timer.raise_()
+        self.pushButton_previous.raise_()
+        self.pushButton_next.raise_()
 
         self.retranslateUi(Zadanie4_part2_var1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie4_part2_var1)
@@ -98,6 +106,8 @@ class Ui_Zadanie4_part2_var1(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:100%; background-color:transparent;\"><span style=\" font-family:\'Calibri\',\'serif\'; font-size:11pt; color:#000000;\">c) A passive element is an electrical component that does not generate power, but instead dissipates, stores, and/or releases it. Passive elements include resistances, capacitors, and coils (also called inductors). These components are labeled in circuit diagrams as Rs, Cs and Ls, respectively. In most circuits, they are connected to active elements, typically semiconductor devices such as amplifiers and digital logic chips.</span></p></body></html>"))
         self.pushButton_show_text.setText(_translate("Zadanie4_part2_var1", "Показать текст"))
+        self.pushButton_previous.setText(_translate("Zadanie4_part2_var1", "Назад"))
+        self.pushButton_next.setText(_translate("Zadanie4_part2_var1", "Далее"))
 
 
 if __name__ == "__main__":

@@ -230,7 +230,7 @@ class Ui_Zadanie6_part1_var1(object):
         self.label_img = QtWidgets.QLabel(Zadanie6_part1_var1)
         self.label_img.setGeometry(QtCore.QRect(0, 0, 421, 631))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("img/for_test2.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("../../../img/for_test2.jpg"))
         self.label_img.setObjectName("label_img")
         self.label_img.raise_()
         self.label_title.raise_()
@@ -308,7 +308,7 @@ class Ui_Zadanie6_part1_var1(object):
         _translate = QtCore.QCoreApplication.translate
         Zadanie6_part1_var1.setWindowTitle(_translate("Zadanie6_part1_var1", "Form"))
         self.label_title.setText(_translate("Zadanie6_part1_var1", "Задание 6.*\n"
-                                                                   " Сгруппируйте синонимы."))
+" Сгруппируйте синонимы."))
         self.label_number_11.setText(_translate("Zadanie6_part1_var1", "11"))
         self.label_word_5.setText(_translate("Zadanie6_part1_var1", "several"))
         self.label_number_8.setText(_translate("Zadanie6_part1_var1", "8"))
@@ -362,7 +362,6 @@ class Ui_Zadanie6_part1_var1(object):
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     Zadanie6_part1_var1 = QtWidgets.QWidget()
     ui = Ui_Zadanie6_part1_var1()

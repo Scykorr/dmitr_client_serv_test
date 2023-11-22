@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>425</width>
-    <height>622</height>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -142,10 +142,10 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="pushButton_show_text">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>60</x>
      <y>560</y>
      <width>91</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -171,7 +171,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>421</width>
-     <height>621</height>
+     <height>631</height>
     </rect>
    </property>
    <property name="text">
@@ -179,6 +179,32 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="pixmap">
     <pixmap>../../../img/for_tests.jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_previous">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>600</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Назад</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_next">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>600</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Далее</string>
    </property>
   </widget>
   <zorder>label_img</zorder>
@@ -192,6 +218,8 @@ p, li { white-space: pre-wrap; }
   <zorder>lineEdit_3</zorder>
   <zorder>pushButton_show_text</zorder>
   <zorder>label_timer</zorder>
+  <zorder>pushButton_previous</zorder>
+  <zorder>pushButton_next</zorder>
  </widget>
  <resources/>
  <connections/>
