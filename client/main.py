@@ -1,18 +1,26 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication
-import sys
 from GUIpy.client_login import Ui_Form_client_login
 from client.users import Client
 from choose_test import WindowChooseTest
+import get_ip
 from socket import socket, AF_INET, SOCK_STREAM
 import json
 import sqlite3
 import webbrowser
+from PyQt5 import QtCore, QtWidgets
+from PyQt5 import QtWebEngineWidgets
+from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5 import *
+
+import os
+import sys
 
 with open('ip_address', 'r', encoding='utf-8') as ip_file:
     for el in ip_file:
         ip_address_server = el
 
+# ip_address_server = get_ip.get_local_ip()
 
 class WindowLogin(QtWidgets.QWidget):
     def __init__(self, parent=None):

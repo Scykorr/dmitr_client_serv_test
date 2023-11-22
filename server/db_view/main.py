@@ -38,7 +38,7 @@ class WindowServerMain(QtWidgets.QWidget):
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
 
     def drop_db(self):
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute('delete from user')
         con.commit()
@@ -76,7 +76,7 @@ class WindowServerMain(QtWidgets.QWidget):
 
     def select_from_users(self):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute('select * from user')
         for el in answer:
@@ -123,7 +123,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
     def update_seconds_test2(self):
         update_value = self.ui_form_question.lineEdit_update_time.text()
         if update_value.isdigit():
-            con = sql.connect('../data.db')
+            con = sql.connect('data.db')
             cur = con.cursor()
             cur.execute(
                 f'update score_for_count set seconds_for_test2 = {int(update_value)} where id_score = 1')
@@ -133,7 +133,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.ui_form_question.lineEdit_update_time.setText(str(self.get_seconds_for_count()))
 
     def get_seconds_for_count(self):
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         seconds = cur.execute('select seconds_for_test2 from score_for_count')
         seconds = seconds.fetchone()[0]
@@ -197,7 +197,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.update_variant4_sql(data_tuple_var4)
 
     def get_id_variants(self, id_question):
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         id_question = cur.execute('select id_var_answ from variant_answer where id_question={0}'.format(
             id_question,
@@ -219,7 +219,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             emp_photo = self.convert_to_binary_data(file_address)
         sqlite_insert_blob_query = """ update variant_answer set text_var_answ = ?, var_answ_right= ?,  variant_img = ? where id_question = ? and id_var_answ= ? """
         data_tuple = (data_tuple[0], data_tuple[1], emp_photo, data_tuple[2], data_tuple[3])
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple)
         con.commit()
@@ -227,7 +227,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.close()
         sqlite_insert_blob_query = """ update img set image = ? where id_variant= ? """
         data_tuple1 = (emp_photo, data_tuple[4])
-        con = sql.connect('../img.db')
+        con = sql.connect('img.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple1)
         con.commit()
@@ -243,7 +243,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             emp_photo = self.convert_to_binary_data(file_address)
         sqlite_insert_blob_query = """ update variant_answer set text_var_answ = ?, var_answ_right= ?,  variant_img = ? where id_question = ? and id_var_answ= ? """
         data_tuple = (data_tuple[0], data_tuple[1], emp_photo, data_tuple[2], data_tuple[3])
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple)
         con.commit()
@@ -251,7 +251,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.close()
         sqlite_insert_blob_query = """ update img set image = ? where id_variant= ? """
         data_tuple2 = (emp_photo, data_tuple[4])
-        con = sql.connect('../img.db')
+        con = sql.connect('img.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple2)
         con.commit()
@@ -267,7 +267,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             emp_photo = self.convert_to_binary_data(file_address)
         sqlite_insert_blob_query = """ update variant_answer set text_var_answ = ?, var_answ_right= ?,  variant_img = ? where id_question = ? and id_var_answ= ? """
         data_tuple = (data_tuple[0], data_tuple[1], emp_photo, data_tuple[2], data_tuple[3])
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple)
         con.commit()
@@ -275,7 +275,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.close()
         sqlite_insert_blob_query = """ update img set image = ? where id_variant= ? """
         data_tuple3 = (emp_photo, data_tuple[4])
-        con = sql.connect('../img.db')
+        con = sql.connect('img.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple3)
         con.commit()
@@ -291,7 +291,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             emp_photo = self.convert_to_binary_data(file_address)
         sqlite_insert_blob_query = """ update variant_answer set text_var_answ = ?, var_answ_right= ?,  variant_img = ? where id_question = ? and id_var_answ= ? """
         data_tuple = (data_tuple[0], data_tuple[1], emp_photo, data_tuple[2], data_tuple[3])
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple)
         con.commit()
@@ -299,7 +299,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.close()
         sqlite_insert_blob_query = """ update img set image = ? where id_variant= ? """
         data_tuple4 = (emp_photo, data_tuple[4])
-        con = sql.connect('../img.db')
+        con = sql.connect('img.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple4)
         con.commit()
@@ -317,7 +317,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
                 emp_photo = self.convert_to_binary_data(file_address)
             sqlite_insert_blob_query = """ INSERT INTO question (text_question, img_question) VALUES (?,?)"""
             data_tuple = (self.ui_form_question.textEdit_add_new_question.toPlainText(), emp_photo)
-            con = sql.connect('../data.db')
+            con = sql.connect('data.db')
             cur = con.cursor()
             cur.execute(sqlite_insert_blob_query, data_tuple)
             con.commit()
@@ -326,7 +326,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             id_curr_question = self.get_id_question()
             sqlite_insert_blob_query = """ INSERT INTO img (image, id_question) VALUES (?,?)"""
             data_tuple1 = (emp_photo, id_curr_question)
-            con = sql.connect('../img.db')
+            con = sql.connect('img.db')
             cur = con.cursor()
             cur.execute(sqlite_insert_blob_query, data_tuple1)
             con.commit()
@@ -356,7 +356,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             emp_photo = self.convert_to_binary_data(file_address)
         sqlite_insert_blob_query = """ update question set text_question = ?, img_question = ? where iq_question=?"""
         data_tuple = (data_tuple[0], emp_photo, data_tuple[1])
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple)
         con.commit()
@@ -364,7 +364,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.close()
         sqlite_insert_blob_query = """ update img set image = ? where id_question=?"""
         data_tuple1 = (emp_photo, data_tuple[1])
-        con = sql.connect('../img.db')
+        con = sql.connect('img.db')
         cur = con.cursor()
         cur.execute(sqlite_insert_blob_query, data_tuple1)
         con.commit()
@@ -373,7 +373,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.update_question_list()
 
     def insert_variant_answer(self, val, id_question):
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute(
             'insert into variant_answer (text_var_answ, var_answ_right, id_question) '
@@ -384,7 +384,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.commit()
         cur.close()
         con.close()
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         id_var_question = cur.execute(
             'select id_var_answ from variant_answer '
@@ -396,7 +396,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.commit()
         cur.close()
         con.close()
-        con = sql.connect('../img.db')
+        con = sql.connect('img.db')
         cur = con.cursor()
         cur.execute(
             'insert into img (id_question, id_variant) '
@@ -409,7 +409,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         con.close()
 
     def get_id_question(self):
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         id_question = cur.execute('select iq_question from question where text_question="{0}"'.format(
             self.ui_form_question.textEdit_add_new_question.toPlainText(),
@@ -426,7 +426,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
     def sql_delete(self):
         if self.ui_form_question.textEdit_add_new_question.toPlainText() != '':
             id_question = self.get_id_question()
-            con = sql.connect('../data.db')
+            con = sql.connect('data.db')
             cur = con.cursor()
             cur.execute('delete from variant_answer where id_question={0}'.format(
                 id_question,
@@ -434,7 +434,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             con.commit()
             cur.close()
             con.close()
-            con = sql.connect('../data.db')
+            con = sql.connect('data.db')
             cur = con.cursor()
             cur.execute('delete from question where iq_question={0}'.format(
                 id_question,
@@ -442,7 +442,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             con.commit()
             cur.close()
             con.close()
-            con = sql.connect('../img.db')
+            con = sql.connect('img.db')
             cur = con.cursor()
             cur.execute('delete from img where id_question={0}'.format(
                 id_question,
@@ -458,7 +458,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
                 self.ui_form_question.tableWidget_question_list.currentColumn() == 2:
             cur_text = self.ui_form_question.tableWidget_question_list.currentItem().text()
             self.ui_form_question.textEdit_add_new_question.setText(cur_text)
-            con = sql.connect('../data.db')
+            con = sql.connect('data.db')
             cur = con.cursor()
             img_bin = cur.execute(
                 'select img_question from question where text_question="{0}"'.format(
@@ -481,7 +481,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             vals_answ = []
             curr_row = self.ui_form_question.tableWidget_question_list.currentRow()
             self.ui_form_question.tableWidget_question_list.setCurrentCell(curr_row, 0)
-            con = sql.connect('../data.db')
+            con = sql.connect('data.db')
             cur = con.cursor()
             answer = cur.execute(
                 'select text_var_answ, var_answ_right, variant_img from variant_answer where id_question={0}'.format(
@@ -516,7 +516,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
             con.commit()
             cur.close()
             con.close()
-            con = sql.connect('../data.db')
+            con = sql.connect('data.db')
             cur = con.cursor()
             img_bin = cur.execute(
                 'select img_question from question where text_question="{0}"'.format(
@@ -544,7 +544,7 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.ui_form_question.tableWidget_question_list.verticalHeader().setVisible(False)
         self.ui_form_question.tableWidget_question_list.setHorizontalHeaderLabels(
             ("id;№;Текст вопроса").split(";"))
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         questions = cur.execute('select * from question')
         self.ui_form_question.tableWidget_question_list.insertRow(

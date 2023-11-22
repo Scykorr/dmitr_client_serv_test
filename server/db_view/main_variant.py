@@ -43,7 +43,7 @@ class WindowVariantMain(QtWidgets.QWidget):
         self.task6var2part2 = Task6Part2Var2()
 
     def drop_db(self):
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         cur.execute('delete from zadanie_variant')
         con.commit()
@@ -69,7 +69,7 @@ class WindowVariantMain(QtWidgets.QWidget):
 
     def select_from_users(self):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute('select user_name, variant from zadanie_variant')
         for el in answer:

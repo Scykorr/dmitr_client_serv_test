@@ -48,7 +48,7 @@ class Task1Part1Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=1 and user_name='{user_name}'"
@@ -159,7 +159,7 @@ class Task2Part1Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=2 and user_name='{user_name}' and num_part=1 and variant=2")
@@ -255,7 +255,7 @@ class Task345Part1Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=4 and user_name='{user_name}' and num_part=1 and variant=2")
@@ -268,7 +268,7 @@ class Task345Part1Var2(QtWidgets.QWidget):
         con.close()
 
         vals1 = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=5 and user_name='{user_name}' and num_part=1 and variant=2")
@@ -377,7 +377,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=6 and user_name='{user_name}' and num_part=1 and variant=2")
@@ -478,7 +478,7 @@ class Task7Part1Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=7 and user_name='{user_name}' and num_part=1 and variant=2")
@@ -534,7 +534,7 @@ class Task8Part1Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=8 and user_name='{user_name}' and num_part=1 and variant=2")
@@ -615,7 +615,7 @@ class Task123Part2Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals1 = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=1 and user_name='{user_name}' "
@@ -629,7 +629,7 @@ class Task123Part2Var2(QtWidgets.QWidget):
         con.close()
 
         vals2 = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=2 and user_name='{user_name}' "
@@ -643,7 +643,7 @@ class Task123Part2Var2(QtWidgets.QWidget):
         con.close()
 
         vals3 = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=3 and user_name='{user_name}' "
@@ -752,7 +752,7 @@ class Task4Part2Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=4 and user_name='{user_name}' "
@@ -799,7 +799,7 @@ class Task5Part2Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=5 and user_name='{user_name}' "
@@ -856,7 +856,7 @@ class Task6Part2Var2(QtWidgets.QWidget):
 
     def main_select(self, user_name):
         vals = []
-        con = sql.connect('../data.db')
+        con = sql.connect('data.db')
         cur = con.cursor()
         answer = cur.execute(
             f"select answer_user from zadanie_variant where num_zadanie=6 and user_name='{user_name}' "

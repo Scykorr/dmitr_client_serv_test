@@ -11,7 +11,7 @@ from GUIpy.variant_2.zadanie7_part1_var2 import Ui_Zadanie7_part1_var1
 from GUIpy.variant_2.zadanie8_part1_var2 import Ui_Zadanie8_part1_var1
 from client.threads import MyThreadVariant
 from client.users import Client
-from open_html_function import open_file
+from open_html_function_old import Window
 from random import shuffle
 
 
@@ -240,7 +240,8 @@ class Task345Part1Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        open_file(filename='var_2_text1.htm')
+        self.window = Window(filename='var_2_text1.htm')
+        self.window.show()
 
     def get_next_task(self):
         self.answer()
@@ -567,7 +568,8 @@ class Task123Part2Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        open_file('var_2_text2.htm')
+        self.window = Window(filename='var_2_text2.htm')
+        self.window.show()
 
 
     def get_next_task(self):
@@ -628,7 +630,8 @@ class Task4Part2Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        open_file('var_2_text2.htm')
+        self.window = Window(filename='var_2_text2.htm')
+        self.window.show()
 
 
     def get_next_task(self):

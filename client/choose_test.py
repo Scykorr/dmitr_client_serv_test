@@ -8,6 +8,7 @@ from client.variant_1 import Task1Part1Var1
 from client.variant_2 import Task1Part1Var2
 
 
+
 class WindowChooseTest(QtWidgets.QWidget):
     def __init__(self, ip_address_server, user_name=None, parent=None):
         QtWidgets.QWidget.__init__(self, parent)

@@ -58,7 +58,7 @@ class Ui_Form_questions(object):
         self.label_img = QtWidgets.QLabel(Form_questions)
         self.label_img.setGeometry(QtCore.QRect(0, 0, 1001, 441))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("../../img/for_test2.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("img/for_test2.jpg"))
         self.label_img.setObjectName("label_img")
         self.label_img.raise_()
         self.tableWidget_question_list.raise_()

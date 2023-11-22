@@ -29,7 +29,7 @@ class Ui_Form_server(object):
         self.label_img = QtWidgets.QLabel(Form_server)
         self.label_img.setGeometry(QtCore.QRect(0, 0, 471, 361))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("../../img/for_test2.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("img/for_test2.jpg"))
         self.label_img.setObjectName("label_img")
         self.label_img.raise_()
         self.tableWidget_server.raise_()

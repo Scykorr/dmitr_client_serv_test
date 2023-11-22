@@ -2,10 +2,13 @@ from socket import *
 import sqlite3 as sql
 import json
 from random import shuffle
+import get_ip
 
-with open('ip_address', 'r', encoding='utf-8') as ip_file:
-    for el in ip_file:
-        ip_address_server = el
+# with open('ip_address', 'r', encoding='utf-8') as ip_file:
+#     for el in ip_file:
+#         ip_address_server = el
+
+ip_address_server = get_ip.get_local_ip()
 
 
 class Server:
