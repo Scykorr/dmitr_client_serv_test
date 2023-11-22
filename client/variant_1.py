@@ -17,6 +17,7 @@ from client.users import Client
 from open_html_function_old import Window
 from random import shuffle
 from threads import MyThreadVariant
+import open_pdf
 
 
 class Task1Part1Var1(QtWidgets.QWidget):
@@ -244,8 +245,9 @@ class Task345Part1Var1(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.window = Window(filename='var_1_text1.htm')
-        self.window.show()
+        open_pdf.open_pdf(0, '../draft/var_1_text1.pdf')
+        # self.window = Window(filename='var_1_text1.htm')
+        # self.window.show()
 
     def get_next_task(self):
         self.answer()

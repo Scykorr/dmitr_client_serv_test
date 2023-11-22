@@ -2,6 +2,26 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 import pypdfium2 as pdfium
 
 
+
+class OpenPdf(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        QtWidgets.QWidget.__init__(self, parent)
+        self.choose_test_window = None
+        self.ui_client_login = Ui_Form_client_login()
+        self.ui_client_login.setupUi(self)
+        self.ui_client_login.pushButton_fio.clicked.connect(self.send_fio)
+        self.student_fio = ''
+
+    def send_fio(self):
+        self.student_fio = self.ui_client_login.lineEdit_fio.text()
+        user_name.append(self.student_fio)
+        self.choose_test_window = WindowChooseTest(ip_address_server, user_name)
+        Client(ip_address_server, 7000).connect("insert into user(fio_user) values ('{0}')".format(
+            self.student_fio,
+        ))
+        self.hide()
+        self.choose_test_window.show()
+
 def open_pdf(num_page=0, doc_path=""):
     the_file = doc_path
 
@@ -29,7 +49,3 @@ def open_pdf(num_page=0, doc_path=""):
 
     window_layout.addWidget(label_to_display_the_page)
     window.setLayout(window_layout)
-    window.show()
-    application.exec()
-
-open_pdf(2)

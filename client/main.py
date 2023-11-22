@@ -9,8 +9,8 @@ import json
 import sqlite3
 import webbrowser
 from PyQt5 import QtCore, QtWidgets
-from PyQt5 import QtWebEngineWidgets
-from PyQt5.QtWebEngineWidgets import QWebEngineView
+# from PyQt5 import QtWebEngineWidgets
+# from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5 import *
 
 import os
