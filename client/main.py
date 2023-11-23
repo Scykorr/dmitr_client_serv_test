@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication
 from GUIpy.client_login import Ui_Form_client_login
-from client.users import Client
+from users import Client
 from choose_test import WindowChooseTest
 import get_ip
 from socket import socket, AF_INET, SOCK_STREAM
@@ -9,9 +9,8 @@ import json
 import sqlite3
 import webbrowser
 from PyQt5 import QtCore, QtWidgets
-# from PyQt5 import QtWebEngineWidgets
-# from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5 import *
+import pypdfium2 as pdfium
 
 import os
 import sys

@@ -3,7 +3,7 @@ import sys
 from PyQt5 import QtWidgets, QtCore, QtGui
 import pypdfium2 as pdfium
 from PyQt5.QtWidgets import QApplication
-from client.GUIpy.open_file import Ui_Form
+from GUIpy.open_file import Ui_Form
 
 
 class OpenPdf(QtWidgets.QWidget):

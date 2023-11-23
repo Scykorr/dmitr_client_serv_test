@@ -5,9 +5,9 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMessageBox
 
-from client.GUIpy.client_test1 import Ui_Form_client_test1
-from client.threads import MyThread
-from client.users import Client
+from GUIpy.client_test1 import Ui_Form_client_test1
+from threads import MyThread
+from users import Client
 import sqlite3 as sql
 
 

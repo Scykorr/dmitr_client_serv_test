@@ -9,10 +9,10 @@ from GUIpy.variant_2.zadanie6_part1_var2 import Ui_Zadanie6_part1_var1
 from GUIpy.variant_2.zadanie6_part2_var2 import Ui_Zadanie6_part2_var1
 from GUIpy.variant_2.zadanie7_part1_var2 import Ui_Zadanie7_part1_var1
 from GUIpy.variant_2.zadanie8_part1_var2 import Ui_Zadanie8_part1_var1
-from client.threads import MyThreadVariant
-from client.users import Client
-from open_html_function_old import Window
+from threads import MyThreadVariant
+from users import Client
 from random import shuffle
+from open_pdf import OpenPdf
 
 
 class Task1Part1Var2(QtWidgets.QWidget):
@@ -181,6 +181,7 @@ class Task345Part1Var2(QtWidgets.QWidget):
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
         self.student_fio = user_name[0]
+        self.num_page_pdf = 0
 
     def on_clicked(self):
         self.mythread.start()
@@ -240,8 +241,8 @@ class Task345Part1Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.window = Window(filename='var_2_text1.htm')
-        self.window.show()
+        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_2_text1.pdf')
+        self.open_pdf.show()
 
     def get_next_task(self):
         self.answer()
@@ -568,8 +569,8 @@ class Task123Part2Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.window = Window(filename='var_2_text2.htm')
-        self.window.show()
+        self.open_pdf = OpenPdf(doc_path='../draft/var_2_text2.pdf')
+        self.open_pdf.show()
 
 
     def get_next_task(self):
@@ -630,8 +631,8 @@ class Task4Part2Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.window = Window(filename='var_2_text2.htm')
-        self.window.show()
+        self.open_pdf = OpenPdf(doc_path='../draft/var_2_text2.pdf')
+        self.open_pdf.show()
 
 
     def get_next_task(self):

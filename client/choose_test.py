@@ -1,11 +1,11 @@
 from PyQt5 import QtWidgets
 
-from client.GUIpy.client_main import Ui_Form_client_main
-from client.first_test import FirstTestWindow
-from client.second_test import SecondTestWindow
+from GUIpy.client_main import Ui_Form_client_main
+from first_test import FirstTestWindow
+from second_test import SecondTestWindow
 
-from client.variant_1 import Task1Part1Var1
-from client.variant_2 import Task1Part1Var2
+from variant_1 import Task1Part1Var1
+from variant_2 import Task1Part1Var2
 
 
 
