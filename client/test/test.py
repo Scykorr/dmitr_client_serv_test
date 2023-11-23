@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 import pypdfium2 as pdfium
 
 
-def open_pdf(num_page=0, doc_path=""):
+def open_pdf(num_page=0, doc_path="../../draft/var_1_text1.pdf"):
     the_file = doc_path
 
     application = QtWidgets.QApplication([])
@@ -32,4 +32,4 @@ def open_pdf(num_page=0, doc_path=""):
     window.show()
     application.exec()
 
-open_pdf(2)
+open_pdf()

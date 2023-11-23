@@ -17,7 +17,7 @@ from client.users import Client
 from open_html_function_old import Window
 from random import shuffle
 from threads import MyThreadVariant
-import open_pdf
+from open_pdf import OpenPdf
 
 
 class Task1Part1Var1(QtWidgets.QWidget):
@@ -185,6 +185,10 @@ class Task345Part1Var1(QtWidgets.QWidget):
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
         self.student_fio = user_name[0]
+        self.num_page_pdf = 0
+        self.ui_form.pushButton_next.clicked.connect(self.go_next)
+        self.ui_form.pushButton_3.clicked.connect(self.go_before)
+        self.num_page_pdf = 0
 
     def on_clicked(self):
         self.mythread.start()
@@ -245,9 +249,36 @@ class Task345Part1Var1(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        open_pdf.open_pdf(0, '../draft/var_1_text1.pdf')
-        # self.window = Window(filename='var_1_text1.htm')
-        # self.window.show()
+        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text1.pdf')
+        self.open_pdf.show()
+
+    def go_next(self):
+        if self.num_page_pdf < 2:
+            self.num_page_pdf += 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text1.pdf')
+            self.open_pdf.show()
+
+    def go_before(self):
+        if self.num_page_pdf > 0:
+            self.num_page_pdf -= 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text1.pdf')
+            self.open_pdf.show()
+
+    def go_next(self):
+        if self.num_page_pdf < 2:
+            self.num_page_pdf += 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text1.pdf')
+            self.open_pdf.show()
+
+    def go_before(self):
+        if self.num_page_pdf > 0:
+            self.num_page_pdf -= 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text1.pdf')
+            self.open_pdf.show()
 
     def get_next_task(self):
         self.answer()
@@ -495,6 +526,9 @@ class Task123Part2Var1(QtWidgets.QWidget):
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
         self.student_fio = user_name[0]
+        self.num_page_pdf = 0
+        self.ui_form.pushButton_next.clicked.connect(self.go_next)
+        self.ui_form.pushButton_previous.clicked.connect(self.go_before)
 
     def on_clicked(self):
         self.mythread.start()
@@ -573,8 +607,36 @@ class Task123Part2Var1(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.window = Window(filename='var_1_text2.htm')
-        self.window.show()
+        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+        self.open_pdf.show()
+
+    def go_next(self):
+        if self.num_page_pdf < 3:
+            self.num_page_pdf += 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+            self.open_pdf.show()
+
+    def go_before(self):
+        if self.num_page_pdf > 0:
+            self.num_page_pdf -= 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+            self.open_pdf.show()
+
+    def go_next(self):
+        if self.num_page_pdf < 2:
+            self.num_page_pdf += 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+            self.open_pdf.show()
+
+    def go_before(self):
+        if self.num_page_pdf > 0:
+            self.num_page_pdf -= 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+            self.open_pdf.show()
 
     def get_next_task(self):
         self.answer()
@@ -603,6 +665,9 @@ class Task4Part2Var1(QtWidgets.QWidget):
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
         self.student_fio = user_name[0]
+        self.num_page_pdf = 0
+        self.ui_form.pushButton_next.clicked.connect(self.go_next)
+        self.ui_form.pushButton_previous.clicked.connect(self.go_before)
 
     def on_clicked(self):
         self.mythread.start()
@@ -635,8 +700,23 @@ class Task4Part2Var1(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.window = Window(filename='var_1_text2.htm')
-        self.window.show()
+        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+        self.open_pdf.show()
+
+
+    def go_next(self):
+        if self.num_page_pdf < 3:
+            self.num_page_pdf += 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+            self.open_pdf.show()
+    def go_before(self):
+        if self.num_page_pdf > 0:
+            self.num_page_pdf -= 1
+            self.open_pdf.close()
+            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+            self.open_pdf.show()
+
 
     def get_next_task(self):
         self.answer()
