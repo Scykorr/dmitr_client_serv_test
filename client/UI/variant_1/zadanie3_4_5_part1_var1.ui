@@ -786,32 +786,6 @@
     <pixmap>../../../img/for_tests.jpg</pixmap>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_next">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>550</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Далее</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>550</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Назад</string>
-   </property>
-  </widget>
   <zorder>label_img</zorder>
   <zorder>label_title</zorder>
   <zorder>pushButton_answer</zorder>
@@ -870,8 +844,6 @@
   <zorder>label_zadanie5_16</zorder>
   <zorder>lineEdit_zadane5_16</zorder>
   <zorder>label_timer</zorder>
-  <zorder>pushButton_next</zorder>
-  <zorder>pushButton_3</zorder>
  </widget>
  <resources/>
  <connections/>

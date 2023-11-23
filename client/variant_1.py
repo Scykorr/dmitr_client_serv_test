@@ -704,20 +704,6 @@ class Task4Part2Var1(QtWidgets.QWidget):
         self.open_pdf.show()
 
 
-    def go_next(self):
-        if self.num_page_pdf < 3:
-            self.num_page_pdf += 1
-            self.open_pdf.close()
-            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-            self.open_pdf.show()
-    def go_before(self):
-        if self.num_page_pdf > 0:
-            self.num_page_pdf -= 1
-            self.open_pdf.close()
-            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-            self.open_pdf.show()
-
-
     def get_next_task(self):
         self.answer()
         self.window = Task5Part2Var1(ip_address_server=self.ip_address_server, user_name=self.user_name,

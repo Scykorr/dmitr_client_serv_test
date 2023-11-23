@@ -43,7 +43,7 @@ class Ui_Zadanie4_part2_var1(object):
         self.lineEdit_2.setGeometry(QtCore.QRect(360, 460, 51, 20))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton_show_text = QtWidgets.QPushButton(Zadanie4_part2_var1)
-        self.pushButton_show_text.setGeometry(QtCore.QRect(70, 590, 91, 31))
+        self.pushButton_show_text.setGeometry(QtCore.QRect(20, 590, 91, 31))
         self.pushButton_show_text.setObjectName("pushButton_show_text")
         self.label_timer = QtWidgets.QLabel(Zadanie4_part2_var1)
         self.label_timer.setGeometry(QtCore.QRect(120, 610, 171, 31))
@@ -54,12 +54,6 @@ class Ui_Zadanie4_part2_var1(object):
         self.label_img.setText("")
         self.label_img.setPixmap(QtGui.QPixmap("../../../img/for_test3.jpg"))
         self.label_img.setObjectName("label_img")
-        self.pushButton_next = QtWidgets.QPushButton(Zadanie4_part2_var1)
-        self.pushButton_next.setGeometry(QtCore.QRect(130, 630, 75, 23))
-        self.pushButton_next.setObjectName("pushButton_next")
-        self.pushButton_previous = QtWidgets.QPushButton(Zadanie4_part2_var1)
-        self.pushButton_previous.setGeometry(QtCore.QRect(10, 630, 75, 23))
-        self.pushButton_previous.setObjectName("pushButton_previous")
         self.label_img.raise_()
         self.label_title.raise_()
         self.pushButton_answer.raise_()
@@ -69,8 +63,6 @@ class Ui_Zadanie4_part2_var1(object):
         self.lineEdit_2.raise_()
         self.pushButton_show_text.raise_()
         self.label_timer.raise_()
-        self.pushButton_next.raise_()
-        self.pushButton_previous.raise_()
 
         self.retranslateUi(Zadanie4_part2_var1)
         QtCore.QMetaObject.connectSlotsByName(Zadanie4_part2_var1)
@@ -93,8 +85,6 @@ class Ui_Zadanie4_part2_var1(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Times New Roman\',\'serif\'; font-size:12pt;\">b)  The electronic devices we encounter all around us are driven and controlled by the flow of electrical current through electronic circuits. Each circuit is an arrangement of electrical elements designed to perform specific functions. Circuits can be engineered to carry out a wide variety of operations, from simple actions to complex tasks, according to the job(s) the system must perform. Let’s begin by looking at how the key passive elements found in most electronic circuits work.</span></p></body></html>"))
         self.pushButton_show_text.setText(_translate("Zadanie4_part2_var1", "Показать текст"))
-        self.pushButton_next.setText(_translate("Zadanie4_part2_var1", "Далее"))
-        self.pushButton_previous.setText(_translate("Zadanie4_part2_var1", "Назад"))
 
 
 if __name__ == "__main__":
