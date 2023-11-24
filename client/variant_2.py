@@ -12,7 +12,8 @@ from GUIpy.variant_2.zadanie8_part1_var2 import Ui_Zadanie8_part1_var1
 from threads import MyThreadVariant
 from users import Client
 from random import shuffle
-from open_pdf import OpenPdf
+
+from test_class_window import Menu
 
 
 class Task1Part1Var2(QtWidgets.QWidget):
@@ -241,8 +242,10 @@ class Task345Part1Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_2_text1.pdf')
-        self.open_pdf.show()
+        self.open_text = Menu(
+            doc_paths=['img/2_1_1.PNG', 'img/2_1_2.PNG', 'img/2_1_3.PNG', 'img/2_1_4.PNG', 'img/2_1_5.PNG',
+                       'img/2_1_6.PNG'])
+        self.open_text.show()
 
     def get_next_task(self):
         self.answer()
@@ -569,8 +572,9 @@ class Task123Part2Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.open_pdf = OpenPdf(doc_path='../draft/var_2_text2.pdf')
-        self.open_pdf.show()
+        self.open_text = Menu(
+            doc_paths=['img/2_2_1.PNG', 'img/2_2_2.PNG', 'img/2_2_3.PNG', 'img/2_2_4.PNG'])
+        self.open_text.show()
 
 
     def get_next_task(self):
@@ -631,8 +635,9 @@ class Task4Part2Var2(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.open_pdf = OpenPdf(doc_path='../draft/var_2_text2.pdf')
-        self.open_pdf.show()
+        self.open_text = Menu(
+            doc_paths=['img/2_2_1.PNG', 'img/2_2_2.PNG', 'img/2_2_3.PNG', 'img/2_2_4.PNG'])
+        self.open_text.show()
 
 
     def get_next_task(self):

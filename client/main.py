@@ -3,19 +3,16 @@ from PyQt5.QtWidgets import QApplication
 from GUIpy.client_login import Ui_Form_client_login
 from users import Client
 from choose_test import WindowChooseTest
-import get_ip
 from socket import socket, AF_INET, SOCK_STREAM
 import json
 import sqlite3
-import webbrowser
 from PyQt5 import QtCore, QtWidgets
 from PyQt5 import *
-import pypdfium2 as pdfium
 
 import os
 import sys
 
-with open('ip_address', 'r', encoding='utf-8') as ip_file:
+with open('ip_address.txt', 'r', encoding='utf-8') as ip_file:
     for el in ip_file:
         ip_address_server = el
 

@@ -1,7 +1,7 @@
 import sqlite3 as sql
 from PyQt5 import QtWidgets
 
-from open_html_function import open_file
+from test_class_window import Menu
 
 from GUIpy.variant_2.zadanie1_part1_var2 import Ui_Zadanie1_part1
 from GUIpy.variant_2.zadanie2_part1_var2 import Ui_Zadanie2_part1
@@ -337,7 +337,10 @@ class Task345Part1Var2(QtWidgets.QWidget):
             self.ui_form.lineEdit_zadane5_15.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        open_file(filename='var_2_text1.htm')
+        self.open_text = Menu(
+            doc_paths=['img/2_1_1.PNG', 'img/2_1_2.PNG', 'img/2_1_3.PNG', 'img/2_1_4.PNG', 'img/2_1_5.PNG',
+                       'img/2_1_6.PNG'])
+        self.open_text.show()
 
 
 class Task6Part1Var2(QtWidgets.QWidget):
@@ -733,7 +736,9 @@ class Task123Part2Var2(QtWidgets.QWidget):
             self.ui_form.lineEdit_17.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        open_file(filename='var_2_text2.htm')
+        self.open_text = Menu(
+            doc_paths=['img/2_2_1.PNG', 'img/2_2_2.PNG', 'img/2_2_3.PNG', 'img/2_2_4.PNG'])
+        self.open_text.show()
 
 
 
@@ -779,7 +784,9 @@ class Task4Part2Var2(QtWidgets.QWidget):
 
 
     def get_text(self):
-        open_file(filename='var_2_text2.htm')
+        self.open_text = Menu(
+            doc_paths=['img/2_2_1.PNG', 'img/2_2_2.PNG', 'img/2_2_3.PNG', 'img/2_2_4.PNG'])
+        self.open_text.show()
 
 
 class Task5Part2Var2(QtWidgets.QWidget):

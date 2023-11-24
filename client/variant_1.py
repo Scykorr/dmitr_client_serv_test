@@ -16,7 +16,8 @@ from GUIpy.variant_1.zadanie8_part1_var1 import Ui_Zadanie8_part1_var1
 from users import Client
 from random import shuffle
 from threads import MyThreadVariant
-from open_pdf import OpenPdf
+
+from test_class_window import Menu
 
 
 class Task1Part1Var1(QtWidgets.QWidget):
@@ -246,8 +247,11 @@ class Task345Part1Var1(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text1.pdf')
-        self.open_pdf.show()
+        self.open_text = Menu(
+            doc_paths=['img/1_1_1.PNG', 'img/1_1_2.PNG', 'img/1_1_3.PNG', 'img/1_1_4.PNG', 'img/1_1_5.PNG'])
+        self.open_text.show()
+        # self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text1.pdf')
+        # self.open_pdf.show()
 
     def get_next_task(self):
         self.answer()
@@ -496,8 +500,6 @@ class Task123Part2Var1(QtWidgets.QWidget):
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
         self.student_fio = user_name[0]
         self.num_page_pdf = 0
-        self.ui_form.pushButton_next.clicked.connect(self.go_next)
-        self.ui_form.pushButton_previous.clicked.connect(self.go_before)
 
     def on_clicked(self):
         self.mythread.start()
@@ -576,36 +578,12 @@ class Task123Part2Var1(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-        self.open_pdf.show()
-
-    def go_next(self):
-        if self.num_page_pdf < 3:
-            self.num_page_pdf += 1
-            self.open_pdf.close()
-            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-            self.open_pdf.show()
-
-    def go_before(self):
-        if self.num_page_pdf > 0:
-            self.num_page_pdf -= 1
-            self.open_pdf.close()
-            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-            self.open_pdf.show()
-
-    def go_next(self):
-        if self.num_page_pdf < 2:
-            self.num_page_pdf += 1
-            self.open_pdf.close()
-            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-            self.open_pdf.show()
-
-    def go_before(self):
-        if self.num_page_pdf > 0:
-            self.num_page_pdf -= 1
-            self.open_pdf.close()
-            self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-            self.open_pdf.show()
+        self.open_text = Menu(
+            doc_paths=['img/1_2_1.PNG', 'img/1_2_2.PNG', 'img/1_2_3.PNG', 'img/1_2_4.PNG', 'img/1_2_5.PNG',
+                       'img/1_2_6.PNG', 'img/1_2_7.PNG'])
+        self.open_text.show()
+        # self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+        # self.open_pdf.show()
 
     def get_next_task(self):
         self.answer()
@@ -635,8 +613,6 @@ class Task4Part2Var1(QtWidgets.QWidget):
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
         self.student_fio = user_name[0]
         self.num_page_pdf = 0
-        self.ui_form.pushButton_next.clicked.connect(self.go_next)
-        self.ui_form.pushButton_previous.clicked.connect(self.go_before)
 
     def on_clicked(self):
         self.mythread.start()
@@ -669,9 +645,12 @@ class Task4Part2Var1(QtWidgets.QWidget):
         self.on_finished()
 
     def get_text(self):
-        self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
-        self.open_pdf.show()
-
+        self.open_text = Menu(
+            doc_paths=['img/1_2_1.PNG', 'img/1_2_2.PNG', 'img/1_2_3.PNG', 'img/1_2_4.PNG', 'img/1_2_5.PNG',
+                       'img/1_2_6.PNG', 'img/1_2_7.PNG'])
+        self.open_text.show()
+        # self.open_pdf = OpenPdf(num_page=self.num_page_pdf, doc_path='../draft/var_1_text2.pdf')
+        # self.open_pdf.show()
 
     def get_next_task(self):
         self.answer()

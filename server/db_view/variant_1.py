@@ -1,8 +1,6 @@
 import sqlite3 as sql
 from PyQt5 import QtWidgets
 
-from open_html_function import open_file
-
 from GUIpy.variant_1.zadanie1_part1_var1 import Ui_Zadanie1_part1
 from GUIpy.variant_1.zadanie2_part1_var1 import Ui_Zadanie2_part1
 from GUIpy.variant_1.zadanie3_4_5_part1_var1 import Ui_Zadanie3_4_5_part1_var1
@@ -13,6 +11,7 @@ from GUIpy.variant_1.zadanie1_2_3_part2_var1 import Ui_Zadanie1_2_3_part2_var1
 from GUIpy.variant_1.zadanie4_part2_var1 import Ui_Zadanie4_part2_var1
 from GUIpy.variant_1.zadanie5_part2_var1 import Ui_Zadanie5_part2_var1
 from GUIpy.variant_1.zadanie6_part2_var1 import Ui_Zadanie6_part2_var1
+from test_class_window import Menu
 
 
 class Task1Part1Var1(QtWidgets.QWidget):
@@ -336,7 +335,9 @@ class Task345Part1Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_zadane5_16.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        open_file('var_1_text1.htm')
+        self.open_text = Menu(
+            doc_paths=['img/1_1_1.PNG', 'img/1_1_2.PNG', 'img/1_1_3.PNG', 'img/1_1_4.PNG', 'img/1_1_5.PNG'])
+        self.open_text.show()
 
 
 class Task6Part1Var1(QtWidgets.QWidget):
@@ -726,7 +727,10 @@ class Task123Part2Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_17.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        open_file('var_1_text2.htm')
+        self.open_text = Menu(
+            doc_paths=['img/1_2_1.PNG', 'img/1_2_2.PNG', 'img/1_2_3.PNG', 'img/1_2_4.PNG', 'img/1_2_5.PNG',
+                       'img/1_2_6.PNG', 'img/1_2_7.PNG'])
+        self.open_text.show()
 
 
 
@@ -775,7 +779,10 @@ class Task4Part2Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_3.setStyleSheet("QLineEdit {background-color: red;}")
 
     def get_text(self):
-        open_file(filename='var_1_text2.htm')
+        self.open_text = Menu(
+            doc_paths=['img/1_2_1.PNG', 'img/1_2_2.PNG', 'img/1_2_3.PNG', 'img/1_2_4.PNG', 'img/1_2_5.PNG',
+                       'img/1_2_6.PNG', 'img/1_2_7.PNG'])
+        self.open_text.show()
 
 
 class Task5Part2Var1(QtWidgets.QWidget):
