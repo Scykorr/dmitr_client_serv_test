@@ -168,7 +168,7 @@ class Task1Part1Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=1,
@@ -304,7 +304,7 @@ class Task2Part1Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=2,
@@ -363,12 +363,18 @@ class Task345Part1Var1(QtWidgets.QWidget):
         answer = "{word1}".format(
             word1=word1,
         )
+        true_answers_4 = 0
+        false_answers_4 = 0
+
         true_answers = 0
         false_answers = 0
+
         if self.ui_form.lineEdit_zadanie4.text() == '3 8 29 32':
-            true_answers += 1
+            true_answers_4 += 1
         else:
-            false_answers += 1
+            false_answers_4 += 1
+
+
         if self.ui_form.lineEdit_zadane5_1.text() == '1':
             true_answers += 1
         else:
@@ -436,14 +442,14 @@ class Task345Part1Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=4,
                 num_part=1,
                 answ_user=answer,
-                true_answer=true_answers,
-                false_answer=false_answers,
+                true_answer=true_answers_4,
+                false_answer=false_answers_4,
             ))
 
         answer_second = ("{word1};{word2};{word3};{word4};{word5};{word6};{word7};{word8};{word9};{word10};{word11};"
@@ -466,13 +472,15 @@ class Task345Part1Var1(QtWidgets.QWidget):
             word16=self.ui_form.lineEdit_zadane5_16.text(),
         )
         Client(self.ip_address_server, 7000).connect(
-            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=5,
                 num_part=1,
                 answ_user=answer_second,
+                true_answer=true_answers,
+                false_answer=false_answers,
             ))
         self.on_finished()
 
@@ -620,7 +628,7 @@ class Task6Part1Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=6,
@@ -725,7 +733,7 @@ class Task7Part1Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=7,
@@ -836,7 +844,7 @@ class Task8Part1Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=8,
@@ -896,17 +904,27 @@ class Task123Part2Var1(QtWidgets.QWidget):
             word3=self.ui_form.checkBox_3_zadan1_part2_var1.isChecked(),
         )
 
+        true_answers_1 = 0
+        false_answers_1 = 0
+
+        true_answers_2 = 0
+        false_answers_2 = 0
+
         true_answers = 0
         false_answers = 0
 
         if self.ui_form.checkBox_3_zadan1_part2_var1.isChecked():
-            true_answers += 1
+            true_answers_1 += 1
         else:
-            false_answers += 1
+            false_answers_1 += 1
+
+
         if self.ui_form.checkBox_zadan2_part2_var1_4.isChecked():
-            true_answers += 1
+            true_answers_2 += 1
         else:
-            false_answers += 1
+            false_answers_2 += 1
+
+
         if self.ui_form.lineEdit.text() == '11':
             true_answers += 1
         else:
@@ -978,14 +996,14 @@ class Task123Part2Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=1,
                 num_part=2,
                 answ_user=answer,
-                true_answer=true_answers,
-                false_answer=false_answers,
+                true_answer=true_answers_1,
+                false_answer=false_answers_1,
             ))
 
         answer_2 = "{word1};{word2};{word3};{word4}".format(
@@ -995,13 +1013,15 @@ class Task123Part2Var1(QtWidgets.QWidget):
             word4=self.ui_form.checkBox_zadan2_part2_var1_4.isChecked(),
         )
         Client(self.ip_address_server, 7000).connect(
-            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=2,
                 num_part=2,
                 answ_user=answer_2,
+                true_answer=true_answers_2,
+                false_answer=false_answers_2,
             ))
 
         answer_3 = ("{word1};{word2};{word3};{word4};{word5};{word6};{word7};{word8};{word9};{word10};{word11};"
@@ -1025,13 +1045,15 @@ class Task123Part2Var1(QtWidgets.QWidget):
             word17=self.ui_form.lineEdit_17.text(),
         )
         Client(self.ip_address_server, 7000).connect(
-            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}')".format(
+            "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=3,
                 num_part=2,
                 answ_user=answer_3,
+                true_answer=true_answers,
+                false_answer=false_answers,
             ))
         self.on_finished()
 
@@ -1110,7 +1132,7 @@ class Task4Part2Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=4,
@@ -1205,7 +1227,7 @@ class Task5Part2Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=5,
@@ -1317,7 +1339,7 @@ class Task6Part2Var1(QtWidgets.QWidget):
 
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
-            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer}})".format(
+            "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
                 user_name=self.student_fio,
                 variant=1,
                 num_zad=6,
@@ -1330,6 +1352,22 @@ class Task6Part2Var1(QtWidgets.QWidget):
 
     def get_next_task(self):
         self.answer()
+        vaals = []
+        answer_true = Client(self.ip_address_server, 7000).connect(
+            f"select true_answers from zadanie_variant where user_name='{self.user_name[0]}' and variant=1")
+        for el in answer_true:
+            vaals.append(int(el[0]))
+        result_test = round(sum(vaals)/120 * 100)
+        self.msgBox = QMessageBox()
+        if 95 <= result_test <= 100:
+            self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "отлично"!')
+        elif 80 <= result_test <= 94:
+            self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "хорошо"!')
+        elif 60 <= result_test <= 79:
+            self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "удовлетворительно"!')
+        elif 0 <= result_test <= 59:
+            self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "неудовлетворительно"!')
+        self.msgBox.show()
         self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name)
         self.close()
         self.window.show()
