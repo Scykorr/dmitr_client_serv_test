@@ -13,12 +13,13 @@ from users import Client
 
 
 class WindowVariantMain(QtWidgets.QWidget):
-    def __init__(self, ip_address_server, username, parent=None):
+    def __init__(self, ip_address_server, username, variant, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui_main_server = Ui_Form()
         self.ui_main_server.setupUi(self)
         self.ip_address_server = ip_address_server
         self.user_name = username
+        self.variant = variant
         self.username = None
         self.ui_main_server.tableWidget_server.setColumnCount(18)
         self.ui_main_server.pushButton_delete_all.clicked.connect(self.drop_db)
@@ -62,18 +63,21 @@ class WindowVariantMain(QtWidgets.QWidget):
                 self.ui_main_server.tableWidget_server.rowCount() < len(s):
             for _ in range(len(s) - self.ui_main_server.tableWidget_server.rowCount()):
                 self.ui_main_server.tableWidget_server.insertRow(self.ui_main_server.tableWidget_server.rowCount())
-        for i_res, res in enumerate(s):
-            self.ui_main_server.tableWidget_server.setItem(i_res, 0, QTableWidgetItem(str(res[0])))
-            self.ui_main_server.tableWidget_server.setItem(i_res, 1, QTableWidgetItem(str(res[1])))
+        for el in s:
+            self.ui_main_server.tableWidget_server.setItem(0, 0, QTableWidgetItem(str(self.user_name[0])))
+            self.ui_main_server.tableWidget_server.setItem(0, 1, QTableWidgetItem(str(self.variant)))
+            self.ui_main_server.tableWidget_server.setItem(0, 15, QTableWidgetItem(str(s[0])))
+            self.ui_main_server.tableWidget_server.setItem(0, 16, QTableWidgetItem(str(s[1])))
 
     def select_from_users(self):
-        vals = []
+        vals_true = []
+        vals_fals = []
 
-        answer = Client(self.ip_address_server, 7000).connect(f"select user_name, variant from zadanie_variant where user_name='{self.user_name[0]}'")
+        answer = Client(self.ip_address_server, 7000).connect(f"select true_answers, false_answers from zadanie_variant where user_name='{self.user_name[0]}' and variant={self.variant}")
         for el in answer:
-            vals.append(tuple(el))
-        vals = list(set(vals))
-        return vals
+            vals_true.append(el[0])
+            vals_fals.append(el[1])
+        return [sum(vals_true), sum(vals_fals)]
 
     def get_task(self):
         curr_row = self.ui_main_server.tableWidget_server.currentRow()
@@ -168,6 +172,6 @@ class WindowVariantMain(QtWidgets.QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    main_server_window = WindowVariantMain('192.168.56.1', ['Иванов Иван Иванович', 1])
+    main_server_window = WindowVariantMain('192.168.56.1', ['Иванов Иван Иванович', 1], 1)
     main_server_window.show()
     sys.exit(app.exec_())

@@ -1359,15 +1359,20 @@ class Task6Part2Var1(QtWidgets.QWidget):
             vaals.append(int(el[0]))
         result_test = round(sum(vaals)/120 * 100)
         self.msgBox = QMessageBox()
+        mark = 0
         if 95 <= result_test <= 100:
             self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "отлично"!')
+            mark = 5
         elif 80 <= result_test <= 94:
             self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "хорошо"!')
+            mark = 4
         elif 60 <= result_test <= 79:
             self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "удовлетворительно"!')
+            mark = 3
         elif 0 <= result_test <= 59:
             self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "неудовлетворительно"!')
+            mark = 2
         self.msgBox.show()
-        self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name)
+        self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name, variant=1, mark=mark)
         self.close()
         self.window.show()
