@@ -20,7 +20,7 @@ class WindowVariantMain(QtWidgets.QWidget):
         self.ip_address_server = ip_address_server
         self.user_name = username
         self.username = None
-        self.ui_main_server.tableWidget_server.setColumnCount(15)
+        self.ui_main_server.tableWidget_server.setColumnCount(18)
         self.ui_main_server.pushButton_delete_all.clicked.connect(self.drop_db)
         self.ui_main_server.tableWidget_server.doubleClicked.connect(self.get_task)
         self.on_change()
@@ -57,7 +57,7 @@ class WindowVariantMain(QtWidgets.QWidget):
         s = self.select_from_users()
         self.ui_main_server.tableWidget_server.clear()
         self.ui_main_server.tableWidget_server.setHorizontalHeaderLabels(
-            "ФИО;Вариант;№1;№2;№4;№5;№6;№7;№8;№1;№2;№3;№4;№5;№6".split(";"))
+            "ФИО;Вариант;№1;№2;№4;№5;№6;№7;№8;№1;№2;№3;№4;№5;№6;Правильно;Неправильно;Оценка".split(";"))
         if self.ui_main_server.tableWidget_server.rowCount() == 0 or \
                 self.ui_main_server.tableWidget_server.rowCount() < len(s):
             for _ in range(len(s) - self.ui_main_server.tableWidget_server.rowCount()):
@@ -168,6 +168,6 @@ class WindowVariantMain(QtWidgets.QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    main_server_window = WindowVariantMain('192.168.56.1')
+    main_server_window = WindowVariantMain('192.168.56.1', ['Иванов Иван Иванович', 1])
     main_server_window.show()
     sys.exit(app.exec_())
