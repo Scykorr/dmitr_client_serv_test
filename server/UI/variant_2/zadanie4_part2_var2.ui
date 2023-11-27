@@ -18,7 +18,7 @@
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>381</width>
+     <width>471</width>
      <height>61</height>
     </rect>
    </property>
@@ -35,7 +35,7 @@
    </property>
    <property name="text">
     <string>Задание 4.
- Укажите номера абзацев, куда могут быть
+ Укажите номера предложений, куда могут быть
  включены данные ниже части текста.</string>
    </property>
    <property name="textFormat">

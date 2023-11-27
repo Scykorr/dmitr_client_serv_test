@@ -12,6 +12,7 @@ from GUIpy.variant_2.zadanie8_part1_var2 import Ui_Zadanie8_part1_var1
 from threads import MyThreadVariant
 from users import Client
 from random import shuffle
+from main_variant import WindowVariantMain
 
 from test_class_window import Menu
 
@@ -767,4 +768,6 @@ class Task6Part2Var2(QtWidgets.QWidget):
 
     def get_next_task(self):
         self.answer()
+        self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name)
         self.close()
+        self.window.show()

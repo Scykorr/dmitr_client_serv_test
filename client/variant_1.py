@@ -18,6 +18,7 @@ from random import shuffle
 from threads import MyThreadVariant
 
 from test_class_window import Menu
+from main_variant import WindowVariantMain
 
 
 class Task1Part1Var1(QtWidgets.QWidget):
@@ -778,4 +779,6 @@ class Task6Part2Var1(QtWidgets.QWidget):
 
     def get_next_task(self):
         self.answer()
+        self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name)
         self.close()
+        self.window.show()

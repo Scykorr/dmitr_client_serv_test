@@ -16,7 +16,7 @@ class Ui_Zadanie4_part2_var1(object):
         Zadanie4_part2_var1.setObjectName("Zadanie4_part2_var1")
         Zadanie4_part2_var1.resize(425, 619)
         self.label_title = QtWidgets.QLabel(Zadanie4_part2_var1)
-        self.label_title.setGeometry(QtCore.QRect(20, 10, 381, 61))
+        self.label_title.setGeometry(QtCore.QRect(0, 10, 431, 61))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
@@ -79,7 +79,7 @@ class Ui_Zadanie4_part2_var1(object):
         _translate = QtCore.QCoreApplication.translate
         Zadanie4_part2_var1.setWindowTitle(_translate("Zadanie4_part2_var1", "Form"))
         self.label_title.setText(_translate("Zadanie4_part2_var1", "Задание 4.\n"
-" Укажите номера абзацев, куда могут быть\n"
+" Укажите номера предложений, куда могут быть\n"
 " включены данные ниже части текста."))
         self.pushButton_answer.setText(_translate("Zadanie4_part2_var1", "Далее"))
         self.textBrowser.setHtml(_translate("Zadanie4_part2_var1", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

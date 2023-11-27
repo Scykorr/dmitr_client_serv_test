@@ -3,16 +3,19 @@ from PyQt5 import QtWidgets
 
 from test_class_window import Menu
 
-from GUIpy.variant_2.zadanie1_part1_var2 import Ui_Zadanie1_part1
-from GUIpy.variant_2.zadanie2_part1_var2 import Ui_Zadanie2_part1
-from GUIpy.variant_2.zadanie3_4_5_part1_var2 import Ui_Zadanie3_4_5_part1_var1
-from GUIpy.variant_2.zadanie6_part1_var2 import Ui_Zadanie6_part1_var1
-from GUIpy.variant_2.zadanie7_part1_var2 import Ui_Zadanie7_part1_var1
-from GUIpy.variant_2.zadanie8_part1_var2 import Ui_Zadanie8_part1_var1
-from GUIpy.variant_2.zadanie1_2_3_part2_var2 import Ui_Zadanie1_2_3_part2_var1
-from GUIpy.variant_2.zadanie4_part2_var2 import Ui_Zadanie4_part2_var1
-from GUIpy.variant_2.zadanie5_part2_var2 import Ui_Zadanie5_part2_var1
-from GUIpy.variant_2.zadanie6_part2_var2 import Ui_Zadanie6_part2_var1
+from GUIpy.variant_2_answer.zadanie1_part1_var2 import Ui_Zadanie1_part1
+from GUIpy.variant_2_answer.zadanie2_part1_var2 import Ui_Zadanie2_part1
+from GUIpy.variant_2_answer.zadanie3_4_5_part1_var2 import Ui_Zadanie3_4_5_part1_var1
+from GUIpy.variant_2_answer.zadanie6_part1_var2 import Ui_Zadanie6_part1_var1
+from GUIpy.variant_2_answer.zadanie7_part1_var2 import Ui_Zadanie7_part1_var1
+from GUIpy.variant_2_answer.zadanie8_part1_var2 import Ui_Zadanie8_part1_var1
+from GUIpy.variant_2_answer.zadanie1_2_3_part2_var2 import Ui_Zadanie1_2_3_part2_var1
+from GUIpy.variant_2_answer.zadanie4_part2_var2 import Ui_Zadanie4_part2_var1
+from GUIpy.variant_2_answer.zadanie5_part2_var2 import Ui_Zadanie5_part2_var1
+from GUIpy.variant_2_answer.zadanie6_part2_var2 import Ui_Zadanie6_part2_var1
+
+
+from users import Client
 
 
 class Task1Part1Var2(QtWidgets.QWidget):
@@ -46,20 +49,15 @@ class Task1Part1Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_word_41.setText('фаза')
         self.ui_form.lineEdit_word_42.setText('батарея')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=1 and user_name='{user_name}'"
             f" and num_part=1 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         return vals
 
     def update_cells(self, val):
@@ -157,19 +155,14 @@ class Task2Part1Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_answer_31.setText('adv')
         self.ui_form.lineEdit_answer_32.setText('n')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=2 and user_name='{user_name}' and num_part=1 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         return vals
 
     def update_cells(self, val):
@@ -253,32 +246,22 @@ class Task345Part1Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_zadane5_29.setText('44')
         self.ui_form.lineEdit_zadane5_30.setText('48')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=4 and user_name='{user_name}' and num_part=1 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells_zad4(val)
-        con.commit()
-        cur.close()
-        con.close()
 
         vals1 = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=5 and user_name='{user_name}' and num_part=1 and variant=2")
         for el in answer:
             vals1.append(el)
         val1 = vals1[0][0].split(';')
         self.update_cells_zad5(val1)
-        con.commit()
-        cur.close()
-        con.close()
 
     def update_cells_zad4(self, val):
         self.ui_form.lineEdit_zadanie4.setText(' '.join(val))
@@ -378,19 +361,14 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_answer_31.setText(self.get_num(self.ui_form.label_word_31.text()))
         self.ui_form.lineEdit_answer_32.setText(self.get_num(self.ui_form.label_word_32.text()))
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=6 and user_name='{user_name}' and num_part=1 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         self.set_default_vals()
         return vals
 
@@ -479,19 +457,14 @@ class Task7Part1Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_answer_9.setText('2')
         self.ui_form.lineEdit_answer_10.setText('6')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=7 and user_name='{user_name}' and num_part=1 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         return vals
 
     def update_cells(self, val):
@@ -535,19 +508,14 @@ class Task8Part1Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_answer_19.setText('6')
         self.ui_form.lineEdit_answer_20.setText('2')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=8 and user_name='{user_name}' and num_part=1 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         return vals
 
     def update_cells(self, val):
@@ -616,48 +584,33 @@ class Task123Part2Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_33.setText('36')
         self.ui_form.lineEdit_34.setText('42')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals1 = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=1 and user_name='{user_name}' "
             f"and num_part=2 and variant=2")
         for el in answer:
             vals1.append(el)
         val = vals1[0][0].split(';')
         self.update_cells_1(val)
-        con.commit()
-        cur.close()
-        con.close()
 
         vals2 = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=2 and user_name='{user_name}' "
             f"and num_part=2 and variant=2")
         for el in answer:
             vals2.append(el)
         val = vals2[0][0].split(';')
         self.update_cells_2(val)
-        con.commit()
-        cur.close()
-        con.close()
 
         vals3 = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=3 and user_name='{user_name}' "
             f"and num_part=2 and variant=2")
         for el in answer:
             vals3.append(el)
         val = vals3[0][0].split(';')
         self.update_cells_3(val)
-        con.commit()
-        cur.close()
-        con.close()
 
     def update_cells_1(self, val):
         if val[0] == 'True':
@@ -755,20 +708,15 @@ class Task4Part2Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_3.setText('26')
         self.ui_form.lineEdit_4.setText('1')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=4 and user_name='{user_name}' "
             f"and num_part=2 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         return vals
 
     def update_cells(self, val):
@@ -804,20 +752,15 @@ class Task5Part2Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_answer_9.setText('6')
         self.ui_form.lineEdit_answer_10.setText('2')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=5 and user_name='{user_name}' "
             f"and num_part=2 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         return vals
 
     def update_cells(self, val):
@@ -861,20 +804,15 @@ class Task6Part2Var2(QtWidgets.QWidget):
         self.ui_form.lineEdit_answer_19.setText('7')
         self.ui_form.lineEdit_answer_20.setText('5')
 
-    def main_select(self, user_name):
+    def main_select(self, user_name, ip_address_server):
         vals = []
-        con = sql.connect('data.db')
-        cur = con.cursor()
-        answer = cur.execute(
+        answer = Client(ip_address_server, 7000).connect(
             f"select answer_user from zadanie_variant where num_zadanie=6 and user_name='{user_name}' "
             f"and num_part=2 and variant=2")
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        con.commit()
-        cur.close()
-        con.close()
         return vals
 
     def update_cells(self, val):

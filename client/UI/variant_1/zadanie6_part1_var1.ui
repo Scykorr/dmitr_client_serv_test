@@ -77,7 +77,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>equation</string>
+    <string>determined</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_10">
@@ -172,7 +172,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>often</string>
+    <string>usually</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_number_1">
@@ -221,7 +221,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>inversely</string>
+    <string>insulator</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_8">
@@ -270,7 +270,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>commonly</string>
+    <string>figures</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_word_4">
@@ -283,7 +283,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>circuit</string>
+    <string>limited</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_word_13">
@@ -296,7 +296,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>high</string>
+    <string>measure</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_9">
@@ -345,7 +345,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>heat</string>
+    <string>flowing</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_word_7">
@@ -358,7 +358,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>collide</string>
+    <string>relationship</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_word_10">
@@ -371,7 +371,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>electrical</string>
+    <string>decrease</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_word_2">
@@ -384,7 +384,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>electric</string>
+    <string>components</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_4">
@@ -427,7 +427,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>proportional</string>
+    <string>advantage</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_number_6">
@@ -476,7 +476,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>offer</string>
+    <string>wire</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_number_13">
@@ -574,7 +574,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>restrict</string>
+    <string>using</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_word_11">
@@ -587,7 +587,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>length</string>
+    <string>permit</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_answer_5">
