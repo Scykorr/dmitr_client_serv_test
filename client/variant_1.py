@@ -374,7 +374,6 @@ class Task345Part1Var1(QtWidgets.QWidget):
         else:
             false_answers_4 += 1
 
-
         if self.ui_form.lineEdit_zadane5_1.text() == '1':
             true_answers += 1
         else:
@@ -918,12 +917,10 @@ class Task123Part2Var1(QtWidgets.QWidget):
         else:
             false_answers_1 += 1
 
-
         if self.ui_form.checkBox_zadan2_part2_var1_4.isChecked():
             true_answers_2 += 1
         else:
             false_answers_2 += 1
-
 
         if self.ui_form.lineEdit.text() == '11':
             true_answers += 1
@@ -1336,7 +1333,6 @@ class Task6Part2Var1(QtWidgets.QWidget):
         else:
             false_answers += 1
 
-
         Client(self.ip_address_server, 7000).connect(
             "insert into zadanie_variant (user_name, variant, num_zadanie, num_part, answer_user, true_answers, false_answers) "
             "values ('{user_name}', {variant}, {num_zad}, {num_part}, '{answ_user}', {true_answer}, {false_answer})".format(
@@ -1357,7 +1353,7 @@ class Task6Part2Var1(QtWidgets.QWidget):
             f"select true_answers from zadanie_variant where user_name='{self.user_name[0]}' and variant=1")
         for el in answer_true:
             vaals.append(int(el[0]))
-        result_test = round(sum(vaals)/120 * 100)
+        result_test = round(sum(vaals) / 120 * 100)
         self.msgBox = QMessageBox()
         mark = 0
         if 95 <= result_test <= 100:
@@ -1373,6 +1369,7 @@ class Task6Part2Var1(QtWidgets.QWidget):
             self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "неудовлетворительно"!')
             mark = 2
         self.msgBox.show()
-        self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name, variant=1, mark=mark)
+        self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name, variant=1,
+                                        mark=mark)
         self.close()
         self.window.show()

@@ -13,7 +13,7 @@ from users import Client
 
 
 class WindowVariantMain(QtWidgets.QWidget):
-    def __init__(self, ip_address_server, username, variant, parent=None):
+    def __init__(self, ip_address_server, username, variant, mark, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui_main_server = Ui_Form()
         self.ui_main_server.setupUi(self)

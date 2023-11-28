@@ -14,7 +14,6 @@ from GUIpy.variant_2_answer.zadanie4_part2_var2 import Ui_Zadanie4_part2_var1
 from GUIpy.variant_2_answer.zadanie5_part2_var2 import Ui_Zadanie5_part2_var1
 from GUIpy.variant_2_answer.zadanie6_part2_var2 import Ui_Zadanie6_part2_var1
 
-
 from users import Client
 
 
@@ -694,7 +693,6 @@ class Task123Part2Var2(QtWidgets.QWidget):
         self.open_text.show()
 
 
-
 class Task4Part2Var2(QtWidgets.QWidget):
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
@@ -729,7 +727,6 @@ class Task4Part2Var2(QtWidgets.QWidget):
             self.ui_form.lineEdit.setStyleSheet("QLineEdit {background-color: red;}")
         if self.ui_form.lineEdit_2.text() != self.ui_form.lineEdit_4.text():
             self.ui_form.lineEdit_2.setStyleSheet("QLineEdit {background-color: red;}")
-
 
     def get_text(self):
         self.open_text = Menu(
