@@ -218,7 +218,7 @@ class Ui_Zadanie6_part1_var1(object):
         self.label_img = QtWidgets.QLabel(Zadanie6_part1_var1)
         self.label_img.setGeometry(QtCore.QRect(0, 0, 421, 581))
         self.label_img.setText("")
-        self.label_img.setPixmap(QtGui.QPixmap("../../../img/for_tests.jpg"))
+        self.label_img.setPixmap(QtGui.QPixmap("img/for_tests.jpg"))
         self.label_img.setObjectName("label_img")
         self.label_img.raise_()
         self.label_title.raise_()
