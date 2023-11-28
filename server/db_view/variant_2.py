@@ -350,7 +350,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.ui_form = Ui_Zadanie6_part1_var1()
         self.ui_form.setupUi(self)
         self.true_answer = ['1,include', '2,component', '3,typically', '4,property', '5,the number of', '6,primary',
-                            '7,varous', '8,producing', '9,over', '10,applied', '11,possible', '12,calculate',
+                            '7,various', '8,producing', '9,over', '10,applied', '11,possible', '12,calculate',
                             '13,separated', '14,quickly', '15,change', '16,approximately']
 
     def get_num(self, word):

@@ -505,7 +505,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.ui_form.setupUi(self)
         self.ui_form.pushButton_answer.clicked.connect(self.get_next_task)
         self.words_dict = {'comprise': 'include', 'element': 'component', 'usually': 'typically', 'feature': 'property',
-                           'several': 'the number of', 'main': 'primary', 'different': 'varous',
+                           'several': 'the number of', 'main': 'primary', 'different': 'various',
                            'creating': 'producing', 'through': 'over', 'used': 'applied', 'probable': 'possible',
                            'evaluate': 'calculate', 'isolated': 'separated', 'rapidly': 'quickly',
                            'transformation': 'change', 'nearly': 'approximately'}
@@ -557,7 +557,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         )
 
         true_answer_list = ['1,include', '2,component', '3,typically', '4,property', '5,the number of', '6,primary',
-                            '7,varous', '8,producing', '9,over', '10,applied', '11,possible', '12,calculate',
+                            '7,various', '8,producing', '9,over', '10,applied', '11,possible', '12,calculate',
                             '13,separated', '14,quickly', '15,change', '16,approximately']
 
         true_answers = 0
