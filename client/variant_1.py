@@ -1368,8 +1368,18 @@ class Task6Part2Var1(QtWidgets.QWidget):
         elif 0 <= result_test <= 59:
             self.msgBox.setText(f'Ваш результат: {result_test}% правильных ответов. Оценка - "неудовлетворительно"!')
             mark = 2
+        Client(self.ip_address_server, 7000).connect(
+            "insert into user_result_variant (user_name, variant, mark, percent, true_answers, false_answers) "
+            "values ('{user_name}', {variant}, {mark}, {percent}, '{true_answers}', {false_answers})".format(
+                user_name=self.student_fio,
+                variant=1,
+                mark=mark,
+                percent=result_test,
+                true_answers=sum(vaals),
+                false_answers=120 - sum(vaals),
+            ))
         self.msgBox.show()
         self.window = WindowVariantMain(ip_address_server=self.ip_address_server, username=self.user_name, variant=1,
-                                        mark=mark)
+                                        mark=mark, percent=result_test)
         self.close()
         self.window.show()

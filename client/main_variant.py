@@ -13,15 +13,17 @@ from users import Client
 
 
 class WindowVariantMain(QtWidgets.QWidget):
-    def __init__(self, ip_address_server, username, variant, mark, parent=None):
+    def __init__(self, ip_address_server, username, variant, mark, percent, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui_main_server = Ui_Form()
         self.ui_main_server.setupUi(self)
         self.ip_address_server = ip_address_server
         self.user_name = username
         self.variant = variant
+        self.mark = mark
+        self.percent = percent
         self.username = None
-        self.ui_main_server.tableWidget_server.setColumnCount(18)
+        self.ui_main_server.tableWidget_server.setColumnCount(19)
         self.ui_main_server.pushButton_delete_all.clicked.connect(self.drop_db)
         self.ui_main_server.tableWidget_server.doubleClicked.connect(self.get_task)
         self.on_change()
@@ -58,7 +60,7 @@ class WindowVariantMain(QtWidgets.QWidget):
         s = self.select_from_users()
         self.ui_main_server.tableWidget_server.clear()
         self.ui_main_server.tableWidget_server.setHorizontalHeaderLabels(
-            "ФИО;Вариант;№1;№2;№4;№5;№6;№7;№8;№1;№2;№3;№4;№5;№6;Правильно;Неправильно;Оценка".split(";"))
+            "ФИО;Вариант;№1;№2;№4;№5;№6;№7;№8;№1;№2;№3;№4;№5;№6;Правильно;Неправильно;Процент;Оценка".split(";"))
         if self.ui_main_server.tableWidget_server.rowCount() == 0 or \
                 self.ui_main_server.tableWidget_server.rowCount() < len(s):
             for _ in range(len(s) - self.ui_main_server.tableWidget_server.rowCount()):
@@ -68,6 +70,9 @@ class WindowVariantMain(QtWidgets.QWidget):
             self.ui_main_server.tableWidget_server.setItem(0, 1, QTableWidgetItem(str(self.variant)))
             self.ui_main_server.tableWidget_server.setItem(0, 15, QTableWidgetItem(str(s[0])))
             self.ui_main_server.tableWidget_server.setItem(0, 16, QTableWidgetItem(str(s[1])))
+            self.ui_main_server.tableWidget_server.setItem(0, 17, QTableWidgetItem(str(self.percent)))
+            self.ui_main_server.tableWidget_server.setItem(0, 18, QTableWidgetItem(str(self.mark)))
+
 
     def select_from_users(self):
         vals_true = []
@@ -172,6 +177,6 @@ class WindowVariantMain(QtWidgets.QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    main_server_window = WindowVariantMain('192.168.56.1', ['Иванов Иван Иванович', 1], 1)
+    main_server_window = WindowVariantMain('192.168.56.1', ['Иванов Иван Иванович', 1], 1, 5, 95)
     main_server_window.show()
     sys.exit(app.exec_())

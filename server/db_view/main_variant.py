@@ -15,7 +15,7 @@ class WindowVariantMain(QtWidgets.QWidget):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui_main_server = Ui_Form()
         self.ui_main_server.setupUi(self)
-        self.ui_main_server.tableWidget_server.setColumnCount(15)
+        self.ui_main_server.tableWidget_server.setColumnCount(19)
         self.ui_main_server.pushButton_delete_all.clicked.connect(self.drop_db)
         self.ui_main_server.tableWidget_server.doubleClicked.connect(self.get_task)
         self.on_change()
@@ -49,6 +49,12 @@ class WindowVariantMain(QtWidgets.QWidget):
         con.commit()
         cur.close()
         con.close()
+        con = sql.connect('data.db')
+        cur = con.cursor()
+        cur.execute('delete from user_result_variant')
+        con.commit()
+        cur.close()
+        con.close()
         self.ui_main_server.tableWidget_server.setRowCount(0)
 
     def open_window_db(self):
@@ -58,14 +64,32 @@ class WindowVariantMain(QtWidgets.QWidget):
         s = self.select_from_users()
         self.ui_main_server.tableWidget_server.clear()
         self.ui_main_server.tableWidget_server.setHorizontalHeaderLabels(
-            "ФИО;Вариант;№1;№2;№4;№5;№6;№7;№8;№1;№2;№3;№4;№5;№6".split(";"))
+            "ФИО;Вариант;№1;№2;№4;№5;№6;№7;№8;№1;№2;№3;№4;№5;№6;Правильно;Неправильно;Процент;Оценка".split(";"))
         if self.ui_main_server.tableWidget_server.rowCount() == 0 or \
                 self.ui_main_server.tableWidget_server.rowCount() < len(s):
             for _ in range(len(s) - self.ui_main_server.tableWidget_server.rowCount()):
                 self.ui_main_server.tableWidget_server.insertRow(self.ui_main_server.tableWidget_server.rowCount())
         for i_res, res in enumerate(s):
+            s1 = self.select_users_results(str(res[0]), str(res[1]))
             self.ui_main_server.tableWidget_server.setItem(i_res, 0, QTableWidgetItem(str(res[0])))
             self.ui_main_server.tableWidget_server.setItem(i_res, 1, QTableWidgetItem(str(res[1])))
+            self.ui_main_server.tableWidget_server.setItem(i_res, 15, QTableWidgetItem(str(s1[0][2])))
+            self.ui_main_server.tableWidget_server.setItem(i_res, 16, QTableWidgetItem(str(s1[0][3])))
+            self.ui_main_server.tableWidget_server.setItem(i_res, 17, QTableWidgetItem(str(s1[0][1])))
+            self.ui_main_server.tableWidget_server.setItem(i_res, 18, QTableWidgetItem(str(s1[0][0])))
+
+    def select_users_results(self, user_name, variant):
+        vals = []
+        con = sql.connect('data.db')
+        cur = con.cursor()
+        answer = cur.execute(
+            f"select mark, percent, true_answers, false_answers from user_result_variant where user_name='{user_name}' and variant={variant}")
+        for el in answer:
+            vals.append(el)
+        con.commit()
+        cur.close()
+        con.close()
+        return vals
 
     def select_from_users(self):
         vals = []
