@@ -127,10 +127,10 @@ class FirstTestWindow(QtWidgets.QWidget):
             self.counter_questions + 1,
         ))
         self.ui_first_test.plainTextEdit.setPlainText(self.new_lst_question[self.counter_questions][1])
-        self.ui_first_test.radioButton_answer1.setText(self.sorted_variants[self.counter_questions][0][1])
-        self.ui_first_test.radioButton_answer2.setText(self.sorted_variants[self.counter_questions][1][1])
-        self.ui_first_test.radioButton_answer3.setText(self.sorted_variants[self.counter_questions][2][1])
-        self.ui_first_test.radioButton_4.setText(self.sorted_variants[self.counter_questions][3][1])
+        self.ui_first_test.textBrowser.setText(self.sorted_variants[self.counter_questions][0][1])
+        self.ui_first_test.textBrowser_2.setText(self.sorted_variants[self.counter_questions][1][1])
+        self.ui_first_test.textBrowser_3.setText(self.sorted_variants[self.counter_questions][2][1])
+        self.ui_first_test.textBrowser_4.setText(self.sorted_variants[self.counter_questions][3][1])
 
         id_question = self.new_lst_question[self.counter_questions][0]
         id_var1 = self.sorted_variants[self.counter_questions][0][0]

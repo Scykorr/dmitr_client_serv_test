@@ -139,10 +139,10 @@ class SecondTestWindow(QtWidgets.QWidget):
             self.counter_questions + 1,
         ))
         self.ui_second_test.plainTextEdit_question.setPlainText(self.test2_questions[self.counter_questions][1])
-        self.ui_second_test.radioButton_answer1.setText(self.test2_variants[self.counter_questions][0][1])
-        self.ui_second_test.radioButton_answer2.setText(self.test2_variants[self.counter_questions][1][1])
-        self.ui_second_test.radioButton_answer3.setText(self.test2_variants[self.counter_questions][2][1])
-        self.ui_second_test.radioButton_answer.setText(self.test2_variants[self.counter_questions][3][1])
+        self.ui_second_test.textBrowser.setText(self.test2_variants[self.counter_questions][0][1])
+        self.ui_second_test.textBrowser_2.setText(self.test2_variants[self.counter_questions][1][1])
+        self.ui_second_test.textBrowser_3.setText(self.test2_variants[self.counter_questions][2][1])
+        self.ui_second_test.textBrowser_4.setText(self.test2_variants[self.counter_questions][3][1])
 
         id_question = self.test2_questions[self.counter_questions][0]
         id_var1 = self.test2_variants[self.counter_questions][0][0]
