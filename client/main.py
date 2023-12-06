@@ -16,6 +16,7 @@ with open('ip_address.txt', 'r', encoding='utf-8') as ip_file:
     for el in ip_file:
         ip_address_server = el
 
+
 # ip_address_server = get_ip.get_local_ip()
 
 class WindowLogin(QtWidgets.QWidget):

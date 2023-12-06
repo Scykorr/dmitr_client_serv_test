@@ -38,9 +38,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-340</y>
-        <width>1172</width>
-        <height>1214</height>
+        <y>0</y>
+        <width>1189</width>
+        <height>874</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -55,6 +55,11 @@
              </property>
              <item>
               <widget class="QPlainTextEdit" name="plainTextEdit">
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
                <property name="plainText">
                 <string>пывпвп
 ывпав</string>
@@ -62,22 +67,6 @@
               </widget>
              </item>
             </layout>
-           </item>
-           <item alignment="Qt::AlignHCenter">
-            <widget class="QLabel" name="label_img_question">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
            </item>
           </layout>
          </item>
@@ -102,48 +91,27 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
-            <widget class="QTextBrowser" name="textBrowser_2"/>
+            <widget class="QTextBrowser" name="textBrowser_2">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+            </widget>
            </item>
            <item>
-            <widget class="QTextBrowser" name="textBrowser"/>
+            <widget class="QTextBrowser" name="textBrowser">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="label_img_var1">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_img_var3">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QHBoxLayout" name="horizontalLayout_2"/>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -166,48 +134,27 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_8">
            <item>
-            <widget class="QTextBrowser" name="textBrowser_4"/>
+            <widget class="QTextBrowser" name="textBrowser_4">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+            </widget>
            </item>
            <item>
-            <widget class="QTextBrowser" name="textBrowser_3"/>
+            <widget class="QTextBrowser" name="textBrowser_3">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QLabel" name="label_img_var2">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_img_var4">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QHBoxLayout" name="horizontalLayout_4"/>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_5">

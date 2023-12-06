@@ -117,11 +117,6 @@ class FirstTestWindow(QtWidgets.QWidget):
             ))
 
     def get_questionts(self):
-        self.ui_first_test.label_img_question.clear()
-        self.ui_first_test.label_img_var1.clear()
-        self.ui_first_test.label_img_var2.clear()
-        self.ui_first_test.label_img_var3.clear()
-        self.ui_first_test.label_img_var4.clear()
 
         self.setWindowTitle('Вопрос №{0}'.format(
             self.counter_questions + 1,
@@ -131,87 +126,6 @@ class FirstTestWindow(QtWidgets.QWidget):
         self.ui_first_test.textBrowser_2.setText(self.sorted_variants[self.counter_questions][1][1])
         self.ui_first_test.textBrowser_3.setText(self.sorted_variants[self.counter_questions][2][1])
         self.ui_first_test.textBrowser_4.setText(self.sorted_variants[self.counter_questions][3][1])
-
-        id_question = self.new_lst_question[self.counter_questions][0]
-        id_var1 = self.sorted_variants[self.counter_questions][0][0]
-        id_var2 = self.sorted_variants[self.counter_questions][1][0]
-        id_var3 = self.sorted_variants[self.counter_questions][2][0]
-        id_var4 = self.sorted_variants[self.counter_questions][3][0]
-
-        con = sql.connect('img.db')
-        cur = con.cursor()
-        img_bin = cur.execute(
-            'select image from img where id_question="{0}"'.format(
-                id_question,
-            ))
-        img_bin = img_bin.fetchone()
-        con.commit()
-        cur.close()
-        con.close()
-        pix = QPixmap()
-        if img_bin != None:
-            if pix.loadFromData(img_bin[0], 'png'):
-                self.ui_first_test.label_img_question.setPixmap(pix)
-
-        con = sql.connect('img.db')
-        cur = con.cursor()
-        img_bin = cur.execute(
-            'select image from img where id_variant="{0}"'.format(
-                id_var1,
-            ))
-        img_bin = img_bin.fetchone()
-        con.commit()
-        cur.close()
-        con.close()
-        pix1 = QPixmap()
-        if img_bin is not None:
-            if pix1.loadFromData(img_bin[0], 'png'):
-                self.ui_first_test.label_img_var1.setPixmap(pix1)
-
-        con = sql.connect('img.db')
-        cur = con.cursor()
-        img_bin = cur.execute(
-            'select image from img where id_variant="{0}"'.format(
-                id_var2,
-            ))
-        img_bin = img_bin.fetchone()
-        con.commit()
-        cur.close()
-        con.close()
-        pix2 = QPixmap()
-        if img_bin is not None:
-            if pix2.loadFromData(img_bin[0], 'png'):
-                self.ui_first_test.label_img_var2.setPixmap(pix2)
-
-        con = sql.connect('img.db')
-        cur = con.cursor()
-        img_bin = cur.execute(
-            'select image from img where id_variant="{0}"'.format(
-                id_var3,
-            ))
-        img_bin = img_bin.fetchone()
-        con.commit()
-        cur.close()
-        con.close()
-        pix3 = QPixmap()
-        if img_bin is not None:
-            if pix3.loadFromData(img_bin[0], 'png'):
-                self.ui_first_test.label_img_var3.setPixmap(pix3)
-
-        con = sql.connect('img.db')
-        cur = con.cursor()
-        img_bin = cur.execute(
-            'select image from img where id_variant="{0}"'.format(
-                id_var4,
-            ))
-        img_bin = img_bin.fetchone()
-        con.commit()
-        cur.close()
-        con.close()
-        pix4 = QPixmap()
-        if img_bin is not None:
-            if pix4.loadFromData(img_bin[0], 'png'):
-                self.ui_first_test.label_img_var4.setPixmap(pix4)
 
     def sort_variants(self):
         new_list = [[] for _ in range(10)]
