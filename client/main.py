@@ -94,7 +94,7 @@ class Client:
             else:
                 self.sender(req)
                 data = json.loads(
-                    self.cli.recv(63000).decode('utf-8')
+                    self.cli.recv(300000).decode('utf-8')
                 )
                 if data['answer']:
                     print('SERVER ANSWER:\n\t{answ}'.format(
