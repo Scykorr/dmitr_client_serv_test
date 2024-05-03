@@ -8,6 +8,8 @@ from variant_1 import (Task1Part1Var1, Task2Part1Var1, Task345Part1Var1, Task6Pa
                        Task8Part1Var1, Task123Part2Var1, Task4Part2Var1, Task5Part2Var1, Task6Part2Var1)
 from variant_2 import (Task1Part1Var2, Task2Part1Var2, Task345Part1Var2, Task6Part1Var2, Task7Part1Var2,
                        Task8Part1Var2, Task123Part2Var2, Task4Part2Var2, Task5Part2Var2, Task6Part2Var2)
+import shutil
+import os
 
 
 class WindowVariantMain(QtWidgets.QWidget):
@@ -56,11 +58,27 @@ class WindowVariantMain(QtWidgets.QWidget):
         cur.close()
         con.close()
         self.ui_main_server.tableWidget_server.setRowCount(0)
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        cur.execute('delete from zadanie_variant')
+        con.commit()
+        cur.close()
+        con.close()
+        con = sql.connect('../data.db')
+        cur = con.cursor()
+        cur.execute('delete from user_result_variant')
+        con.commit()
+        cur.close()
+        con.close()
+        self.ui_main_server.tableWidget_server.setRowCount(0)
 
     def open_window_db(self):
         self.questions_window.show()
 
     def on_change(self):
+        src = os.path.realpath('../data.db')
+        dst = os.path.realpath('data.db')
+        shutil.copyfile(src, dst)
         s = self.select_from_users()
         self.ui_main_server.tableWidget_server.clear()
         self.ui_main_server.tableWidget_server.setHorizontalHeaderLabels(
@@ -71,12 +89,13 @@ class WindowVariantMain(QtWidgets.QWidget):
                 self.ui_main_server.tableWidget_server.insertRow(self.ui_main_server.tableWidget_server.rowCount())
         for i_res, res in enumerate(s):
             s1 = self.select_users_results(str(res[0]), str(res[1]))
-            self.ui_main_server.tableWidget_server.setItem(i_res, 0, QTableWidgetItem(str(res[0])))
-            self.ui_main_server.tableWidget_server.setItem(i_res, 1, QTableWidgetItem(str(res[1])))
-            self.ui_main_server.tableWidget_server.setItem(i_res, 15, QTableWidgetItem(str(s1[0][2])))
-            self.ui_main_server.tableWidget_server.setItem(i_res, 16, QTableWidgetItem(str(s1[0][3])))
-            self.ui_main_server.tableWidget_server.setItem(i_res, 17, QTableWidgetItem(str(s1[0][1])))
-            self.ui_main_server.tableWidget_server.setItem(i_res, 18, QTableWidgetItem(str(s1[0][0])))
+            if s1:
+                self.ui_main_server.tableWidget_server.setItem(i_res, 0, QTableWidgetItem(str(res[0])))
+                self.ui_main_server.tableWidget_server.setItem(i_res, 1, QTableWidgetItem(str(res[1])))
+                self.ui_main_server.tableWidget_server.setItem(i_res, 15, QTableWidgetItem(str(s1[0][2])))
+                self.ui_main_server.tableWidget_server.setItem(i_res, 16, QTableWidgetItem(str(s1[0][3])))
+                self.ui_main_server.tableWidget_server.setItem(i_res, 17, QTableWidgetItem(str(s1[0][1])))
+                self.ui_main_server.tableWidget_server.setItem(i_res, 18, QTableWidgetItem(str(s1[0][0])))
 
     def select_users_results(self, user_name, variant):
         vals = []
