@@ -302,7 +302,7 @@ class Task2Part1Var2(QtWidgets.QWidget):
             true_answers += 1
         else:
             false_answers += 1
-        if self.ui_form.lineEdit_answer_15.text() == 'n':
+        if self.ui_form.lineEdit_answer_15.text() == 'adj':
             true_answers += 1
         else:
             false_answers += 1
@@ -379,7 +379,7 @@ class Task345Part1Var2(QtWidgets.QWidget):
         else:
             false_answers_4 += 1
 
-        if self.ui_form.lineEdit_zadane5_1.text() == '2':
+        if self.ui_form.lineEdit_zadane5_1.text() == '3':
             true_answers += 1
         else:
             false_answers += 1
@@ -505,7 +505,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.ui_form.setupUi(self)
         self.ui_form.pushButton_answer.clicked.connect(self.get_next_task)
         self.words_dict = {'comprise': 'include', 'element': 'component', 'usually': 'typically', 'feature': 'property',
-                           'several': 'the number of', 'main': 'primary', 'different': 'various',
+                           'several': 'a number of', 'main': 'primary', 'different': 'various',
                            'creating': 'producing', 'through': 'over', 'used': 'applied', 'probable': 'possible',
                            'evaluate': 'calculate', 'isolated': 'separated', 'rapidly': 'quickly',
                            'transformation': 'change', 'nearly': 'approximately'}

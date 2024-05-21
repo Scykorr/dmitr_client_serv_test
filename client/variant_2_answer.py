@@ -331,7 +331,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.window = None
         self.ui_form = Ui_Zadanie6_part1_var1()
         self.ui_form.setupUi(self)
-        self.true_answer = ['1,include', '2,component', '3,typically', '4,property', '5,the number of', '6,primary',
+        self.true_answer = ['1,include', '2,component', '3,typically', '4,property', '5,a number of', '6,primary',
                             '7,various', '8,producing', '9,over', '10,applied', '11,possible', '12,calculate',
                             '13,separated', '14,quickly', '15,change', '16,approximately']
 
@@ -451,10 +451,10 @@ class Task7Part1Var2(QtWidgets.QWidget):
 
     def set_default_vals(self):
         self.ui_form.lineEdit_answer_6.setText('4')
-        self.ui_form.lineEdit_answer_7.setText('7')
-        self.ui_form.lineEdit_answer_8.setText('1')
+        self.ui_form.lineEdit_answer_7.setText('6')
+        self.ui_form.lineEdit_answer_8.setText('3')
         self.ui_form.lineEdit_answer_9.setText('2')
-        self.ui_form.lineEdit_answer_10.setText('6')
+        self.ui_form.lineEdit_answer_10.setText('5')
 
     def main_select(self, user_name, ip_address_server):
         vals = []

@@ -53,8 +53,9 @@ class Task1Part1Var1(QtWidgets.QWidget):
             f"select answer_user from zadanie_variant where num_zadanie=1 and user_name='{user_name}' and num_part=1 and variant=1")
         for el in answer:
             vals.append(el)
-        val = vals[0][0].split(';')
-        self.update_cells(val)
+        if vals:
+            val = vals[0][0].split(';')
+            self.update_cells(val)
         con.commit()
         cur.close()
         con.close()
@@ -162,8 +163,9 @@ class Task2Part1Var1(QtWidgets.QWidget):
             f"select answer_user from zadanie_variant where num_zadanie=2 and user_name='{user_name}' and num_part=1 and variant=1")
         for el in answer:
             vals.append(el)
-        val = vals[0][0].split(';')
-        self.update_cells(val)
+        if vals:
+            val = vals[0][0].split(';')
+            self.update_cells(val)
         con.commit()
         cur.close()
         con.close()

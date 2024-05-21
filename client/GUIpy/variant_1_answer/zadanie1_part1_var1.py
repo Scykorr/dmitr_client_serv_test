@@ -318,7 +318,7 @@ class Ui_Zadanie1_part1(object):
         self.label_word_4.setText(_translate("Zadanie1_part1", "material"))
         self.label_word_5.setText(_translate("Zadanie1_part1", "determine"))
         self.label_word_6.setText(_translate("Zadanie1_part1", "energy"))
-        self.label_word_7.setText(_translate("Zadanie1_part1", "transfer(n, v)"))
+        self.label_word_7.setText(_translate("Zadanie1_part1", "transfer(n)"))
         self.label_word_8.setText(_translate("Zadanie1_part1", "mechanism"))
         self.label_word_9.setText(_translate("Zadanie1_part1", "symbol"))
         self.label_word_10.setText(_translate("Zadanie1_part1", "characteristics"))

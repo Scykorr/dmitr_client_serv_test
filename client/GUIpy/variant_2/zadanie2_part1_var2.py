@@ -281,7 +281,7 @@ class Ui_Zadanie2_part1(object):
         self.label_word_15.setText(_translate("Zadanie2_part1", "approximately"))
         self.label_number_15.setText(_translate("Zadanie2_part1", "15"))
         self.label_number_16.setText(_translate("Zadanie2_part1", "16"))
-        self.label_word_16.setText(_translate("Zadanie2_part1", "greater"))
+        self.label_word_16.setText(_translate("Zadanie2_part1", "greated"))
 
 
 if __name__ == "__main__":

@@ -193,7 +193,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>transfer(n, v)</string>
+    <string>transfer(n)</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_word_7">
