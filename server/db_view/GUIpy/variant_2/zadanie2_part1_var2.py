@@ -367,7 +367,7 @@ class Ui_Zadanie2_part1(object):
         self.label_word_15.setText(_translate("Zadanie2_part1", "approximately"))
         self.label_number_15.setText(_translate("Zadanie2_part1", "15"))
         self.label_number_16.setText(_translate("Zadanie2_part1", "16"))
-        self.label_word_16.setText(_translate("Zadanie2_part1", "greater"))
+        self.label_word_16.setText(_translate("Zadanie2_part1", "greated"))
         self.label_2.setText(_translate("Zadanie2_part1", "Ответ"))
         self.label.setText(_translate("Zadanie2_part1", "Правильный ответ"))
         self.label_3.setText(_translate("Zadanie2_part1", "Ответ"))

@@ -259,7 +259,6 @@ class Task345Part1Var1(QtWidgets.QWidget):
 
     def update_cells_zad4(self, val):
         self.ui_form.lineEdit_zadanie4.setText(' '.join(val))
-        self.check_values()
 
     def update_cells_zad5(self, val):
         self.ui_form.lineEdit_zadane5_1.setText(val[0])
@@ -286,6 +285,7 @@ class Task345Part1Var1(QtWidgets.QWidget):
         if self.ui_form.lineEdit_zadane5_1.text() != self.ui_form.lineEdit_zadane5_17.text():
             self.ui_form.lineEdit_zadane5_1.setStyleSheet("QLineEdit {background-color: red;}")
         if self.ui_form.lineEdit_zadane5_2.text() != self.ui_form.lineEdit_zadane5_18.text():
+            print(self.ui_form.lineEdit_zadane5_2.text(), self.ui_form.lineEdit_zadane5_18.text())
             self.ui_form.lineEdit_zadane5_2.setStyleSheet("QLineEdit {background-color: red;}")
         if self.ui_form.lineEdit_zadane5_3.text() != self.ui_form.lineEdit_zadane5_19.text():
             self.ui_form.lineEdit_zadane5_3.setStyleSheet("QLineEdit {background-color: red;}")
