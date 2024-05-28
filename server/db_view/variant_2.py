@@ -282,7 +282,6 @@ class Task345Part1Var2(QtWidgets.QWidget):
 
     def update_cells_zad4(self, val):
         self.ui_form.lineEdit_zadanie4.setText(' '.join(val))
-        self.check_values()
 
     def update_cells_zad5(self, val):
         self.ui_form.lineEdit_zadane5_1.setText(val[0])
@@ -349,7 +348,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.window = None
         self.ui_form = Ui_Zadanie6_part1_var1()
         self.ui_form.setupUi(self)
-        self.true_answer = ['1,include', '2,component', '3,typically', '4,property', '5,the number of', '6,primary',
+        self.true_answer = ['1,include', '2,component', '3,typically', '4,property', '5,a number of', '6,primary',
                             '7,various', '8,producing', '9,over', '10,applied', '11,possible', '12,calculate',
                             '13,separated', '14,quickly', '15,change', '16,approximately']
 
@@ -387,11 +386,10 @@ class Task6Part1Var2(QtWidgets.QWidget):
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
-        self.update_cells(val)
         con.commit()
         cur.close()
         con.close()
-        self.set_default_vals()
+        self.update_cells(val)
         return vals
 
     def update_cells(self, val):
@@ -427,6 +425,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.ui_form.label_word_31.setText(val[14].split(',')[1])
         self.ui_form.lineEdit_answer_16.setText(val[15].split(',')[0])
         self.ui_form.label_word_32.setText(val[15].split(',')[1])
+        self.set_default_vals()
         self.check_values()
 
     def check_values(self):
@@ -474,10 +473,10 @@ class Task7Part1Var2(QtWidgets.QWidget):
 
     def set_default_vals(self):
         self.ui_form.lineEdit_answer_6.setText('4')
-        self.ui_form.lineEdit_answer_7.setText('7')
-        self.ui_form.lineEdit_answer_8.setText('1')
+        self.ui_form.lineEdit_answer_7.setText('6')
+        self.ui_form.lineEdit_answer_8.setText('3')
         self.ui_form.lineEdit_answer_9.setText('2')
-        self.ui_form.lineEdit_answer_10.setText('6')
+        self.ui_form.lineEdit_answer_10.setText('5')
 
     def main_select(self, user_name):
         vals = []
@@ -661,23 +660,21 @@ class Task123Part2Var2(QtWidgets.QWidget):
 
     def update_cells_1(self, val):
         if val[0] == 'True':
-            self.ui_form.checkBox_zadan1_part2_var1.setChecked(True)
+            self.ui_form.checkBox_zadan1_part2_var1_2.setChecked(True)
         if val[1] == 'True':
-            self.ui_form.checkBox_2_zadan1_part2_var1.setChecked(True)
+            self.ui_form.checkBox_zadan1_part2_var1_3.setChecked(True)
         if val[2] == 'True':
-            self.ui_form.checkBox_3_zadan1_part2_var1.setChecked(True)
-        self.check_values()
+            self.ui_form.checkBox_zadan1_part2_var1_4.setChecked(True)
 
     def update_cells_2(self, val):
         if val[0] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1.setChecked(True)
+            self.ui_form.checkBox_zadan2_part2_var1_5.setChecked(True)
         if val[1] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1_2.setChecked(True)
+            self.ui_form.checkBox_zadan2_part2_var1_6.setChecked(True)
         if val[2] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1_3.setChecked(True)
+            self.ui_form.checkBox_zadan2_part2_var1_7.setChecked(True)
         if val[3] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1_4.setChecked(True)
-        self.check_values()
+            self.ui_form.checkBox_zadan2_part2_var1_8.setChecked(True)
 
     def update_cells_3(self, val):
         self.ui_form.lineEdit.setText(val[0])
@@ -741,7 +738,6 @@ class Task123Part2Var2(QtWidgets.QWidget):
         self.open_text.show()
 
 
-
 class Task4Part2Var2(QtWidgets.QWidget):
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
@@ -782,7 +778,6 @@ class Task4Part2Var2(QtWidgets.QWidget):
         if self.ui_form.lineEdit_2.text() != self.ui_form.lineEdit_4.text():
             self.ui_form.lineEdit_2.setStyleSheet("QLineEdit {background-color: red;}")
 
-
     def get_text(self):
         self.open_text = Menu(
             doc_paths=['img/2_2_1.PNG', 'img/2_2_2.PNG', 'img/2_2_3.PNG', 'img/2_2_4.PNG'])
@@ -798,7 +793,7 @@ class Task5Part2Var2(QtWidgets.QWidget):
         self.set_default_vals()
 
     def set_default_vals(self):
-        self.ui_form.lineEdit_answer_6.setText('2')
+        self.ui_form.lineEdit_answer_6.setText('3')
         self.ui_form.lineEdit_answer_7.setText('7')
         self.ui_form.lineEdit_answer_8.setText('1')
         self.ui_form.lineEdit_answer_9.setText('6')

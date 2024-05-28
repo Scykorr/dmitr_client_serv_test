@@ -264,7 +264,6 @@ class Task345Part1Var2(QtWidgets.QWidget):
 
     def update_cells_zad4(self, val):
         self.ui_form.lineEdit_zadanie4.setText(' '.join(val))
-        self.check_values()
 
     def update_cells_zad5(self, val):
         self.ui_form.lineEdit_zadane5_1.setText(val[0])
@@ -368,7 +367,6 @@ class Task6Part1Var2(QtWidgets.QWidget):
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        self.set_default_vals()
         return vals
 
     def update_cells(self, val):
@@ -404,6 +402,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
         self.ui_form.label_word_31.setText(val[14].split(',')[1])
         self.ui_form.lineEdit_answer_16.setText(val[15].split(',')[0])
         self.ui_form.label_word_32.setText(val[15].split(',')[1])
+        self.set_default_vals()
         self.check_values()
 
     def check_values(self):
@@ -613,23 +612,21 @@ class Task123Part2Var2(QtWidgets.QWidget):
 
     def update_cells_1(self, val):
         if val[0] == 'True':
-            self.ui_form.checkBox_zadan1_part2_var1.setChecked(True)
+            self.ui_form.checkBox_zadan1_part2_var1_2.setChecked(True)
         if val[1] == 'True':
-            self.ui_form.checkBox_2_zadan1_part2_var1.setChecked(True)
+            self.ui_form.checkBox_zadan1_part2_var1_3.setChecked(True)
         if val[2] == 'True':
-            self.ui_form.checkBox_3_zadan1_part2_var1.setChecked(True)
-        self.check_values()
+            self.ui_form.checkBox_zadan1_part2_var1_4.setChecked(True)
 
     def update_cells_2(self, val):
         if val[0] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1.setChecked(True)
+            self.ui_form.checkBox_zadan2_part2_var1_5.setChecked(True)
         if val[1] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1_2.setChecked(True)
+            self.ui_form.checkBox_zadan2_part2_var1_6.setChecked(True)
         if val[2] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1_3.setChecked(True)
+            self.ui_form.checkBox_zadan2_part2_var1_7.setChecked(True)
         if val[3] == 'True':
-            self.ui_form.checkBox_zadan2_part2_var1_4.setChecked(True)
-        self.check_values()
+            self.ui_form.checkBox_zadan2_part2_var1_8.setChecked(True)
 
     def update_cells_3(self, val):
         self.ui_form.lineEdit.setText(val[0])
@@ -743,7 +740,7 @@ class Task5Part2Var2(QtWidgets.QWidget):
         self.set_default_vals()
 
     def set_default_vals(self):
-        self.ui_form.lineEdit_answer_6.setText('2')
+        self.ui_form.lineEdit_answer_6.setText('3')
         self.ui_form.lineEdit_answer_7.setText('7')
         self.ui_form.lineEdit_answer_8.setText('1')
         self.ui_form.lineEdit_answer_9.setText('6')

@@ -556,7 +556,7 @@ class Task6Part1Var2(QtWidgets.QWidget):
             word16=f'{self.ui_form.lineEdit_answer_16.text()},{self.ui_form.label_word_32.text()}',
         )
 
-        true_answer_list = ['1,include', '2,component', '3,typically', '4,property', '5,the number of', '6,primary',
+        true_answer_list = ['1,include', '2,component', '3,typically', '4,property', '5,a number of', '6,primary',
                             '7,various', '8,producing', '9,over', '10,applied', '11,possible', '12,calculate',
                             '13,separated', '14,quickly', '15,change', '16,approximately']
 
@@ -717,11 +717,11 @@ class Task7Part1Var2(QtWidgets.QWidget):
             true_answers += 1
         else:
             false_answers += 1
-        if self.ui_form.lineEdit_answer_2.text() == '7':
+        if self.ui_form.lineEdit_answer_2.text() == '6':
             true_answers += 1
         else:
             false_answers += 1
-        if self.ui_form.lineEdit_answer_3.text() == '1':
+        if self.ui_form.lineEdit_answer_3.text() == '3':
             true_answers += 1
         else:
             false_answers += 1
@@ -729,7 +729,7 @@ class Task7Part1Var2(QtWidgets.QWidget):
             true_answers += 1
         else:
             false_answers += 1
-        if self.ui_form.lineEdit_answer_5.text() == '6':
+        if self.ui_form.lineEdit_answer_5.text() == '5':
             true_answers += 1
         else:
             false_answers += 1
@@ -1192,7 +1192,7 @@ class Task5Part2Var2(QtWidgets.QWidget):
         true_answers = 0
         false_answers = 0
 
-        if self.ui_form.lineEdit_answer_1.text() == '2':
+        if self.ui_form.lineEdit_answer_1.text() == '3':
             true_answers += 1
         else:
             false_answers += 1
