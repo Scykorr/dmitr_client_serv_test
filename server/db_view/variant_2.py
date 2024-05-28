@@ -56,10 +56,11 @@ class Task1Part1Var2(QtWidgets.QWidget):
         for el in answer:
             vals.append(el)
         val = vals[0][0].split(';')
-        self.update_cells(val)
+
         con.commit()
         cur.close()
         con.close()
+        self.update_cells(val)
         return vals
 
     def update_cells(self, val):
