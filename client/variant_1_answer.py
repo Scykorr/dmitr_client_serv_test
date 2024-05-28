@@ -307,7 +307,7 @@ class Task345Part1Var1(QtWidgets.QWidget):
             self.ui_form.lineEdit_zadane5_11.setStyleSheet("QLineEdit {background-color: red;}")
         if self.ui_form.lineEdit_zadane5_12.text() != self.ui_form.lineEdit_zadane5_28.text():
             self.ui_form.lineEdit_zadane5_12.setStyleSheet("QLineEdit {background-color: red;}")
-        if self.ui_form.lineEdit_zadane5_13.text() != '23' or self.ui_form.lineEdit_zadane5_13.text() != '24':
+        if self.ui_form.lineEdit_zadane5_13.text() != self.ui_form.lineEdit_zadane5_29.text():
             self.ui_form.lineEdit_zadane5_13.setStyleSheet("QLineEdit {background-color: red;}")
         if self.ui_form.lineEdit_zadane5_14.text() != self.ui_form.lineEdit_zadane5_30.text():
             self.ui_form.lineEdit_zadane5_14.setStyleSheet("QLineEdit {background-color: red;}")
@@ -364,7 +364,6 @@ class Task6Part1Var1(QtWidgets.QWidget):
             vals.append(el)
         val = vals[0][0].split(';')
         self.update_cells(val)
-        self.set_default_vals()
         return vals
 
     def update_cells(self, val):
@@ -398,10 +397,13 @@ class Task6Part1Var1(QtWidgets.QWidget):
         self.ui_form.label_word_29.setText(val[13].split(',')[1])
         self.ui_form.lineEdit_answer_15.setText(val[14].split(',')[0])
         self.ui_form.label_word_30.setText(val[14].split(',')[1])
+        self.set_default_vals()
         self.check_values()
 
     def check_values(self):
         if self.ui_form.lineEdit_answer_1.text() != self.ui_form.lineEdit_answer_16.text():
+            print(f'1:{self.ui_form.lineEdit_answer_1.text()}')
+            print(f'2:{self.ui_form.lineEdit_answer_16.text()}')
             self.ui_form.lineEdit_answer_1.setStyleSheet("QLineEdit {background-color: red;}")
         if self.ui_form.lineEdit_answer_2.text() != self.ui_form.lineEdit_answer_17.text():
             self.ui_form.lineEdit_answer_2.setStyleSheet("QLineEdit {background-color: red;}")
@@ -610,7 +612,6 @@ class Task123Part2Var1(QtWidgets.QWidget):
             self.ui_form.checkBox_2_zadan1_part2_var1.setChecked(True)
         if val[2] == 'True':
             self.ui_form.checkBox_3_zadan1_part2_var1.setChecked(True)
-        self.check_values()
 
     def update_cells_2(self, val):
         if val[0] == 'True':
@@ -621,7 +622,6 @@ class Task123Part2Var1(QtWidgets.QWidget):
             self.ui_form.checkBox_zadan2_part2_var1_3.setChecked(True)
         if val[3] == 'True':
             self.ui_form.checkBox_zadan2_part2_var1_4.setChecked(True)
-        self.check_values()
 
     def update_cells_3(self, val):
         self.ui_form.lineEdit.setText(val[0])
