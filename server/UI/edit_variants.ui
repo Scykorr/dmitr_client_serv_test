@@ -50,9 +50,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-386</y>
-      <width>1082</width>
-      <height>1195</height>
+      <y>0</y>
+      <width>1099</width>
+      <height>809</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -88,22 +88,6 @@
             </widget>
            </item>
           </layout>
-         </item>
-         <item alignment="Qt::AlignHCenter">
-          <widget class="QLabel" name="label_question_img">
-           <property name="minimumSize">
-            <size>
-             <width>404</width>
-             <height>286</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Box</enum>
-           </property>
-           <property name="text">
-            <string>Место для изображения</string>
-           </property>
-          </widget>
          </item>
         </layout>
        </item>
@@ -145,22 +129,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
-           <item>
-            <widget class="QPushButton" name="pushButton_zagr1">
-             <property name="text">
-              <string>Загрузить</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButtondel1">
-             <property name="text">
-              <string>Удалить</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QVBoxLayout" name="verticalLayout_5"/>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -198,74 +167,12 @@
           </layout>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_9">
-           <item>
-            <widget class="QPushButton" name="pushButton_zagr3">
-             <property name="text">
-              <string>Загрузить</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_del3">
-             <property name="text">
-              <string>Удалить</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QVBoxLayout" name="verticalLayout_9"/>
          </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="label_var1_img">
-           <property name="minimumSize">
-            <size>
-             <width>404</width>
-             <height>286</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Box</enum>
-           </property>
-           <property name="text">
-            <string>Место для изображения</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_var1_path">
-           <property name="text">
-            <string>Путь до изображения</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_var3_img">
-           <property name="minimumSize">
-            <size>
-             <width>404</width>
-             <height>286</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Box</enum>
-           </property>
-           <property name="text">
-            <string>Место для изображения</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_var3_path">
-           <property name="text">
-            <string>Путь до изображения</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <layout class="QHBoxLayout" name="horizontalLayout_2"/>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -317,22 +224,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_12">
-           <item>
-            <widget class="QPushButton" name="pushButton_zagr2">
-             <property name="text">
-              <string>Загрузить</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_del2">
-             <property name="text">
-              <string>Удалить</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QVBoxLayout" name="verticalLayout_12"/>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -370,74 +262,12 @@
           </layout>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_15">
-           <item>
-            <widget class="QPushButton" name="pushButton_zagr4">
-             <property name="text">
-              <string>Загрузить</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_del4">
-             <property name="text">
-              <string>Удалить</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QVBoxLayout" name="verticalLayout_15"/>
          </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_var2_img">
-           <property name="minimumSize">
-            <size>
-             <width>404</width>
-             <height>286</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Box</enum>
-           </property>
-           <property name="text">
-            <string>Место для изображения</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_var2_path">
-           <property name="text">
-            <string>Путь до изображения</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_var4_img">
-           <property name="minimumSize">
-            <size>
-             <width>404</width>
-             <height>286</height>
-            </size>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::Box</enum>
-           </property>
-           <property name="text">
-            <string>Место для изображения</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_var4_path">
-           <property name="text">
-            <string>Путь до изображения</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <layout class="QHBoxLayout" name="horizontalLayout_4"/>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1211</width>
-    <height>894</height>
+    <width>628</width>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@
       <enum>Qt::ScrollBarAsNeeded</enum>
      </property>
      <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContents</enum>
+      <enum>QAbstractScrollArea::AdjustIgnored</enum>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
@@ -39,8 +39,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1172</width>
-        <height>1056</height>
+        <width>608</width>
+        <height>410</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -51,7 +51,7 @@
            <item>
             <layout class="QVBoxLayout" name="verticalLayout">
              <property name="sizeConstraint">
-              <enum>QLayout::SetMinAndMaxSize</enum>
+              <enum>QLayout::SetDefaultConstraint</enum>
              </property>
              <item>
               <widget class="QPlainTextEdit" name="plainTextEdit">
@@ -62,22 +62,6 @@
               </widget>
              </item>
             </layout>
-           </item>
-           <item alignment="Qt::AlignHCenter">
-            <widget class="QLabel" name="label_img_question">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
            </item>
           </layout>
          </item>
@@ -100,40 +84,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="label_img_var1">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_img_var3">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QHBoxLayout" name="horizontalLayout_2"/>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -154,40 +105,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QLabel" name="label_img_var2">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_img_var4">
-             <property name="minimumSize">
-              <size>
-               <width>404</width>
-               <height>286</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::Box</enum>
-             </property>
-             <property name="text">
-              <string>Место для изображения</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <layout class="QHBoxLayout" name="horizontalLayout_4"/>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_5">

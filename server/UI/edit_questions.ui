@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>997</width>
+    <width>869</width>
     <height>435</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>561</width>
+     <width>791</width>
      <height>271</height>
     </rect>
    </property>
@@ -28,7 +28,7 @@
     <rect>
      <x>10</x>
      <y>290</y>
-     <width>561</width>
+     <width>791</width>
      <height>71</height>
     </rect>
    </property>
@@ -143,9 +143,9 @@
   <widget class="QLineEdit" name="lineEdit_update_time">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>390</y>
-     <width>113</width>
+     <x>590</x>
+     <y>380</y>
+     <width>91</width>
      <height>20</height>
     </rect>
    </property>
@@ -156,8 +156,8 @@
   <widget class="QPushButton" name="pushButton_update_time">
    <property name="geometry">
     <rect>
-     <x>780</x>
-     <y>390</y>
+     <x>700</x>
+     <y>380</y>
      <width>101</width>
      <height>23</height>
     </rect>

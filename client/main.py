@@ -134,6 +134,7 @@ class WindowChooseTest(QtWidgets.QWidget):
         self.ui_choose_test = Ui_Form_client_main()
         self.ui_choose_test.setupUi(self)
         self.ui_choose_test.pushButton_test1.clicked.connect(self.test_1)
+        self.ui_choose_test.pushButton_test2.setVisible(False)
         self.ui_choose_test.pushButton_test2.clicked.connect(self.test_2)
 
     def test_1(self):
@@ -194,8 +195,18 @@ class FirstTestWindow(QtWidgets.QWidget):
                 self.student_fio,
                 result_points,
             ))
-        QMessageBox.about(self, 'Ваш результат:', 'Тест завершен.\n{0} верных ответов из 10.'.format(
-            self.right_answer
+        result_mark = 0
+        if self.right_answer < 5:
+            result_mark = 2
+        elif 5 <= self.right_answer < 7:
+            result_mark = 3
+        elif 7 <= self.right_answer < 9:
+            result_mark = 4
+        else:
+            result_mark = 5
+        QMessageBox.about(self, 'Ваш результат:', 'Тест завершен.\n{0} верных ответов из 10.\nВаша оценка {1}!'.format(
+            self.right_answer,
+            result_mark,
         ))
         exit()
 
@@ -249,20 +260,43 @@ class FirstTestWindow(QtWidgets.QWidget):
             ))
 
     def get_questionts(self):
-        self.ui_first_test.label_img_question.clear()
-        self.ui_first_test.label_img_var1.clear()
-        self.ui_first_test.label_img_var2.clear()
-        self.ui_first_test.label_img_var3.clear()
-        self.ui_first_test.label_img_var4.clear()
+        # self.ui_first_test.label_img_question.clear()
+        # self.ui_first_test.label_img_var1.clear()
+        # self.ui_first_test.label_img_var2.clear()
+        # self.ui_first_test.label_img_var3.clear()
+        # self.ui_first_test.label_img_var4.clear()
 
         self.setWindowTitle('Вопрос №{0}'.format(
             self.counter_questions + 1,
         ))
         self.ui_first_test.plainTextEdit.setPlainText(self.new_lst_question[self.counter_questions][1])
-        self.ui_first_test.radioButton_answer1.setText(self.sorted_variants[self.counter_questions][0][1])
-        self.ui_first_test.radioButton_answer2.setText(self.sorted_variants[self.counter_questions][1][1])
-        self.ui_first_test.radioButton_answer3.setText(self.sorted_variants[self.counter_questions][2][1])
-        self.ui_first_test.radioButton_4.setText(self.sorted_variants[self.counter_questions][3][1])
+        question_1 = self.sorted_variants[self.counter_questions][0][1].split()
+        question_2 = self.sorted_variants[self.counter_questions][1][1].split()
+        question_3 = self.sorted_variants[self.counter_questions][2][1].split()
+        question_4 = self.sorted_variants[self.counter_questions][3][1].split()
+        for num, el in enumerate(question_1):
+            if num >= 4 and num % 4 == 0:
+                question_1.insert(num, '\n')
+        for num, el in enumerate(question_2):
+            if num >= 4 and num % 4 == 0:
+                question_2.insert(num, '\n')
+
+        for num, el in enumerate(question_3):
+            if num >= 4 and num % 4 == 0:
+                question_3.insert(num, '\n')
+
+        for num, el in enumerate(question_4):
+            if num >= 4 and num % 4 == 0:
+                question_4.insert(num, '\n')
+
+        question_1 = ' '.join(question_1)
+        question_2 = ' '.join(question_2)
+        question_3 = ' '.join(question_3)
+        question_4 = ' '.join(question_4)
+        self.ui_first_test.radioButton_answer1.setText(question_1)
+        self.ui_first_test.radioButton_answer2.setText(question_2)
+        self.ui_first_test.radioButton_answer3.setText(question_3)
+        self.ui_first_test.radioButton_4.setText(question_4)
 
         id_question = self.new_lst_question[self.counter_questions][0]
         id_var1 = self.sorted_variants[self.counter_questions][0][0]
@@ -345,7 +379,6 @@ class FirstTestWindow(QtWidgets.QWidget):
             if pix4.loadFromData(img_bin[0], 'png'):
                 self.ui_first_test.label_img_var4.setPixmap(pix4)
 
-
     def sort_variants(self):
         new_list = [[] for _ in range(10)]
         counter = 0
@@ -417,8 +450,18 @@ class SecondTestWindow(QtWidgets.QWidget):
                 result_score,
                 summ_answer,
             ))
-        QMessageBox.about(self, 'Ваш результат:', 'Тест завершен.\n{0} верных ответов из 10.'.format(
-            self.right_answer
+        result_mark = 0
+        if self.right_answer < 5:
+            result_mark = 2
+        elif 5 <= self.right_answer < 7:
+            result_mark = 3
+        elif 7 <= self.right_answer < 9:
+            result_mark = 4
+        else:
+            result_mark = 5
+        QMessageBox.about(self, 'Ваш результат:', 'Тест завершен.\n{0} верных ответов из 10.\n Ваша оценка {1}!'.format(
+            self.right_answer,
+            result_mark
         ))
         exit()
 

@@ -37,6 +37,7 @@ class WindowServerMain(QtWidgets.QWidget):
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
 
+
     def drop_db(self):
         con = sql.connect('../data.db')
         cur = con.cursor()
@@ -109,16 +110,21 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.ui_form_question.tableWidget_question_list.setSizeAdjustPolicy(
             QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.ui_form_question.pushButton_download_img.clicked.connect(self.openFileNameDialog)
-        self.variants_window.ui_form_variants.pushButton_zagr1.clicked.connect(self.open_file_name_dialog_variant1)
-        self.variants_window.ui_form_variants.pushButton_zagr2.clicked.connect(self.open_file_name_dialog_variant2)
-        self.variants_window.ui_form_variants.pushButton_zagr3.clicked.connect(self.open_file_name_dialog_variant3)
-        self.variants_window.ui_form_variants.pushButton_zagr4.clicked.connect(self.open_file_name_dialog_variant4)
-        self.variants_window.ui_form_variants.pushButtondel1.clicked.connect(self.del_img_var1)
-        self.variants_window.ui_form_variants.pushButton_del2.clicked.connect(self.del_img_var2)
-        self.variants_window.ui_form_variants.pushButton_del3.clicked.connect(self.del_img_var3)
-        self.variants_window.ui_form_variants.pushButton_del4.clicked.connect(self.del_img_var4)
+        # self.variants_window.ui_form_variants.pushButton_zagr1.clicked.connect(self.open_file_name_dialog_variant1)
+        # self.variants_window.ui_form_variants.pushButton_zagr2.clicked.connect(self.open_file_name_dialog_variant2)
+        # self.variants_window.ui_form_variants.pushButton_zagr3.clicked.connect(self.open_file_name_dialog_variant3)
+        # self.variants_window.ui_form_variants.pushButton_zagr4.clicked.connect(self.open_file_name_dialog_variant4)
+        # self.variants_window.ui_form_variants.pushButtondel1.clicked.connect(self.del_img_var1)
+        # self.variants_window.ui_form_variants.pushButton_del2.clicked.connect(self.del_img_var2)
+        # self.variants_window.ui_form_variants.pushButton_del3.clicked.connect(self.del_img_var3)
+        # self.variants_window.ui_form_variants.pushButton_del4.clicked.connect(self.del_img_var4)
         self.ui_form_question.lineEdit_update_time.setText(str(self.get_seconds_for_count()))
         self.ui_form_question.pushButton_update_time.clicked.connect(self.update_seconds_test2)
+        self.ui_form_question.label_show_img.setVisible(False)
+        self.ui_form_question.label_img_address.setVisible(False)
+        self.ui_form_question.pushButton_download_img.setVisible(False)
+        self.ui_form_question.pushButton_delete_img.setVisible(False)
+
 
     def update_seconds_test2(self):
         update_value = self.ui_form_question.lineEdit_update_time.text()
@@ -166,15 +172,16 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.ui_form_question.label_img_address.clear()
 
     def clear_variants(self):
-        self.variants_window.ui_form_variants.label_var1_path.setText('Путь до изображения')
-        self.variants_window.ui_form_variants.label_var2_path.setText('Путь до изображения')
-        self.variants_window.ui_form_variants.label_var3_path.setText('Путь до изображения')
-        self.variants_window.ui_form_variants.label_var4_path.setText('Путь до изображения')
-        self.variants_window.ui_form_variants.label_var1_img.clear()
-        self.variants_window.ui_form_variants.label_var2_img.clear()
-        self.variants_window.ui_form_variants.label_var3_img.clear()
-        self.variants_window.ui_form_variants.label_var4_img.clear()
-        self.variants_window.ui_form_variants.label_question_img.clear()
+        pass
+        # self.variants_window.ui_form_variants.label_var1_path.setText('Путь до изображения')
+        # self.variants_window.ui_form_variants.label_var2_path.setText('Путь до изображения')
+        # self.variants_window.ui_form_variants.label_var3_path.setText('Путь до изображения')
+        # self.variants_window.ui_form_variants.label_var4_path.setText('Путь до изображения')
+        # self.variants_window.ui_form_variants.label_var1_img.clear()
+        # self.variants_window.ui_form_variants.label_var2_img.clear()
+        # self.variants_window.ui_form_variants.label_var3_img.clear()
+        # self.variants_window.ui_form_variants.label_var4_img.clear()
+        # self.variants_window.ui_form_variants.label_question_img.clear()
 
     def update_variants(self):
         id_quest = self.get_id_question()
