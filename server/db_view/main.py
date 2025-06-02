@@ -27,7 +27,9 @@ class WindowServerMain(QtWidgets.QWidget):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui_main_server = Ui_Form_server()
         self.ui_main_server.setupUi(self)
-        self.ui_main_server.tableWidget_server.setColumnCount(6)
+        self.resize(900, 351)
+        self.ui_main_server.tableWidget_server.setColumnCount(7)
+        self.ui_main_server.tableWidget_server.resize(881, 301)
         self.ui_main_server.pushButton_delete_all.clicked.connect(self.drop_db)
         self.questions_window = WindowEditQuestions()
         self.ui_main_server.pushButton_work_db.clicked.connect(self.open_window_db)
@@ -62,7 +64,7 @@ class WindowServerMain(QtWidgets.QWidget):
     def on_change(self, s):
         self.ui_main_server.tableWidget_server.clear()
         self.ui_main_server.tableWidget_server.setHorizontalHeaderLabels(
-            ("ФИО;Правильных;Неправильных;Время;Отвечено;Баллы").split(";"))
+            ("ФИО;Правильных;Неправильных;Время;Отвечено;Баллы;Итоговая оценка").split(";"))
         if self.ui_main_server.tableWidget_server.rowCount() == 0 or \
                 self.ui_main_server.tableWidget_server.rowCount() < len(s):
             for _ in range(len(s) - self.ui_main_server.tableWidget_server.rowCount()):
@@ -74,6 +76,15 @@ class WindowServerMain(QtWidgets.QWidget):
             self.ui_main_server.tableWidget_server.setItem(i_res, 3, QTableWidgetItem(str(res[4])))
             self.ui_main_server.tableWidget_server.setItem(i_res, 4, QTableWidgetItem(str(res[5])))
             self.ui_main_server.tableWidget_server.setItem(i_res, 5, QTableWidgetItem(str(res[6])))
+            if str(res[6]) != 'None':
+                if int(res[6]) < 5:
+                    self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('2'))
+                elif 5 <= int(res[6]) < 7:
+                    self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('3'))
+                elif 7 <= int(res[6]) < 9:
+                    self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('4'))
+                elif 9 <= int(res[6]) <= 10:
+                    self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('5'))
 
     def select_from_users(self):
         vals = []
@@ -219,8 +230,9 @@ class WindowEditQuestions(QtWidgets.QWidget):
             return id_question
 
     def update_variant1_sql(self, data_tuple):
-        file_address = self.variants_window.ui_form_variants.label_var1_path.text()
-        if file_address == 'Путь до изображения':
+        # file_address = self.variants_window.ui_form_variants.label_var1_path.text()
+        file_address = ''
+        if file_address == '':
             emp_photo = None
         else:
             emp_photo = self.convert_to_binary_data(file_address)
@@ -243,8 +255,9 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.update_question_list()
 
     def update_variant2_sql(self, data_tuple):
-        file_address = self.variants_window.ui_form_variants.label_var2_path.text()
-        if file_address == 'Путь до изображения':
+        # file_address = self.variants_window.ui_form_variants.label_var2_path.text()
+        file_address = ''
+        if file_address == '':
             emp_photo = None
         else:
             emp_photo = self.convert_to_binary_data(file_address)
@@ -267,8 +280,8 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.update_question_list()
 
     def update_variant3_sql(self, data_tuple):
-        file_address = self.variants_window.ui_form_variants.label_var3_path.text()
-        if file_address == 'Путь до изображения':
+        file_address = ''
+        if file_address == '':
             emp_photo = None
         else:
             emp_photo = self.convert_to_binary_data(file_address)
@@ -291,8 +304,9 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.update_question_list()
 
     def update_variant4_sql(self, data_tuple):
-        file_address = self.variants_window.ui_form_variants.label_var4_path.text()
-        if file_address == 'Путь до изображения':
+        # file_address = self.variants_window.ui_form_variants.label_var4_path.text()
+        file_address = ''
+        if file_address == '':
             emp_photo = None
         else:
             emp_photo = self.convert_to_binary_data(file_address)
@@ -356,7 +370,8 @@ class WindowEditQuestions(QtWidgets.QWidget):
         return blob_data
 
     def update_question_value(self, data_tuple):
-        file_address = self.ui_form_question.label_img_address.text()
+        # file_address = self.ui_form_question.label_img_address.text()
+        file_address = ''
         if file_address == '':
             emp_photo = None
         else:
