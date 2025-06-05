@@ -64,7 +64,7 @@ class WindowServerMain(QtWidgets.QWidget):
     def on_change(self, s):
         self.ui_main_server.tableWidget_server.clear()
         self.ui_main_server.tableWidget_server.setHorizontalHeaderLabels(
-            ("ФИО;Правильных;Неправильных;Время;Отвечено;Баллы;Итоговая оценка").split(";"))
+            ("Номер варианта;Правильных;Неправильных;Время;Отвечено;Баллы;Итоговая оценка").split(";"))
         if self.ui_main_server.tableWidget_server.rowCount() == 0 or \
                 self.ui_main_server.tableWidget_server.rowCount() < len(s):
             for _ in range(len(s) - self.ui_main_server.tableWidget_server.rowCount()):

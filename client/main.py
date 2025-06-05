@@ -119,7 +119,8 @@ class WindowLogin(QtWidgets.QWidget):
 
     def send_fio(self):
         self.choose_test_window = WindowChooseTest()
-        self.student_fio = self.ui_client_login.lineEdit_fio.text()
+        # self.student_fio = self.ui_client_login.lineEdit_fio.text()
+        self.student_fio = self.ui_client_login.comboBox_variant.currentText()
         user_name.append(self.student_fio)
         Client(ip_address_server, 7000).connect("insert into user(fio_user) values ('{0}')".format(
             self.student_fio,
