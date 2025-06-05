@@ -124,8 +124,8 @@ class WindowEditQuestions(QtWidgets.QWidget):
         self.ui_form_question.pushButton_delete_img.clicked.connect(self.del_img_question)
         self.update_question_list()
         self.setWindowTitle('Редактор вопросов')
-        self.ui_form_question.tableWidget_question_list.setSizeAdjustPolicy(
-            QtWidgets.QAbstractScrollArea.AdjustToContents)
+        # self.ui_form_question.tableWidget_question_list.setSizeAdjustPolicy(
+        #     QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.ui_form_question.pushButton_download_img.clicked.connect(self.openFileNameDialog)
         # self.variants_window.ui_form_variants.pushButton_zagr1.clicked.connect(self.open_file_name_dialog_variant1)
         # self.variants_window.ui_form_variants.pushButton_zagr2.clicked.connect(self.open_file_name_dialog_variant2)
