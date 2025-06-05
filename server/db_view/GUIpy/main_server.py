@@ -37,6 +37,7 @@ class Ui_Form_server(object):
         self.horizontalLayout.addLayout(self.verticalLayout_2)
         self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.tableWidget_server = QtWidgets.QTableWidget(self.verticalLayoutWidget_3)
         self.tableWidget_server.setObjectName("tableWidget_server")
