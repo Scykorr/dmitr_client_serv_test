@@ -197,9 +197,9 @@ class FirstTestWindow(QtWidgets.QWidget):
                 result_points,
             ))
         result_mark = 0
-        if self.right_answer < 5:
+        if self.right_answer < 4:
             result_mark = 2
-        elif 5 <= self.right_answer < 7:
+        elif 4 <= self.right_answer < 7:
             result_mark = 3
         elif 7 <= self.right_answer < 9:
             result_mark = 4

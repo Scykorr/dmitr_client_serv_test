@@ -82,14 +82,14 @@ class WindowServerMain(QtWidgets.QWidget):
             self.ui_main_server.tableWidget_server.setItem(i_res, 3, QTableWidgetItem(str(res[4])))
             self.ui_main_server.tableWidget_server.setItem(i_res, 4, QTableWidgetItem(str(res[5])))
             self.ui_main_server.tableWidget_server.setItem(i_res, 5, QTableWidgetItem(str(res[6])))
-            if str(res[6]) != 'None':
-                if int(res[6]) < 5:
+            if str(res[2]) != 'None':
+                if int(res[2]) < 4:
                     self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('2'))
-                elif 5 <= int(res[6]) < 7:
+                elif 4 <= int(res[2]) < 7:
                     self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('3'))
-                elif 7 <= int(res[6]) < 9:
+                elif 7 <= int(res[2]) < 9:
                     self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('4'))
-                elif 9 <= int(res[6]) <= 10:
+                elif 9 <= int(res[2]) <= 10:
                     self.ui_main_server.tableWidget_server.setItem(i_res, 6, QTableWidgetItem('5'))
 
     def select_from_users(self):
