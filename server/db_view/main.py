@@ -27,9 +27,9 @@ class WindowServerMain(QtWidgets.QWidget):
         QtWidgets.QWidget.__init__(self, parent)
         self.ui_main_server = Ui_Form_server()
         self.ui_main_server.setupUi(self)
-        self.resize(900, 351)
+        # self.resize(900, 351)
         self.ui_main_server.tableWidget_server.setColumnCount(7)
-        self.ui_main_server.tableWidget_server.resize(881, 301)
+        # self.ui_main_server.tableWidget_server.resize(881, 301)
         self.ui_main_server.pushButton_delete_all.clicked.connect(self.drop_db)
         self.questions_window = WindowEditQuestions()
         self.ui_main_server.pushButton_work_db.clicked.connect(self.open_window_db)
@@ -38,6 +38,12 @@ class WindowServerMain(QtWidgets.QWidget):
         self.mythread.started.connect(self.on_started)
         self.mythread.finished.connect(self.on_finished)
         self.mythread.mysignal.connect(self.on_change, QtCore.Qt.QueuedConnection)
+        # self.ui_main_server.tableWidget_server.setSizeAdjustPolicy(
+        #     QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.ui_main_server.tableWidget_server.setSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        self.ui_main_server.tableWidget_server.horizontalHeader().setSectionResizeMode(
+            QtWidgets.QHeaderView.Stretch)
 
 
     def drop_db(self):
